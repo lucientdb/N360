@@ -7,7 +7,7 @@ import PolesListClient from "@/components/sections/PolesListClient"
 export const metadata: Metadata = {
   title: "Nos 8 Pôles d'Expertise",
   description:
-    "Découvrez les 8 pôles d'intelligence numérique d'Intelligence360 : cybersécurité, OSINT, social listening, viralisation, gestion d'image, production audiovisuelle, développement IT et transformation digitale.",
+    "Découvrez les 8 pôles d'intelligence numérique d'Numérique 360 : cybersécurité, OSINT, social listening, viralisation, gestion d'image, production audiovisuelle, développement IT et transformation digitale.",
 }
 
 export default function PolesPage() {
@@ -24,7 +24,7 @@ export default function PolesPage() {
             8 pôles. Une vision.
           </h1>
           <p className="max-w-2xl mx-auto text-base text-brand-gray leading-relaxed">
-            Intelligence360 est le seul acteur en Afrique de l&apos;Ouest à combiner
+            Numérique 360 est le seul acteur en Afrique de l&apos;Ouest à combiner
             cybersécurité opérationnelle, renseignement numérique, viralisation digitale
             et production audiovisuelle sous une même structure.
           </p>

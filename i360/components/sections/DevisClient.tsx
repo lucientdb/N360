@@ -63,6 +63,7 @@ export default function DevisClient() {
   const [step, setStep] = useState(0)
   const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const [form, setForm] = useState<FormData>({
     poles: [],
     budget: "",
@@ -94,9 +95,23 @@ export default function DevisClient() {
 
   async function handleSubmit() {
     setLoading(true)
-    await new Promise((r) => setTimeout(r, 1400))
-    setLoading(false)
-    setSent(true)
+    setError(null)
+    try {
+      const response = await fetch("/api/devis", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      })
+      const data = await response.json()
+      if (!response.ok) {
+        throw new Error(data.error || "Une erreur est survenue lors de l'envoi.")
+      }
+      setSent(true)
+    } catch (err) {
+      setError(err.message || "Une erreur de connexion est survenue. Veuillez réessayer.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   function canNext() {
@@ -429,6 +444,12 @@ export default function DevisClient() {
               </motion.div>
             )}
           </AnimatePresence>
+
+          {error && (
+            <div className="mx-8 mb-4 p-4 text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl">
+              {error}
+            </div>
+          )}
 
           <div className="px-8 pb-8 flex items-center justify-between gap-4">
             {step > 0 ? (

@@ -9,7 +9,7 @@ type Stat = { val: string; label: string; source: string }
 type Etape = { num: string; phase: string; contenu: string; duree: string }
 type Engagement = { label: string; detail: string }
 type Segment = { segment: string; exemples: string; besoins: string; poles: string }
-type Comparaison = { critere: string; i360: string; agences: string; cabinets: string }
+type Comparaison = { critere: string; n360: string; agences: string; cabinets: string }
 
 type Props = {
   valeurs: Valeur[]
@@ -78,7 +78,7 @@ export default function AProposClient({
             </motion.h1>
 
             <motion.p variants={fadeUp} className="text-brand-gray text-lg leading-relaxed max-w-2xl">
-              Intelligence360 est la première agence d&apos;intelligence numérique intégrée
+              Numérique 360 est la première agence d&apos;intelligence numérique intégrée
               d&apos;Afrique de l&apos;Ouest. Basée à Dakar Plateau, au Sénégal, elle regroupe sous un
               même toit huit pôles d&apos;expertise complémentaires : cybersécurité,
               cyber-renseignement, social listening, viralisation, gestion d&apos;image, production
@@ -87,7 +87,7 @@ export default function AProposClient({
 
             <motion.p variants={fadeUp} className="text-brand-gray leading-relaxed max-w-2xl">
               Fondée par une équipe de consultants et d&apos;experts numériques sénégalais,
-              Intelligence360 répond à un constat simple : les entreprises, institutions et
+              Numérique 360 répond à un constat simple : les entreprises, institutions et
               personnalités d&apos;Afrique de l&apos;Ouest ont besoin d&apos;un partenaire numérique complet,
               ancré localement, maîtrisant les spécificités du marché africain tout en opérant
               selon les standards internationaux.
@@ -101,7 +101,7 @@ export default function AProposClient({
                 Notre positionnement unique
               </p>
               <p className="text-foreground leading-relaxed">
-                Intelligence360 est le <strong>seul acteur en Afrique de l&apos;Ouest</strong> à combiner
+                Numérique 360 est le <strong>seul acteur en Afrique de l&apos;Ouest</strong> à combiner
                 cybersécurité opérationnelle (Audit SI, SOC, Forensic), renseignement numérique
                 (OSINT), viralisation digitale et production audiovisuelle sous une même structure.{" "}
                 <strong>Aucun concurrent local n&apos;offre cette chaîne complète.</strong>
@@ -165,7 +165,7 @@ export default function AProposClient({
               </span>
               <p className="text-white leading-relaxed">
                 Faire de Dakar le <strong>hub de l&apos;intelligence numérique</strong> de l&apos;Afrique de
-                l&apos;Ouest. Positionner Intelligence360 comme la référence incontournable en
+                l&apos;Ouest. Positionner Numérique 360 comme la référence incontournable en
                 cybersécurité et en stratégie digitale pour toute organisation souhaitant opérer
                 avec sérénité et puissance dans l&apos;écosystème numérique africain.
               </p>
@@ -229,7 +229,7 @@ export default function AProposClient({
           >
             <p className="text-xs text-white/50 uppercase tracking-[0.15em] mb-3">Le contexte</p>
             <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight">
-              Pourquoi Intelligence360 ?
+              Pourquoi Numérique 360 ?
             </h2>
           </motion.div>
 
@@ -309,7 +309,7 @@ export default function AProposClient({
                 Face à ces enjeux, l&apos;offre locale est insuffisante. Les agences digitales
                 classiques ne maîtrisent pas la cybersécurité. Les cabinets de conseil IT ne font
                 pas de viralisation. Les agences de communication ne font pas d&apos;OSINT.
-                Intelligence360 est née pour combler ce vide.
+                Numérique 360 est née pour combler ce vide.
               </p>
             </div>
 
@@ -318,7 +318,7 @@ export default function AProposClient({
                 Notre avantage compétitif
               </p>
               <p className="text-white/80 leading-relaxed">
-                Intelligence360 est le seul acteur local à proposer une approche de bout en bout :
+                Numérique 360 est le seul acteur local à proposer une approche de bout en bout :
                 identifier les menaces (OSINT) → évaluer les vulnérabilités (Audit SI) → surveiller
                 en continu (SOC) → corriger et protéger (Sécurisation) → amplifier et valoriser
                 (Viralisation & E-Réputation). Cette chaîne intégrée est unique en Afrique de
@@ -343,7 +343,7 @@ export default function AProposClient({
               Secteurs d&apos;intervention
             </h2>
             <p className="text-brand-gray mt-4 max-w-2xl mx-auto leading-relaxed">
-              Intelligence360 intervient auprès d&apos;une clientèle diversifiée, couvrant l&apos;ensemble
+              Numérique 360 intervient auprès d&apos;une clientèle diversifiée, couvrant l&apos;ensemble
               des secteurs économiques et institutionnels d&apos;Afrique de l&apos;Ouest. Notre positionnement
               hybride (cybersécurité + digital + production) nous permet d&apos;adresser des besoins très
               différents avec une même qualité de service.
@@ -432,7 +432,7 @@ export default function AProposClient({
               <thead>
                 <tr className="border-b border-border bg-brand-light">
                   <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-foreground">Critère</th>
-                  <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-brand-blue">Intelligence360</th>
+                  <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-brand-blue">Numérique 360</th>
                   <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-foreground">Agences digitales classiques</th>
                   <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-foreground">Cabinets IT locaux</th>
                 </tr>
@@ -441,7 +441,7 @@ export default function AProposClient({
                 {comparaison.map((row, i) => (
                   <tr key={row.critere} className={i % 2 === 0 ? "bg-white" : "bg-brand-light/50"}>
                     <td className="p-4 font-medium text-foreground">{row.critere}</td>
-                    <td className="p-4 text-brand-blue font-medium">{row.i360}</td>
+                    <td className="p-4 text-brand-blue font-medium">{row.n360}</td>
                     <td className="p-4 text-brand-gray">{row.agences}</td>
                     <td className="p-4 text-brand-gray">{row.cabinets}</td>
                   </tr>
@@ -466,7 +466,7 @@ export default function AProposClient({
               Des experts sénégalais du numérique
             </h2>
             <p className="text-brand-gray leading-relaxed max-w-2xl">
-              Intelligence360 est portée par une équipe fondatrice de professionnels sénégalais du
+              Numérique 360 est portée par une équipe fondatrice de professionnels sénégalais du
               numérique, secondée par des collaborateurs experts répartis sur les 8 pôles. Notre
               philosophie RH : recruter les meilleurs talents locaux, les former aux standards
               internationaux et leur donner les moyens d&apos;exercer leur expertise en Afrique.
@@ -512,7 +512,7 @@ export default function AProposClient({
               Méthode de travail
             </h2>
             <p className="text-brand-gray mt-4 max-w-2xl mx-auto leading-relaxed">
-              Intelligence360 s&apos;appuie sur une méthodologie structurée qui garantit la qualité, la
+              Numérique 360 s&apos;appuie sur une méthodologie structurée qui garantit la qualité, la
               traçabilité et la pertinence de chaque intervention. Notre cycle en 5 étapes est
               appliqué à toutes nos missions, quelle que soit leur nature.
             </p>

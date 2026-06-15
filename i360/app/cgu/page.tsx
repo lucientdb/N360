@@ -1,10 +1,11 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import Navbar from "@/components/layout/Navbar"
 import Footer from "@/components/layout/Footer"
 
 export const metadata: Metadata = {
   title: "Conditions Générales d'Utilisation",
-  description: "Conditions Générales d'Utilisation du site Intelligence360.",
+  description: "Conditions Générales d'Utilisation du site Numérique 360.",
 }
 
 export default function CguPage() {
@@ -22,7 +23,7 @@ export default function CguPage() {
             <h2>Article 1 — Objet</h2>
             <p>
               Les présentes Conditions Générales d&apos;Utilisation (CGU) ont pour objet de
-              définir les modalités d&apos;accès et d&apos;utilisation du site internet d&apos;Intelligence360
+              définir les modalités d&apos;accès et d&apos;utilisation du site internet d&apos;Numérique 360
               accessible à l&apos;adresse www.intelligence360.sn. Tout accès au site implique
               l&apos;acceptation sans réserve des présentes CGU.
             </p>
@@ -30,7 +31,7 @@ export default function CguPage() {
             <h2>Article 2 — Accès au site</h2>
             <p>
               Le site est accessible gratuitement à tout utilisateur disposant d&apos;un accès
-              à internet. Intelligence360 se réserve le droit de modifier, suspendre ou
+              à internet. Numérique 360 se réserve le droit de modifier, suspendre ou
               interrompre l&apos;accès au site à tout moment, sans préavis ni indemnité.
             </p>
 
@@ -38,7 +39,7 @@ export default function CguPage() {
             <p>L&apos;utilisateur s&apos;engage à :</p>
             <ul>
               <li>Utiliser le site conformément à sa destination et aux lois en vigueur</li>
-              <li>Ne pas tenter d&apos;accéder aux systèmes informatiques d&apos;Intelligence360 de manière non autorisée</li>
+              <li>Ne pas tenter d&apos;accéder aux systèmes informatiques d&apos;Numérique 360 de manière non autorisée</li>
               <li>Ne pas diffuser de contenus illicites, diffamatoires ou portant atteinte aux droits de tiers</li>
               <li>Ne pas utiliser les formulaires à des fins de spam ou de sollicitation commerciale non autorisée</li>
             </ul>
@@ -46,29 +47,29 @@ export default function CguPage() {
             <h2>Article 4 — Propriété intellectuelle</h2>
             <p>
               L&apos;ensemble des éléments du site (textes, images, logos, graphismes, structure)
-              est protégé par le droit d&apos;auteur et appartient à Intelligence360. Toute
+              est protégé par le droit d&apos;auteur et appartient à Numérique 360. Toute
               reproduction, même partielle, est strictement interdite sans autorisation
-              préalable écrite d&apos;Intelligence360.
+              préalable écrite d&apos;Numérique 360.
             </p>
 
             <h2>Article 5 — Formulaires et demandes</h2>
             <p>
               Les formulaires de contact et de devis présents sur le site constituent une
               simple prise de contact. Ils ne constituent en aucun cas un contrat ou un
-              engagement ferme d&apos;Intelligence360 à fournir les services décrits. Toute
+              engagement ferme d&apos;Numérique 360 à fournir les services décrits. Toute
               prestation fait l&apos;objet d&apos;un devis et d&apos;un contrat formalisé séparément.
             </p>
 
             <h2>Article 6 — Confidentialité</h2>
             <p>
               Les informations transmises via les formulaires sont traitées conformément à
-              notre <link href="/confidentialite">Politique de confidentialité</link>. Un accord
+              notre <Link href="/confidentialite">Politique de confidentialité</Link>. Un accord
               de non-divulgation (NDA) est systématiquement proposé avant toute mission.
             </p>
 
             <h2>Article 7 — Limitation de responsabilité</h2>
             <p>
-              Intelligence360 ne saurait être tenu responsable des dommages directs ou
+              Numérique 360 ne saurait être tenu responsable des dommages directs ou
               indirects résultant de l&apos;utilisation du site, d&apos;une interruption d&apos;accès ou
               d&apos;informations inexactes publiées de bonne foi. L&apos;utilisateur utilise le site
               sous sa seule responsabilité.
@@ -76,7 +77,7 @@ export default function CguPage() {
 
             <h2>Article 8 — Modification des CGU</h2>
             <p>
-              Intelligence360 se réserve le droit de modifier les présentes CGU à tout
+              Numérique 360 se réserve le droit de modifier les présentes CGU à tout
               moment. Les modifications prennent effet dès leur publication sur le site.
               Il appartient à l&apos;utilisateur de les consulter régulièrement.
             </p>

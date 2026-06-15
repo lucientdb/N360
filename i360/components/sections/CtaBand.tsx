@@ -53,7 +53,7 @@ export default function CtaBand() {
               <span className="text-brand-blue">vitesse supérieure</span>&nbsp;?
             </h2>
             <p className="mt-4 text-brand-gray text-sm leading-relaxed">
-              Intelligence360 est le seul acteur en Afrique de l&apos;Ouest à combiner
+              Numérique 360 est le seul acteur en Afrique de l&apos;Ouest à combiner
               cybersécurité opérationnelle, OSINT, viralisation et production audiovisuelle.
               Premier échange offert, sans engagement.
             </p>

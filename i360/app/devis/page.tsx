@@ -6,7 +6,7 @@ import DevisClient from "@/components/sections/DevisClient"
 export const metadata: Metadata = {
   title: "Demander un devis",
   description:
-    "Demandez un devis gratuit à Intelligence360. Décrivez votre projet et nos experts vous répondent sous 24h avec une proposition sur mesure.",
+    "Demandez un devis gratuit à Numérique 360. Décrivez votre projet et nos experts vous répondent sous 24h avec une proposition sur mesure.",
 }
 
 export default function DevisPage() {

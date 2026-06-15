@@ -4,9 +4,9 @@ import Footer from "@/components/layout/Footer"
 import AProposClient from "@/components/sections/AproposClient"
 
 export const metadata: Metadata = {
-  title: "À propos — Intelligence360",
+  title: "À propos — Numérique 360",
   description:
-    "Intelligence360 est la première agence d'intelligence numérique intégrée d'Afrique de l'Ouest. Basée à Dakar Plateau, elle regroupe 8 pôles d'expertise en cybersécurité, OSINT, viralisation et transformation digitale.",
+    "Numérique 360 est la première agence d'intelligence numérique intégrée d'Afrique de l'Ouest. Basée à Dakar Plateau, elle regroupe 8 pôles d'expertise en cybersécurité, OSINT, viralisation et transformation digitale.",
 }
 
 const valeurs = [
@@ -46,7 +46,7 @@ const stats = [
   {
     val: "< 10",
     label: "Nombre de cabinets locaux capables de réaliser un audit SI complet",
-    source: "Étude de marché I360 2024",
+    source: "Étude de marché N360 2024",
   },
   {
     val: "73%",
@@ -164,15 +164,15 @@ const zones = [
 ]
 
 const comparaison = [
-  { critere: "Cybersécurité opérationnelle", i360: "Oui — SOC, audit, forensic", agences: "Non", cabinets: "Partiel" },
-  { critere: "OSINT & renseignement", i360: "Oui — pôle dédié", agences: "Non", cabinets: "Non" },
-  { critere: "Viralisation & RS", i360: "Oui — pôle dédié", agences: "Oui", cabinets: "Non" },
-  { critere: "Production audiovisuelle", i360: "Oui — studio, drone, Sony FX3", agences: "Partiel", cabinets: "Non" },
-  { critere: "Gestion image personnalités", i360: "Oui — pôle dédié", agences: "Parfois", cabinets: "Non" },
-  { critere: "Développement IT", i360: "Oui — web, mobile, ERP, réseaux", agences: "Non", cabinets: "Oui" },
-  { critere: "Transformation digitale", i360: "Oui — conseil & accompagnement", agences: "Partiel", cabinets: "Partiel" },
-  { critere: "Ancrage sénégalais", i360: "Oui — natif Dakar", agences: "Variable", cabinets: "Variable" },
-  { critere: "Certifications cyber", i360: "CISSP, CEH, ISO 27001 (objectifs)", agences: "Non", cabinets: "Partiel" },
+  { critere: "Cybersécurité opérationnelle", n360: "Oui — SOC, audit, forensic", agences: "Non", cabinets: "Partiel" },
+  { critere: "OSINT & renseignement", n360: "Oui — pôle dédié", agences: "Non", cabinets: "Non" },
+  { critere: "Viralisation & RS", n360: "Oui — pôle dédié", agences: "Oui", cabinets: "Non" },
+  { critere: "Production audiovisuelle", n360: "Oui — studio, drone, Sony FX3", agences: "Partiel", cabinets: "Non" },
+  { critere: "Gestion image personnalités", n360: "Oui — pôle dédié", agences: "Parfois", cabinets: "Non" },
+  { critere: "Développement IT", n360: "Oui — web, mobile, ERP, réseaux", agences: "Non", cabinets: "Oui" },
+  { critere: "Transformation digitale", n360: "Oui — conseil & accompagnement", agences: "Partiel", cabinets: "Partiel" },
+  { critere: "Ancrage sénégalais", n360: "Oui — natif Dakar", agences: "Variable", cabinets: "Variable" },
+  { critere: "Certifications cyber", n360: "CISSP, CEH, ISO 27001 (objectifs)", agences: "Non", cabinets: "Partiel" },
 ]
 
 const rhPhilosophie = [

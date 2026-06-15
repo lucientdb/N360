@@ -1,3 +1,8 @@
+"use client"
+
+import Image from "next/image"
+
+import { useState } from "react"
 import Link from "next/link"
 import { Mail, Phone, MapPin } from "lucide-react"
 
@@ -15,15 +20,21 @@ const TwitterIcon = () => (
 
 const InstagramIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" strokeWidth="2"/>
-    <path d="M12 7a5 5 0 110 10 5 5 0 010-10z" fill="none" stroke="currentColor" strokeWidth="2"/>
-    <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" strokeWidth="2" />
+    <path d="M12 7a5 5 0 110 10 5 5 0 010-10z" fill="none" stroke="currentColor" strokeWidth="2" />
+    <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" />
   </svg>
 )
 
 const YouTubeIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
     <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+  </svg>
+)
+
+const FacebookIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
   </svg>
 )
 
@@ -56,21 +67,50 @@ const socialLinks = [
   { label: "LinkedIn", href: "https://linkedin.com", icon: LinkedInIcon },
   { label: "Twitter", href: "https://twitter.com", icon: TwitterIcon },
   { label: "Instagram", href: "https://instagram.com", icon: InstagramIcon },
+  { label: "Facebook", href: "https://www.facebook.com/share/18njp2m465/?mibextid=wwXIfr", icon: FacebookIcon },
   { label: "YouTube", href: "https://youtube.com", icon: YouTubeIcon },
 ]
 
 export default function Footer() {
+  const [email, setEmail] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [message, setMessage] = useState("")
+
+  async function handleSubscribe(e: React.FormEvent) {
+    e.preventDefault()
+    if (!email) return
+    setLoading(true)
+    setStatus('idle')
+    setMessage("")
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      })
+      const data = await response.json()
+      if (!response.ok) {
+        throw new Error(data.error || "Une erreur est survenue.")
+      }
+      setStatus('success')
+      setEmail("")
+    } catch (err) {
+      setStatus('error')
+      setMessage(err instanceof Error ? err.message : "Une erreur est survenue.")
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <footer className="bg-foreground text-background">
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 
           <div className="lg:col-span-1">
-            <Link
-              href="/"
-              className="font-[family-name:var(--font-heading)] font-black text-2xl tracking-tight text-white"
-            >
-              i<span className="text-brand-blue">360</span>
+            <Link href="/" className="inline-block">
+              <Image src="/images/logo/fond_blanc.jpg" alt="n360 Logo" width={150} height={40} style={{ height: 'auto' }} className="h-10 w-auto object-contain" />
             </Link>
             <p className="mt-4 text-sm text-white/50 leading-relaxed max-w-xs">
               Première agence d&apos;intelligence numérique intégrée d&apos;Afrique de
@@ -80,11 +120,11 @@ export default function Footer() {
 
             <div className="mt-6 flex flex-col gap-3">
               <a
-                href="mailto:contact@intelligence360.sn"
+                href="mailto:contact@n360agency.com"
                 className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-white transition-colors duration-200"
               >
                 <Mail size={14} />
-                contact@intelligence360.sn
+                contact@n360agency.com
               </a>
               <a
                 href="tel:+221776872222"
@@ -177,22 +217,38 @@ export default function Footer() {
             <p className="text-sm text-white/50 leading-relaxed mb-4">
               Recevez nos analyses et insights sur la cybersécurité et le digital.
             </p>
-            <div className="flex flex-col gap-2">
-              <input
-                type="email"
-                placeholder="votre@email.com"
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-brand-blue transition-colors duration-200"
-              />
-              <button className="w-full bg-brand-blue hover:bg-brand-blue-hover text-white text-sm font-medium py-3 rounded-xl transition-colors duration-200">
-                S&apos;abonner
-              </button>
-            </div>
+            {status === "success" ? (
+              <p className="text-sm text-green-400 font-medium bg-green-500/10 border border-green-500/20 rounded-xl p-3">
+                Merci ! Votre inscription a bien été enregistrée.
+              </p>
+            ) : (
+              <form onSubmit={handleSubscribe} className="flex flex-col gap-2">
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="votre@email.com"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-brand-blue transition-colors duration-200"
+                />
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full bg-brand-blue hover:bg-brand-blue-hover disabled:opacity-60 text-white text-sm font-medium py-3 rounded-xl transition-colors duration-200"
+                >
+                  {loading ? "Envoi..." : "S'abonner"}
+                </button>
+                {status === "error" && (
+                  <p className="text-xs text-red-400 mt-1">{message}</p>
+                )}
+              </form>
+            )}
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/30">
-            &copy; {new Date().getFullYear()} Intelligence360. Tous droits réservés.
+            &copy; {new Date().getFullYear()} Numérique 360. Tous droits réservés.
           </p>
           <p className="text-xs text-white/30">
             Fait avec précision au Sénégal 🇸🇳

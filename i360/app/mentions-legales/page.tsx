@@ -4,7 +4,7 @@ import Footer from "@/components/layout/Footer"
 
 export const metadata: Metadata = {
   title: "Mentions légales",
-  description: "Mentions légales d'Intelligence360 — agence d'intelligence numérique basée à Dakar, Sénégal.",
+  description: "Mentions légales d'Numérique 360 — agence d'intelligence numérique basée à Dakar, Sénégal.",
 }
 
 export default function MentionsLegalesPage() {
@@ -21,10 +21,10 @@ export default function MentionsLegalesPage() {
 
             <h2>Éditeur du site</h2>
             <p>
-              <strong>Intelligence360</strong><br />
+              <strong>Numérique 360</strong><br />
               Agence d&apos;intelligence numérique intégrée<br />
               Dakar Plateau, Sénégal<br />
-              Email : contact@intelligence360.sn<br />
+              Email : contact@n360agency.com<br />
               Téléphone : +221 77 687 22 22<br />
               Forme juridique : SARL — RCCM en cours d&apos;enregistrement<br />
               Directeur de la publication : [Nom du dirigeant]
@@ -40,7 +40,7 @@ export default function MentionsLegalesPage() {
             <h2>Propriété intellectuelle</h2>
             <p>
               L&apos;ensemble du contenu de ce site (textes, images, vidéos, logos, graphismes)
-              est la propriété exclusive d&apos;Intelligence360 ou de ses partenaires, et est
+              est la propriété exclusive d&apos;Numérique 360 ou de ses partenaires, et est
               protégé par les lois sénégalaises et internationales relatives à la propriété
               intellectuelle. Toute reproduction, représentation, modification ou exploitation
               totale ou partielle est interdite sans autorisation préalable écrite.
@@ -48,15 +48,15 @@ export default function MentionsLegalesPage() {
 
             <h2>Limitation de responsabilité</h2>
             <p>
-              Intelligence360 s&apos;efforce d&apos;assurer l&apos;exactitude et la mise à jour des
-              informations diffusées sur ce site. Cependant, Intelligence360 ne peut garantir
+              Numérique 360 s&apos;efforce d&apos;assurer l&apos;exactitude et la mise à jour des
+              informations diffusées sur ce site. Cependant, Numérique 360 ne peut garantir
               l&apos;exhaustivité, la précision ou l&apos;actualité des informations et décline toute
               responsabilité pour les dommages résultant de l&apos;utilisation du site.
             </p>
 
             <h2>Liens hypertextes</h2>
             <p>
-              Le site peut contenir des liens vers des sites tiers. Intelligence360 n&apos;exerce
+              Le site peut contenir des liens vers des sites tiers. Numérique 360 n&apos;exerce
               aucun contrôle sur ces sites et décline toute responsabilité quant à leur
               contenu ou leur politique de confidentialité.
             </p>

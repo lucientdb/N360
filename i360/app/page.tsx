@@ -6,9 +6,9 @@ import PolesGrid from "@/components/sections/PolesGrid"
 import CtaBand from "@/components/sections/CtaBand"
 
 export const metadata: Metadata = {
-  title: "Intelligence360 — Intelligence numérique intégrée",
+  title: "i360 — Intelligence Numérique 360°",
   description:
-    "Intelligence360 est la première agence d'intelligence numérique intégrée d'Afrique de l'Ouest. Cybersécurité, OSINT, viralisation, production audiovisuelle et transformation digitale à Dakar.",
+    "i360 mobilise 8 pôles d'expertise pour sécuriser votre image, accélérer votre croissance et anticiper les menaces numériques.",
 }
 
 export default function HomePage() {

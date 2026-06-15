@@ -133,7 +133,7 @@ export default function PolesGrid() {
             8 pôles. Une vision.
           </h2>
           <p className="max-w-2xl mx-auto mt-4 text-brand-gray leading-relaxed">
-            Intelligence360 est le seul acteur en Afrique de l&apos;Ouest à combiner
+            Numérique 360 est le seul acteur en Afrique de l&apos;Ouest à combiner
             cybersécurité opérationnelle, renseignement numérique, viralisation digitale
             et production audiovisuelle sous une même structure.
           </p>

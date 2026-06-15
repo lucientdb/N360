@@ -46,6 +46,12 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  /* exposition des classes personnalisées */
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-hover: var(--brand-blue-hover);
+  --color-brand-blue-light: var(--brand-blue-light);
+  --color-brand-gray: var(--brand-gray);
+  --color-brand-light: var(--brand-light);
 }
 
 :root {
@@ -81,10 +87,71 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  --brand-blue: #0066ff;
-  --brand-blue-hover: #0052cc;
-  --brand-blue-light: #e6f0ff;
-  --brand-gray: #666666;
+  /* i360 brand colors - Updated to green from N360 logo */
+  --brand-blue: #1fa882;
+  /* #1fa882 - Dark Vibrant Green */
+  --brand-blue-hover: #0d5f4a;
+  /* #0d5f4a - Very Dark Green */
+  --brand-blue-light: #d1ede5;
+  /* #d1ede5 - Light Green */
+  --brand-gray: oklch(0.55 0 0);
+  /* #6E6E73 */
+  --brand-light: oklch(0.97 0 0);
+  /* #F5F5F7 */
+}
+
+@keyframes ripple-glow {
+  0% {
+    box-shadow: 
+      0 0 0 2px rgba(31, 168, 130, 0.8),
+      0 0 0 8px rgba(31, 168, 130, 0),
+      0 0 0 14px rgba(31, 168, 130, 0),
+      0 0 0 20px rgba(31, 168, 130, 0),
+      0 0 0 26px rgba(31, 168, 130, 0);
+  }
+  25% {
+    box-shadow: 
+      0 0 0 2px rgba(31, 168, 130, 0.3),
+      0 0 0 8px rgba(31, 168, 130, 0.8),
+      0 0 0 14px rgba(31, 168, 130, 0),
+      0 0 0 20px rgba(31, 168, 130, 0),
+      0 0 0 26px rgba(31, 168, 130, 0);
+  }
+  50% {
+    box-shadow: 
+      0 0 0 2px rgba(31, 168, 130, 0),
+      0 0 0 8px rgba(31, 168, 130, 0.3),
+      0 0 0 14px rgba(31, 168, 130, 0.8),
+      0 0 0 20px rgba(31, 168, 130, 0),
+      0 0 0 26px rgba(31, 168, 130, 0);
+  }
+  75% {
+    box-shadow: 
+      0 0 0 2px rgba(31, 168, 130, 0),
+      0 0 0 8px rgba(31, 168, 130, 0),
+      0 0 0 14px rgba(31, 168, 130, 0.3),
+      0 0 0 20px rgba(31, 168, 130, 0.8),
+      0 0 0 26px rgba(31, 168, 130, 0);
+  }
+  100% {
+    box-shadow: 
+      0 0 0 2px rgba(31, 168, 130, 0),
+      0 0 0 8px rgba(31, 168, 130, 0),
+      0 0 0 14px rgba(31, 168, 130, 0),
+      0 0 0 20px rgba(31, 168, 130, 0.3),
+      0 0 0 26px rgba(31, 168, 130, 0.8);
+  }
+}
+
+@keyframes contour-pulse {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
 }
 
 .dark {
@@ -119,101 +186,38 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
-  --brand-blue: #0066ff;
-  --brand-blue-hover: #0052cc;
-  --brand-blue-light: #e6f0ff;
-  --brand-gray: #666666;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }
 }
 
 @layer utilities {
-  .text-brand-blue {
-    @apply text-[var(--brand-blue)];
-  }
-  .text-brand-gray {
-    @apply text-[var(--brand-gray)];
-  }
-  .bg-brand-blue {
-    @apply bg-[var(--brand-blue)];
-  }
-  .bg-brand-blue-light {
-    @apply bg-[var(--brand-blue-light)];
-  }
-  .hover\:bg-brand-blue-hover:hover {
-    @apply bg-[var(--brand-blue-hover)];
-  }
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.9), 0 0 20px rgba(0, 102, 255, 0.6);
-  }
-  50% {
-    box-shadow: 0 0 0 15px rgba(0, 102, 255, 0), 0 0 40px rgba(0, 102, 255, 0.3);
-  }
-}
-
-.pulse-glow {
-  animation: pulse-glow 1.5s infinite;
-}
-
-/* Custom prose styles for rich text content */  
-
-
-@layer base {
-  .prose-custom h2 {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: var(--foreground);
-    margin-top: 2.5rem;
-    margin-bottom: 0.75rem;
+  .blink-glow {
+    animation: ripple-glow 2s ease-out infinite;
   }
 
-  .prose-custom p {
-    color: var(--brand-gray);
-    font-size: 0.875rem;
-    line-height: 1.75;
-    margin-bottom: 1rem;
+  .contour-pulse {
+    position: relative;
   }
 
-  .prose-custom ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    padding-left: 1rem;
-  }
-
-  .prose-custom li {
-    font-size: 0.875rem;
-    color: var(--brand-gray);
-    line-height: 1.75;
-    list-style-type: disc;
-  }
-
-  .prose-custom a {
-    color: var(--brand-blue);
-    text-decoration: none;
-  }
-
-  .prose-custom a:hover {
-    text-decoration: underline;
-  }
-
-  .prose-custom strong {
-    color: var(--foreground);
-    font-weight: 600;
+  .contour-pulse::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 3px solid #1fa882;
+    animation: contour-pulse 0.9s ease-out infinite;
+    pointer-events: none;
   }
 }

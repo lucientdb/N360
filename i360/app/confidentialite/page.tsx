@@ -4,7 +4,7 @@ import Footer from "@/components/layout/Footer"
 
 export const metadata: Metadata = {
   title: "Politique de confidentialité",
-  description: "Politique de confidentialité et de protection des données personnelles d'Intelligence360.",
+  description: "Politique de confidentialité et de protection des données personnelles d'Numérique 360.",
 }
 
 export default function ConfidentialitePage() {
@@ -21,9 +21,9 @@ export default function ConfidentialitePage() {
 
             <h2>1. Responsable du traitement</h2>
             <p>
-              Intelligence360, dont le siège est situé à Dakar Plateau, Sénégal, est
+              Numérique 360, dont le siège est situé à Dakar Plateau, Sénégal, est
               responsable du traitement de vos données personnelles collectées via ce site.
-              Contact DPO : contact@intelligence360.sn
+              Contact DPO : contact@n360agency.com
             </p>
 
             <h2>2. Données collectées</h2>
@@ -79,7 +79,7 @@ export default function ConfidentialitePage() {
               <li>Droit d&apos;opposition au traitement</li>
             </ul>
             <p>
-              Pour exercer ces droits, contactez-nous à : contact@intelligence360.sn
+              Pour exercer ces droits, contactez-nous à : contact@n360agency.com
             </p>
 
             <h2>8. Cookies</h2>
@@ -91,7 +91,7 @@ export default function ConfidentialitePage() {
 
             <h2>9. Sécurité</h2>
             <p>
-              Intelligence360 met en œuvre les mesures techniques et organisationnelles
+              Numérique 360 met en œuvre les mesures techniques et organisationnelles
               appropriées pour protéger vos données contre tout accès non autorisé,
               modification, divulgation ou destruction.
             </p>

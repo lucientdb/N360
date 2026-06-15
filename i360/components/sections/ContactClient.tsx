@@ -35,8 +35,8 @@ const infos = [
   {
     icon: Mail,
     label: "Email",
-    value: "contact@intelligence360.sn",
-    href: "mailto:contact@intelligence360.sn",
+    value: "contact@n360agency.com",
+    href: "mailto:contact@n360agency.com",
   },
   {
     icon: Phone,
@@ -73,6 +73,7 @@ const subjects = [
 export default function ContactClient() {
   const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -92,9 +93,23 @@ export default function ContactClient() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setLoading(true)
-    await new Promise((r) => setTimeout(r, 1200))
-    setLoading(false)
-    setSent(true)
+    setError(null)
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      })
+      const data = await response.json()
+      if (!response.ok) {
+        throw new Error(data.error || "Une erreur est survenue lors de l'envoi.")
+      }
+      setSent(true)
+    } catch (err) {
+      setError(err.message || "Une erreur de connexion est survenue. Veuillez réessayer.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -168,7 +183,7 @@ export default function ContactClient() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white text-sm font-medium px-6 py-3 rounded-full transition-colors duration-200"
+                className="inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-blue-hover text-white text-sm font-medium px-6 py-3 rounded-full transition-colors duration-200"
               >
                 <MessageCircle size={16} />
                 Écrire sur WhatsApp
@@ -205,7 +220,7 @@ export default function ContactClient() {
                 className="rounded-2xl border border-border bg-brand-light p-12 text-center flex flex-col items-center gap-4"
               >
                 <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
-                  <CheckCircle size={32} className="text-green-500" />
+                  <CheckCircle size={32} className="text-[#0d3124]" />
                 </div>
                 <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-foreground">
                   Message envoyé !
@@ -217,6 +232,7 @@ export default function ContactClient() {
                 <button
                   onClick={() => {
                     setSent(false)
+                    setError(null)
                     setForm({
                       name: "",
                       email: "",
@@ -238,6 +254,12 @@ export default function ContactClient() {
                 <h2 className="font-[family-name:var(--font-heading)] font-bold text-xl text-foreground">
                   Envoyer un message
                 </h2>
+
+                {error && (
+                  <div className="p-4 text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl">
+                    {error}
+                  </div>
+                )}
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">

@@ -15,15 +15,15 @@ const syne = Syne({
 
 export const metadata: Metadata = {
   title: {
-    default: "Intelligence360 — Intelligence numérique intégrée",
-    template: "%s | Intelligence360",
+    default: "i360 — Intelligence Numérique 360°",
+    template: "%s | i360",
   },
   description:
-    "Intelligence360 est la première agence d'intelligence numérique intégrée d'Afrique de l'Ouest. 8 pôles d'expertise : cybersécurité, OSINT, viralisation, gestion d'image, production audiovisuelle, développement IT et transformation digitale.",
-  keywords: ["cybersécurité", "OSINT", "intelligence numérique", "Dakar", "Afrique de l'Ouest", "transformation digitale"],
+    "i360 opère sur 8 pôles d'expertise : cybersécurité, OSINT, transformation digitale, communication et bien plus.",
+  keywords: ["cybersécurité", "OSINT", "transformation digitale", "communication digitale"],
   openGraph: {
-    title: "Intelligence360 — Intelligence Numérique",
-    description: "La référence en cybersécurité et stratégie digitale en Afrique de l'Ouest. Basée à Dakar Plateau.",
+    title: "i360 — Intelligence Numérique 360°",
+    description: "Votre partenaire en cybersécurité et stratégie digitale.",
     locale: "fr_FR",
     type: "website",
   },

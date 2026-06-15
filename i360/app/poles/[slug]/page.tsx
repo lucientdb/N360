@@ -52,7 +52,7 @@ const poles: Pole[] = [
     bgColor: "#EEF4FD",
     image: "/images/poles/osint.jpg",
     pourquoi:
-      "Intelligence360 dispose d'analystes OSINT formés aux techniques les plus avancées et d'un accès à des outils professionnels (Maltego Pro, MISP, OpenCTI). Nous opérons dans le contexte africain avec une connaissance fine des sources locales — réseaux sociaux sénégalais, presses régionales, bases de données UEMOA.",
+      "Numérique 360 dispose d'analystes OSINT formés aux techniques les plus avancées et d'un accès à des outils professionnels (Maltego Pro, MISP, OpenCTI). Nous opérons dans le contexte africain avec une connaissance fine des sources locales — réseaux sociaux sénégalais, presses régionales, bases de données UEMOA.",
     clients: [
       "Entreprises exposées à des risques concurrentiels",
       "Institutions publiques et ministères",
@@ -141,7 +141,7 @@ const poles: Pole[] = [
     bgColor: "#F0EBFF",
     image: "/images/poles/reputation.jpg",
     pourquoi:
-      "En Afrique de l'Ouest, une crise e-réputation se propage en quelques heures sur WhatsApp, Twitter et les groupes Facebook avant d'atteindre les médias traditionnels. Intelligence360 est la seule structure locale à combiner outils de monitoring professionnels, veille humaine et capacité de réponse rapide en français et en langues locales.",
+      "En Afrique de l'Ouest, une crise e-réputation se propage en quelques heures sur WhatsApp, Twitter et les groupes Facebook avant d'atteindre les médias traditionnels. Numérique 360 est la seule structure locale à combiner outils de monitoring professionnels, veille humaine et capacité de réponse rapide en français et en langues locales.",
     clients: [
       "Marques et enseignes à forte présence digitale",
       "Personnalités publiques et politiques",
@@ -319,7 +319,7 @@ const poles: Pole[] = [
     bgColor: "#FDF6E3",
     image: "/images/poles/image.jpg",
     pourquoi:
-      "En Afrique de l'Ouest, la réputation personnelle est inextricablement liée à la crédibilité professionnelle et politique. Intelligence360 dispose d'une équipe de conseillers en image qui comprennent les enjeux locaux — qu'il s'agisse d'un ministre, d'un PDG ou d'un artiste en pleine ascension.",
+      "En Afrique de l'Ouest, la réputation personnelle est inextricablement liée à la crédibilité professionnelle et politique. Numérique 360 dispose d'une équipe de conseillers en image qui comprennent les enjeux locaux — qu'il s'agisse d'un ministre, d'un PDG ou d'un artiste en pleine ascension.",
     clients: [
       "Dirigeants d'entreprise",
       "Personnalités politiques",
@@ -492,12 +492,12 @@ const poles: Pole[] = [
     name: "Cybersécurité & Infrastructures",
     tagline: "Notre pôle phare — protéger ce que vous avez mis des années à construire.",
     description:
-      "La cybersécurité est le pôle stratégique central d'Intelligence360. Dans un contexte d'explosion des cyberattaques en Afrique de l'Ouest, nous proposons une offre complète qui couvre l'ensemble du cycle de protection numérique des organisations.",
+      "La cybersécurité est le pôle stratégique central d'Numérique 360. Dans un contexte d'explosion des cyberattaques en Afrique de l'Ouest, nous proposons une offre complète qui couvre l'ensemble du cycle de protection numérique des organisations.",
     color: "#2BAE6E",
     bgColor: "#E5F8EE",
     image: "/images/poles/cyber.jpg",
     pourquoi:
-      "Intelligence360 est le seul acteur en Afrique de l'Ouest à proposer une chaîne complète de cybersécurité opérationnelle : de l'audit initial à la surveillance continue en passant par la réponse aux incidents. Nos consultants visent les certifications les plus reconnues (CISSP, CEH, ISO 27001) et utilisent les mêmes outils que les cabinets internationaux.",
+      "Numérique 360 est le seul acteur en Afrique de l'Ouest à proposer une chaîne complète de cybersécurité opérationnelle : de l'audit initial à la surveillance continue en passant par la réponse aux incidents. Nos consultants visent les certifications les plus reconnues (CISSP, CEH, ISO 27001) et utilisent les mêmes outils que les cabinets internationaux.",
     clients: [
       "Banques & établissements financiers — CBAO, Ecobank, UBA, BSIC, fintech",
       "Télécoms & opérateurs — Orange Sénégal, Free, Expresso",
@@ -703,7 +703,7 @@ const poles: Pole[] = [
     bgColor: "#EEEAFE",
     image: "/images/poles/digital.jpg",
     pourquoi:
-      "La transformation digitale en Afrique de l'Ouest ne se décrète pas — elle s'accompagne. Intelligence360 combine expertise technique et compréhension des réalités organisationnelles africaines pour proposer des feuilles de route réalistes, progressives et adaptées aux contraintes budgétaires et humaines de chaque organisation.",
+      "La transformation digitale en Afrique de l'Ouest ne se décrète pas — elle s'accompagne. Numérique 360 combine expertise technique et compréhension des réalités organisationnelles africaines pour proposer des feuilles de route réalistes, progressives et adaptées aux contraintes budgétaires et humaines de chaque organisation.",
     clients: [
       "Grandes entreprises en mutation",
       "Institutions publiques en modernisation",
@@ -805,7 +805,7 @@ export async function generateMetadata({
   const pole = getPoleBySlug(slug)
   if (!pole) return { title: "Pôle introuvable" }
   return {
-    title: `${pole.name} — Intelligence360`,
+    title: `${pole.name} — Numérique 360`,
     description: pole.description,
   }
 }
