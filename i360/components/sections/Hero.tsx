@@ -60,13 +60,13 @@ export default function Hero() {
           <motion.div variants={itemVariants}>
             <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-blue bg-brand-blue-light px-4 py-2 rounded-full tracking-widest uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-blue animate-pulse" />
-              Numérique 360
+              N360 Agency
             </span>
           </motion.div>
 
           <motion.h1
             variants={itemVariants}
-            className="font-[family-name:var(--font-heading)] font-black text-5xl md:text-7xl leading-[1.04] tracking-[-2.5px] text-foreground"
+            className="font-[family-name:var(--font-heading)] font-black text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.04] tracking-[-2.5px] text-foreground"
           >
             Une agence.<br />
             Huit expertises.
@@ -79,7 +79,7 @@ export default function Hero() {
             className="max-w-xl text-base md:text-lg text-brand-gray font-light leading-relaxed"
           >
             Première agence d&apos;intelligence numérique intégrée d&apos;Afrique de l&apos;Ouest.
-            Basée à Dakar Plateau, Numérique 360 regroupe cybersécurité, OSINT, viralisation
+            Basée à Dakar Plateau, N360 Agency regroupe cybersécurité, OSINT, viralisation
             et production audiovisuelle sous un même toit.
           </motion.p>
 

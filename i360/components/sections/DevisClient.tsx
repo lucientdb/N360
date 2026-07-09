@@ -5,14 +5,14 @@ import { motion, AnimatePresence, type Variants } from "framer-motion"
 import { CheckCircle, ArrowRight, ArrowLeft } from "lucide-react"
 
 const poles = [
-  { num: "01", name: "Cyber-Renseignement & OSINT", color: "#0071E3" },
-  { num: "02", name: "Social Listening & E-Réputation", color: "#6E44FF" },
-  { num: "03", name: "Viralisation & Réseaux Sociaux", color: "#FF6B35" },
-  { num: "04", name: "Gestion d'Image & Personnalités", color: "#C8972A" },
-  { num: "05", name: "Production Audiovisuelle", color: "#E03B3B" },
-  { num: "06", name: "Cybersécurité & Infrastructures", color: "#2BAE6E" },
-  { num: "07", name: "Développement & Ingénierie IT", color: "#1A8FE3" },
-  { num: "08", name: "Transformation Digitale & Conseil", color: "#7B61FF" },
+  { num: "01", name: "Cyber-Renseignement & OSINT", color: "#1fa882" },
+  { num: "02", name: "Social Listening & E-Réputation", color: "#1fa882" },
+  { num: "03", name: "Viralisation & Réseaux Sociaux", color: "#1fa882" },
+  { num: "04", name: "Gestion d'Image & Personnalités", color: "#1fa882" },
+  { num: "05", name: "Production Audiovisuelle", color: "#1fa882" },
+  { num: "06", name: "Cybersécurité & Infrastructures", color: "#1fa882" },
+  { num: "07", name: "Développement & Ingénierie IT", color: "#1fa882" },
+  { num: "08", name: "Transformation Digitale & Conseil", color: "#1fa882" },
 ]
 
 const budgets = [
@@ -108,7 +108,11 @@ export default function DevisClient() {
       }
       setSent(true)
     } catch (err) {
-      setError(err.message || "Une erreur de connexion est survenue. Veuillez réessayer.")
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Une erreur de connexion est survenue. Veuillez réessayer."
+      )
     } finally {
       setLoading(false)
     }
@@ -128,12 +132,12 @@ export default function DevisClient() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="max-w-md w-full text-center flex flex-col items-center gap-6 py-20"
+          className="max-w-md w-full text-center flex flex-col items-center gap-6 py-16 sm:py-20"
         >
-          <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center">
+          <div className="w-16 sm:w-20 h-16 sm:h-20 rounded-full bg-green-100 flex items-center justify-center">
             <CheckCircle size={40} className="text-green-500" />
           </div>
-          <h1 className="font-[family-name:var(--font-heading)] font-black text-3xl text-foreground">
+          <h1 className="font-[family-name:var(--font-heading)] font-black text-2xl sm:text-3xl text-foreground">
             Demande reçue !
           </h1>
           <p className="text-brand-gray text-sm leading-relaxed">
@@ -161,22 +165,22 @@ export default function DevisClient() {
   }
 
   return (
-    <section className="min-h-screen pt-32 pb-24 px-6 bg-white">
+    <section className="min-h-screen pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-20 md:pb-24 px-6 bg-white">
       <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10 sm:mb-12">
           <p className="text-xs text-brand-blue uppercase tracking-[0.15em] font-medium mb-3">
             Gratuit &amp; sans engagement
           </p>
-          <h1 className="font-[family-name:var(--font-heading)] font-black text-5xl tracking-tight text-foreground mb-4">
+          <h1 className="font-[family-name:var(--font-heading)] font-black text-3xl sm:text-4xl md:text-5xl tracking-tight text-foreground mb-4">
             Demander un devis
           </h1>
-          <p className="text-brand-gray text-sm leading-relaxed">
+          <p className="text-brand-gray text-sm leading-relaxed max-w-md mx-auto">
             Répondez à 4 questions simples. Nos experts vous envoient une
             proposition sur mesure sous 24h.
           </p>
         </div>
 
-        <div className="flex items-center gap-2 mb-10">
+        <div className="flex items-center gap-2 mb-10 overflow-x-auto">
           {steps.map((label, i) => (
             <div key={label} className="flex items-center gap-2 flex-1">
               <div className="flex flex-col items-center gap-1 flex-shrink-0">
@@ -354,7 +358,7 @@ export default function DevisClient() {
                       name="name"
                       value={form.name}
                       onChange={handleChange}
-                      placeholder="Jean Dupont"
+                      placeholder="Modou Diop"
                       className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue transition-colors duration-200"
                     />
                   </div>
@@ -383,7 +387,7 @@ export default function DevisClient() {
                       name="email"
                       value={form.email}
                       onChange={handleChange}
-                      placeholder="jean@entreprise.com"
+                      placeholder="diop@entreprise.com"
                       className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue transition-colors duration-200"
                     />
                   </div>
@@ -505,3 +509,5 @@ export default function DevisClient() {
     </section>
   )
 }
+
+//ceci est un commentaire

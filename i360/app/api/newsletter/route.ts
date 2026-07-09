@@ -13,6 +13,11 @@ export async function POST(req: Request) {
     }
 
     const notificationEmail = process.env.NOTIFICATION_EMAIL || "contact@n360agency.com"
+    const newsletterFromEmail =
+      process.env.RESEND_NEWSLETTER_FROM_EMAIL ||
+      "newsletters@n360agency.com"
+    const newsletterFromName =
+      process.env.RESEND_NEWSLETTER_FROM_NAME || "N360 Newsletter"
     const apiKey = process.env.RESEND_API_KEY
     const audienceId = process.env.RESEND_AUDIENCE_ID
 
@@ -52,7 +57,7 @@ export async function POST(req: Request) {
           addedToAudience = true
         }
       } catch (err) {
-        errorAudience = err.message || err
+        errorAudience = err instanceof Error ? err.message : String(err)
         console.error("Exception lors de la création du contact :", err)
       }
     }
@@ -60,7 +65,7 @@ export async function POST(req: Request) {
     // Toujours envoyer une notification email à l'équipe
     const htmlContent = `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 12px; background-color: #ffffff;">
-        <h2 style="color: #0071E3; margin-top: 0; font-size: 20px;">Nouvelle inscription Newsletter - n360 Agency</h2>
+        <h2 style="color: #1fa882; margin-top: 0; font-size: 20px;">Nouvelle inscription Newsletter - n360 Agency</h2>
         <p>Un nouvel abonné s'est inscrit depuis le site web :</p>
         <p style="background-color: #f7fafc; padding: 12px; border-radius: 8px; font-size: 16px; font-weight: bold; color: #1a202c; border: 1px solid #edf2f7;">
           Email : <a href="mailto:${email}">${email}</a>
@@ -82,7 +87,7 @@ export async function POST(req: Request) {
     `
 
     const { error: emailError } = await resend.emails.send({
-      from: "n360 Newsletter <onboarding@resend.dev>",
+      from: `${newsletterFromName} <${newsletterFromEmail}>`,
       to: [notificationEmail],
       subject: `[Newsletter n360] Nouvel abonné : ${email}`,
       html: htmlContent,

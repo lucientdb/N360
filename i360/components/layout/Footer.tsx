@@ -52,7 +52,6 @@ const footerLinks = {
   entreprise: [
     { label: "À propos", href: "/a-propos" },
     { label: "Réalisations", href: "/#realisations" },
-    { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
     { label: "Demander un devis", href: "/devis" },
   ],
@@ -105,8 +104,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-foreground text-background">
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div className="max-w-7xl mx-auto px-6 pt-12 sm:pt-16 md:pt-16 pb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-16">
 
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block">
@@ -215,7 +214,8 @@ export default function Footer() {
               Newsletter
             </p>
             <p className="text-sm text-white/50 leading-relaxed mb-4">
-              Recevez nos analyses et insights sur la cybersécurité et le digital.
+              Recevez nos analyses et insights sur la cybersécurité et le digital. Les
+              emails sont envoyés depuis newsletters.n360agency.com.
             </p>
             {status === "success" ? (
               <p className="text-sm text-green-400 font-medium bg-green-500/10 border border-green-500/20 rounded-xl p-3">
@@ -248,7 +248,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/30">
-            &copy; {new Date().getFullYear()} Numérique 360. Tous droits réservés.
+            &copy; {new Date().getFullYear()} N360 Agency. Tous droits réservés.
           </p>
           <p className="text-xs text-white/30">
             Fait avec précision au Sénégal 🇸🇳

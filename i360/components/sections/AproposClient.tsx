@@ -50,7 +50,7 @@ export default function AProposClient({
 }: Props) {
   return (
     <>
-      <section className="relative pt-32 pb-20 px-6 bg-white overflow-hidden">
+      <section className="relative pt-16 sm:pt-24 md:pt-32 pb-16 sm:pb-20 md:pb-20 px-6 bg-white overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:48px_48px] opacity-50" />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-blue-light rounded-full blur-[140px] opacity-30 pointer-events-none" />
 
@@ -71,14 +71,14 @@ export default function AProposClient({
 
             <motion.h1
               variants={fadeUp}
-              className="font-[family-name:var(--font-heading)] font-black text-4xl md:text-6xl leading-tight tracking-tight text-foreground max-w-3xl"
+              className="font-[family-name:var(--font-heading)] font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-foreground max-w-3xl"
             >
               La première agence d&apos;intelligence numérique intégrée{" "}
               <span className="text-brand-blue">d&apos;Afrique de l&apos;Ouest</span>
             </motion.h1>
 
-            <motion.p variants={fadeUp} className="text-brand-gray text-lg leading-relaxed max-w-2xl">
-              Numérique 360 est la première agence d&apos;intelligence numérique intégrée
+            <motion.p variants={fadeUp} className="text-sm sm:text-base md:text-lg text-brand-gray leading-relaxed max-w-2xl">
+              N360 Agency est la première agence d&apos;intelligence numérique intégrée
               d&apos;Afrique de l&apos;Ouest. Basée à Dakar Plateau, au Sénégal, elle regroupe sous un
               même toit huit pôles d&apos;expertise complémentaires : cybersécurité,
               cyber-renseignement, social listening, viralisation, gestion d&apos;image, production
@@ -87,7 +87,7 @@ export default function AProposClient({
 
             <motion.p variants={fadeUp} className="text-brand-gray leading-relaxed max-w-2xl">
               Fondée par une équipe de consultants et d&apos;experts numériques sénégalais,
-              Numérique 360 répond à un constat simple : les entreprises, institutions et
+              N360 Agency répond à un constat simple : les entreprises, institutions et
               personnalités d&apos;Afrique de l&apos;Ouest ont besoin d&apos;un partenaire numérique complet,
               ancré localement, maîtrisant les spécificités du marché africain tout en opérant
               selon les standards internationaux.
@@ -101,7 +101,7 @@ export default function AProposClient({
                 Notre positionnement unique
               </p>
               <p className="text-foreground leading-relaxed">
-                Numérique 360 est le <strong>seul acteur en Afrique de l&apos;Ouest</strong> à combiner
+                N360 Agency est le <strong>seul acteur en Afrique de l&apos;Ouest</strong> à combiner
                 cybersécurité opérationnelle (Audit SI, SOC, Forensic), renseignement numérique
                 (OSINT), viralisation digitale et production audiovisuelle sous une même structure.{" "}
                 <strong>Aucun concurrent local n&apos;offre cette chaîne complète.</strong>
@@ -165,7 +165,7 @@ export default function AProposClient({
               </span>
               <p className="text-white leading-relaxed">
                 Faire de Dakar le <strong>hub de l&apos;intelligence numérique</strong> de l&apos;Afrique de
-                l&apos;Ouest. Positionner Numérique 360 comme la référence incontournable en
+                l&apos;Ouest. Positionner N360 Agency comme la référence incontournable en
                 cybersécurité et en stratégie digitale pour toute organisation souhaitant opérer
                 avec sérénité et puissance dans l&apos;écosystème numérique africain.
               </p>
@@ -229,7 +229,7 @@ export default function AProposClient({
           >
             <p className="text-xs text-white/50 uppercase tracking-[0.15em] mb-3">Le contexte</p>
             <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight">
-              Pourquoi Numérique 360 ?
+              Pourquoi N360 Agency ?
             </h2>
           </motion.div>
 
@@ -309,7 +309,7 @@ export default function AProposClient({
                 Face à ces enjeux, l&apos;offre locale est insuffisante. Les agences digitales
                 classiques ne maîtrisent pas la cybersécurité. Les cabinets de conseil IT ne font
                 pas de viralisation. Les agences de communication ne font pas d&apos;OSINT.
-                Numérique 360 est née pour combler ce vide.
+                N360 Agency est née pour combler ce vide.
               </p>
             </div>
 
@@ -318,7 +318,7 @@ export default function AProposClient({
                 Notre avantage compétitif
               </p>
               <p className="text-white/80 leading-relaxed">
-                Numérique 360 est le seul acteur local à proposer une approche de bout en bout :
+                N360 Agency est le seul acteur local à proposer une approche de bout en bout :
                 identifier les menaces (OSINT) → évaluer les vulnérabilités (Audit SI) → surveiller
                 en continu (SOC) → corriger et protéger (Sécurisation) → amplifier et valoriser
                 (Viralisation & E-Réputation). Cette chaîne intégrée est unique en Afrique de
@@ -343,7 +343,7 @@ export default function AProposClient({
               Secteurs d&apos;intervention
             </h2>
             <p className="text-brand-gray mt-4 max-w-2xl mx-auto leading-relaxed">
-              Numérique 360 intervient auprès d&apos;une clientèle diversifiée, couvrant l&apos;ensemble
+              N360 Agency intervient auprès d&apos;une clientèle diversifiée, couvrant l&apos;ensemble
               des secteurs économiques et institutionnels d&apos;Afrique de l&apos;Ouest. Notre positionnement
               hybride (cybersécurité + digital + production) nous permet d&apos;adresser des besoins très
               différents avec une même qualité de service.
@@ -432,7 +432,7 @@ export default function AProposClient({
               <thead>
                 <tr className="border-b border-border bg-brand-light">
                   <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-foreground">Critère</th>
-                  <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-brand-blue">Numérique 360</th>
+                  <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-brand-blue">N360 Agency</th>
                   <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-foreground">Agences digitales classiques</th>
                   <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-foreground">Cabinets IT locaux</th>
                 </tr>
@@ -466,7 +466,7 @@ export default function AProposClient({
               Des experts sénégalais du numérique
             </h2>
             <p className="text-brand-gray leading-relaxed max-w-2xl">
-              Numérique 360 est portée par une équipe fondatrice de professionnels sénégalais du
+              N360 Agency est portée par une équipe fondatrice de professionnels sénégalais du
               numérique, secondée par des collaborateurs experts répartis sur les 8 pôles. Notre
               philosophie RH : recruter les meilleurs talents locaux, les former aux standards
               internationaux et leur donner les moyens d&apos;exercer leur expertise en Afrique.
@@ -512,7 +512,7 @@ export default function AProposClient({
               Méthode de travail
             </h2>
             <p className="text-brand-gray mt-4 max-w-2xl mx-auto leading-relaxed">
-              Numérique 360 s&apos;appuie sur une méthodologie structurée qui garantit la qualité, la
+              N360 Agency s&apos;appuie sur une méthodologie structurée qui garantit la qualité, la
               traçabilité et la pertinence de chaque intervention. Notre cycle en 5 étapes est
               appliqué à toutes nos missions, quelle que soit leur nature.
             </p>

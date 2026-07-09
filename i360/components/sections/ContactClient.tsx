@@ -106,27 +106,31 @@ export default function ContactClient() {
       }
       setSent(true)
     } catch (err) {
-      setError(err.message || "Une erreur de connexion est survenue. Veuillez réessayer.")
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Une erreur de connexion est survenue. Veuillez réessayer."
+      )
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <section className="pt-32 pb-24 px-6 bg-white">
+    <section className="pt-16 sm:pt-24 md:pt-32 pb-16 sm:pb-20 md:pb-24 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start"
         >
           <motion.div variants={itemVariants} className="flex flex-col gap-10">
             <div>
               <p className="text-xs text-brand-blue uppercase tracking-[0.15em] font-medium mb-3">
                 Parlons de votre projet
               </p>
-              <h1 className="font-[family-name:var(--font-heading)] font-black text-5xl md:text-6xl tracking-tight text-foreground leading-tight">
+              <h1 className="font-[family-name:var(--font-heading)] font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-foreground leading-tight">
                 Contactez-nous
               </h1>
               <p className="mt-4 text-brand-gray leading-relaxed max-w-md">
@@ -272,7 +276,7 @@ export default function ContactClient() {
                       value={form.name}
                       onChange={handleChange}
                       required
-                      placeholder="Jean Dupont"
+                      placeholder="Moussa Diop"
                       className="w-full border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-brand-gray/50 focus:outline-none focus:border-brand-blue transition-colors duration-200"
                     />
                   </div>
@@ -286,7 +290,7 @@ export default function ContactClient() {
                       value={form.email}
                       onChange={handleChange}
                       required
-                      placeholder="jean@entreprise.com"
+                      placeholder="diop@entreprise.com"
                       className="w-full border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-brand-gray/50 focus:outline-none focus:border-brand-blue transition-colors duration-200"
                     />
                   </div>
@@ -372,6 +376,7 @@ export default function ContactClient() {
           </motion.div>
         </motion.div>
       </div>
-    </section>
+    </section> 
   )
 }
+

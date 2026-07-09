@@ -14,6 +14,10 @@ export async function POST(req: Request) {
     }
 
     const notificationEmail = process.env.NOTIFICATION_EMAIL || "contact@n360agency.com"
+    const contactFromEmail =
+      process.env.RESEND_CONTACT_FROM_EMAIL || "contact@n360agency.com"
+    const contactFromName =
+      process.env.RESEND_CONTACT_FROM_NAME || "N360 Agency Contact"
     const apiKey = process.env.RESEND_API_KEY
 
     // Simulation de développement si la clé API n'est pas configurée
@@ -36,7 +40,7 @@ export async function POST(req: Request) {
 
     const htmlContent = `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; rounded: 12px;">
-        <h2 style="color: #0071E3; margin-top: 0;">Nouveau message de contact - n360 Agency</h2>
+        <h2 style="color: #1fa882; margin-top: 0;">Nouveau message de contact - n360 Agency</h2>
         <p><strong>Nom complet :</strong> ${name}</p>
         <p><strong>Email :</strong> <a href="mailto:${email}">${email}</a></p>
         <p><strong>Téléphone :</strong> ${phone || "Non renseigné"}</p>
@@ -48,7 +52,7 @@ export async function POST(req: Request) {
     `
 
     const { data, error } = await resend.emails.send({
-      from: "n360 Agency Contact <onboarding@resend.dev>",
+      from: `${contactFromName} <${contactFromEmail}>`,
       to: [notificationEmail],
       replyTo: email,
       subject: `[Contact n360] ${subject}`,
@@ -69,3 +73,4 @@ export async function POST(req: Request) {
     )
   }
 }
+

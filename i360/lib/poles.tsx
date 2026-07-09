@@ -26,8 +26,8 @@ export const poles: Pole[] = [
     tagline: "Voir avant d'être vu.",
     description:
       "Collecte et analyse de renseignements depuis des sources ouvertes pour anticiper les menaces, identifier les acteurs malveillants et protéger vos intérêts numériques.",
-    color: "#0071E3",
-    bgColor: "#EEF4FD",
+    color: "#1fa882",
+    bgColor: "#d1ede5",
     image: "/images/poles/osint.jpg",
     services: [
       {
@@ -72,8 +72,8 @@ export const poles: Pole[] = [
     tagline: "Maîtriser ce que le web dit de vous.",
     description:
       "Surveillance en temps réel de votre image sur le web et les réseaux sociaux. Détection des crises, analyse des sentiments, gestion proactive de votre réputation digitale.",
-    color: "#6E44FF",
-    bgColor: "#F0EBFF",
+    color: "#1fa882",
+    bgColor: "#e8f5ef",
     image: "/images/poles/reputation.jpg",
     services: [
       {
@@ -118,8 +118,8 @@ export const poles: Pole[] = [
     tagline: "Amplifier votre impact digital.",
     description:
       "Stratégies de croissance organique et virale pour maximiser votre reach sur les réseaux sociaux. Création de contenus, community management et campagnes d'influence.",
-    color: "#FF6B35",
-    bgColor: "#FFF0EB",
+    color: "#1fa882",
+    bgColor: "#f0f9f6",
     image: "/images/poles/viral.jpg",
     services: [
       {
@@ -164,8 +164,8 @@ export const poles: Pole[] = [
     tagline: "Votre image, notre priorité absolue.",
     description:
       "Personal branding et gestion de réputation pour dirigeants, personnalités politiques, artistes et célébrités. Une approche discrète, stratégique et sur mesure.",
-    color: "#C8972A",
-    bgColor: "#FDF6E3",
+    color: "#1fa882",
+    bgColor: "#d1ede5",
     image: "/images/poles/image.jpg",
     services: [
       {
@@ -210,8 +210,8 @@ export const poles: Pole[] = [
     tagline: "Des contenus qui marquent les esprits.",
     description:
       "Création de contenus vidéo, podcasts et supports visuels à fort impact. De la conception à la diffusion, nous produisons des contenus qui convertissent.",
-    color: "#E03B3B",
-    bgColor: "#FDE8E8",
+    color: "#1fa882",
+    bgColor: "#e8f5ef",
     image: "/images/poles/audiovisuel.jpg",
     services: [
       {
@@ -256,8 +256,8 @@ export const poles: Pole[] = [
     tagline: "Protéger ce qui compte vraiment.",
     description:
       "Audit, protection et sécurisation de vos systèmes informatiques. De l'audit SI au SOC 24/7, en passant par le pentest et l'investigation forensique.",
-    color: "#2BAE6E",
-    bgColor: "#E5F8EE",
+    color: "#1fa882",
+    bgColor: "#f0f9f6",
     image: "/images/poles/cyber.jpg",
     services: [
       {
@@ -312,8 +312,8 @@ export const poles: Pole[] = [
     tagline: "Des solutions qui performent.",
     description:
       "Conception et développement d'applications web, mobiles et solutions sur mesure. Du cahier des charges au déploiement, nous construisons des produits qui durent.",
-    color: "#1A8FE3",
-    bgColor: "#E8F3FE",
+    color: "#1fa882",
+    bgColor: "#d1ede5",
     image: "/images/poles/dev.jpg",
     services: [
       {
@@ -358,8 +358,8 @@ export const poles: Pole[] = [
     tagline: "Penser demain, agir aujourd'hui.",
     description:
       "Accompagnement stratégique pour digitaliser et moderniser votre organisation. De l'audit digital au déploiement des solutions, nous vous guidons à chaque étape.",
-    color: "#7B61FF",
-    bgColor: "#EEEAFE",
+    color: "#1fa882",
+    bgColor: "#e8f5ef",
     image: "/images/poles/digital.jpg",
     services: [
       {

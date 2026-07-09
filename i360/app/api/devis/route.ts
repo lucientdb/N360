@@ -14,6 +14,10 @@ export async function POST(req: Request) {
     }
 
     const notificationEmail = process.env.NOTIFICATION_EMAIL || "contact@n360agency.com"
+    const quoteFromEmail =
+      process.env.RESEND_DEVIS_FROM_EMAIL || "contact@n360agency.com"
+    const quoteFromName =
+      process.env.RESEND_DEVIS_FROM_NAME || "N360 Agency Devis"
     const apiKey = process.env.RESEND_API_KEY
 
     // Simulation de développement si la clé API n'est pas configurée
@@ -37,13 +41,13 @@ export async function POST(req: Request) {
     const htmlContent = `
       <div style="font-family: sans-serif; max-width: 650px; margin: 0 auto; padding: 25px; border: 1px solid #e2e8f0; border-radius: 16px; background-color: #ffffff;">
         <div style="text-align: center; margin-bottom: 20px;">
-          <h2 style="color: #0071E3; margin: 0; font-size: 24px;">Demande de Devis - n360 Agency</h2>
+          <h2 style="color: #1fa882; margin: 0; font-size: 24px;">Demande de Devis - n360 Agency</h2>
           <p style="color: #718096; font-size: 14px; margin-top: 5px;">Nouvelle demande de devis reçue depuis le site internet.</p>
         </div>
         
         <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 20px 0;" />
 
-        <h3 style="color: #1a202c; border-left: 4px solid #0071E3; padding-left: 10px; margin-bottom: 15px; font-size: 16px;">Coordonnées du demandeur</h3>
+        <h3 style="color: #1a202c; border-left: 4px solid #1fa882; padding-left: 10px; margin-bottom: 15px; font-size: 16px;">Coordonnées du demandeur</h3>
         <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 25px;">
           <tr>
             <td style="padding: 6px 0; color: #718096; width: 150px;"><strong>Nom complet :</strong></td>
@@ -55,7 +59,7 @@ export async function POST(req: Request) {
           </tr>
           <tr>
             <td style="padding: 6px 0; color: #718096;"><strong>Email :</strong></td>
-            <td style="padding: 6px 0; color: #1a202c;"><a href="mailto:${email}" style="color: #0071E3; text-decoration: none;">${email}</a></td>
+            <td style="padding: 6px 0; color: #1a202c;"><a href="mailto:${email}" style="color: #1fa882; text-decoration: none;">${email}</a></td>
           </tr>
           <tr>
             <td style="padding: 6px 0; color: #718096;"><strong>Téléphone :</strong></td>
@@ -63,7 +67,7 @@ export async function POST(req: Request) {
           </tr>
         </table>
 
-        <h3 style="color: #1a202c; border-left: 4px solid #0071E3; padding-left: 10px; margin-bottom: 15px; font-size: 16px;">Détails du besoin</h3>
+        <h3 style="color: #1a202c; border-left: 4px solid #1fa882; padding-left: 10px; margin-bottom: 15px; font-size: 16px;">Détails du besoin</h3>
         <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 25px;">
           <tr>
             <td style="padding: 6px 0; color: #718096; width: 150px; vertical-align: top;"><strong>Pôles d'intérêt :</strong></td>
@@ -83,13 +87,13 @@ export async function POST(req: Request) {
           </tr>
         </table>
 
-        <h3 style="color: #1a202c; border-left: 4px solid #0071E3; padding-left: 10px; margin-bottom: 15px; font-size: 16px;">Description du projet</h3>
+        <h3 style="color: #1a202c; border-left: 4px solid #1fa882; padding-left: 10px; margin-bottom: 15px; font-size: 16px;">Description du projet</h3>
         <div style="background-color: #f7fafc; padding: 20px; border-radius: 12px; border: 1px solid #edf2f7; font-size: 14px; color: #4a5568; line-height: 1.6; white-space: pre-wrap;">${description}</div>
       </div>
     `
 
     const { data, error } = await resend.emails.send({
-      from: "n360 Agency Devis <onboarding@resend.dev>",
+      from: `${quoteFromName} <${quoteFromEmail}>`,
       to: [notificationEmail],
       replyTo: email,
       subject: `[Devis n360] Demande de ${name}`,

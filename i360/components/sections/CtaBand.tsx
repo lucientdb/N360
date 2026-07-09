@@ -38,22 +38,22 @@ export default function CtaBand() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
-        className="relative max-w-6xl mx-auto bg-brand-light rounded-3xl px-10 py-16 overflow-hidden"
+        className="relative max-w-6xl mx-auto bg-brand-light rounded-3xl px-6 sm:px-8 md:px-10 py-12 sm:py-14 md:py-16 overflow-hidden"
       >
         <div className="absolute -top-24 -right-24 w-72 h-72 bg-brand-blue-light rounded-full blur-3xl opacity-60 pointer-events-none" />
         <div className="absolute -bottom-16 -left-16 w-56 h-56 bg-brand-blue-light rounded-full blur-3xl opacity-40 pointer-events-none" />
 
-        <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
-          <motion.div variants={itemVariants} className="text-center lg:text-left max-w-xl">
+        <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10">
+          <motion.div variants={itemVariants} className="text-center md:text-left max-w-xl">
             <p className="text-xs text-brand-blue uppercase tracking-[0.15em] font-medium mb-3">
               Passons à l&apos;action
             </p>
-            <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight text-foreground leading-snug">
+            <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl sm:text-3xl md:text-4xl tracking-tight text-foreground leading-snug">
               Prêt à passer à la{" "}
               <span className="text-brand-blue">vitesse supérieure</span>&nbsp;?
             </h2>
             <p className="mt-4 text-brand-gray text-sm leading-relaxed">
-              Numérique 360 est le seul acteur en Afrique de l&apos;Ouest à combiner
+              N360 Agency est le seul acteur en Afrique de l&apos;Ouest à combiner
               cybersécurité opérationnelle, OSINT, viralisation et production audiovisuelle.
               Premier échange offert, sans engagement.
             </p>

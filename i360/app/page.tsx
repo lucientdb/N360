@@ -6,9 +6,9 @@ import PolesGrid from "@/components/sections/PolesGrid"
 import CtaBand from "@/components/sections/CtaBand"
 
 export const metadata: Metadata = {
-  title: "i360 — Intelligence Numérique 360°",
+  title: "N360 Agency — Intelligence Numérique 360°",
   description:
-    "i360 mobilise 8 pôles d'expertise pour sécuriser votre image, accélérer votre croissance et anticiper les menaces numériques.",
+    "N360 Agency mobilise 8 pôles d'expertise pour sécuriser votre image, accélérer votre croissance et anticiper les menaces numériques.",
 }
 
 export default function HomePage() {

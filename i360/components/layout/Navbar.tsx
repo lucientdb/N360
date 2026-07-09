@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
@@ -18,14 +18,23 @@ const links = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
   const pathname = usePathname()
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsMounted(true)
+  }, [])
+
+  // Close menu when pathname changes
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsOpen(false)
+  }, [pathname])
 
 
   return (
-    <motion.nav
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+    <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-foreground text-white border-b border-white/10 shadow-sm"
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between relative">
@@ -34,28 +43,12 @@ export default function Navbar() {
           <Image src="/images/logo/logo_orig.jpg" alt="n360 Logo" width={120} height={30} style={{ height: 'auto' }} className="h-8 w-auto object-contain" />
         </Link>
 
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="md:flex items-center gap-8 hidden">
           {links.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
                 className={`text-sm transition-colors duration-200 ${pathname === link.href
-                  ? "text-brand-blue font-medium"
-                  : "text-white/50 hover:text-white"
-                  }`}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        <ul className="md:hidden flex items-center gap-4 absolute left-1/2 -translate-x-1/2">
-          {links.slice(0, 3).map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className={`text-xs transition-colors duration-200 ${pathname === link.href
                   ? "text-brand-blue font-medium"
                   : "text-white/50 hover:text-white"
                   }`}
@@ -99,7 +92,7 @@ export default function Navbar() {
       </div>
 
       <AnimatePresence>
-        {isOpen && (
+        {isMounted && isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
@@ -135,6 +128,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </nav>
   )
 }

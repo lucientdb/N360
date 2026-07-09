@@ -54,12 +54,12 @@ export default function PoleClient({ pole, prevPole, nextPole }: Props) {
             animate="visible"
             className="flex flex-col gap-6"
           >
-            <motion.div variants={fadeUp} className="flex items-center gap-2 text-sm text-brand-gray">
-              <Link href="/" className="hover:text-foreground transition-colors">Accueil</Link>
-              <ChevronRight size={14} />
-              <Link href="/poles" className="hover:text-foreground transition-colors">Pôles</Link>
-              <ChevronRight size={14} />
-              <span style={{ color: pole.color }}>{pole.name}</span>
+            <motion.div variants={fadeUp} className="flex items-center gap-2 text-xs sm:text-sm text-brand-gray overflow-x-auto whitespace-nowrap">
+              <Link href="/" className="hover:text-foreground transition-colors flex-shrink-0">Accueil</Link>
+              <ChevronRight size={14} className="flex-shrink-0" />
+              <Link href="/poles" className="hover:text-foreground transition-colors flex-shrink-0">Pôles</Link>
+              <ChevronRight size={14} className="flex-shrink-0" />
+              <span style={{ color: pole.color }} className="flex-shrink-0 truncate">{pole.name}</span>
             </motion.div>
 
             <motion.span
@@ -76,14 +76,14 @@ export default function PoleClient({ pole, prevPole, nextPole }: Props) {
 
             <motion.h1
               variants={fadeUp}
-              className="font-[family-name:var(--font-heading)] font-black text-4xl md:text-6xl leading-tight tracking-tight text-foreground max-w-3xl"
+              className="font-[family-name:var(--font-heading)] font-black text-3xl sm:text-4xl md:text-6xl leading-tight tracking-tight text-foreground max-w-3xl break-words"
             >
               {pole.name}
             </motion.h1>
 
             <motion.p
               variants={fadeUp}
-              className="text-xl font-light italic max-w-xl"
+              className="text-base sm:text-lg md:text-xl font-light italic max-w-xl"
               style={{ color: pole.color }}
             >
               {pole.tagline}
@@ -91,7 +91,7 @@ export default function PoleClient({ pole, prevPole, nextPole }: Props) {
 
             <motion.p
               variants={fadeUp}
-              className="text-brand-gray text-lg leading-relaxed max-w-2xl"
+              className="text-sm sm:text-base md:text-lg text-brand-gray leading-relaxed max-w-2xl"
             >
               {pole.description}
             </motion.p>

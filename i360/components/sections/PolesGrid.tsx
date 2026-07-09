@@ -22,8 +22,8 @@ const poles: Pole[] = [
     slug: "cyber-renseignement-osint",
     name: "Cyber-Renseignement & OSINT",
     description: "Collecte et analyse de renseignements depuis des sources ouvertes pour anticiper les menaces.",
-    color: "#0071E3",
-    bgColor: "#EEF4FD",
+    color: "#1fa882",
+    bgColor: "#d1ede5",
     image: "/images/poles/osint.jpg",
   },
   {
@@ -31,8 +31,8 @@ const poles: Pole[] = [
     slug: "social-listening-e-reputation",
     name: "Social Listening & E-Réputation",
     description: "Surveillance en temps réel de votre image sur le web et les réseaux sociaux.",
-    color: "#6E44FF",
-    bgColor: "#F0EBFF",
+    color: "#1fa882",
+    bgColor: "#e8f5ef",
     image: "/images/poles/listening.jpg",
   },
   {
@@ -40,8 +40,8 @@ const poles: Pole[] = [
     slug: "viralisation-reseaux-sociaux",
     name: "Viralisation & Réseaux Sociaux",
     description: "Stratégies de croissance organique et virale pour maximiser votre reach.",
-    color: "#FF6B35",
-    bgColor: "#FFF0EB",
+    color: "#1fa882",
+    bgColor: "#f0f9f6",
     image: "/images/poles/viral.jpg",
   },
   {
@@ -49,8 +49,8 @@ const poles: Pole[] = [
     slug: "gestion-image-personnalites",
     name: "Gestion d'Image & Personnalités",
     description: "Personal branding et gestion de réputation pour dirigeants et personnalités publiques.",
-    color: "#C8972A",
-    bgColor: "#FDF6E3",
+    color: "#1fa882",
+    bgColor: "#d1ede5",
     image: "/images/poles/image.jpg",
   },
   {
@@ -58,8 +58,8 @@ const poles: Pole[] = [
     slug: "production-audiovisuelle",
     name: "Production Audiovisuelle",
     description: "Création de contenus vidéo, podcasts et supports visuels à fort impact.",
-    color: "#E03B3B",
-    bgColor: "#FDE8E8",
+    color: "#1fa882",
+    bgColor: "#e8f5ef",
     image: "/images/poles/audiovisuel.jpg",
   },
   {
@@ -67,8 +67,8 @@ const poles: Pole[] = [
     slug: "cybersecurite-infrastructures",
     name: "Cybersécurité & Infrastructures",
     description: "Audit, protection et sécurisation de vos systèmes informatiques.",
-    color: "#2BAE6E",
-    bgColor: "#E5F8EE",
+    color: "#1fa882",
+    bgColor: "#f0f9f6",
     image: "/images/poles/cyber.jpg",
   },
   {
@@ -76,8 +76,8 @@ const poles: Pole[] = [
     slug: "developpement-ingenierie-it",
     name: "Développement & Ingénierie IT",
     description: "Conception et développement d'applications web, mobiles et solutions sur mesure.",
-    color: "#1A8FE3",
-    bgColor: "#E8F3FE",
+    color: "#1fa882",
+    bgColor: "#d1ede5",
     image: "/images/poles/dev.jpg",
   },
   {
@@ -85,8 +85,8 @@ const poles: Pole[] = [
     slug: "transformation-digitale-conseil",
     name: "Transformation Digitale & Conseil",
     description: "Accompagnement stratégique pour digitaliser et moderniser votre organisation.",
-    color: "#7B61FF",
-    bgColor: "#EEEAFE",
+    color: "#1fa882",
+    bgColor: "#e8f5ef",
     image: "/images/poles/digital.jpg",
   },
 ]
@@ -133,7 +133,7 @@ export default function PolesGrid() {
             8 pôles. Une vision.
           </h2>
           <p className="max-w-2xl mx-auto mt-4 text-brand-gray leading-relaxed">
-            Numérique 360 est le seul acteur en Afrique de l&apos;Ouest à combiner
+            N360 Agency est le seul acteur en Afrique de l&apos;Ouest à combiner
             cybersécurité opérationnelle, renseignement numérique, viralisation digitale
             et production audiovisuelle sous une même structure.
           </p>

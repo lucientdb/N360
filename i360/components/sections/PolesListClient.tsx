@@ -30,8 +30,8 @@ const poles: Pole[] = [
       "Analyse de réseaux sociaux & empreinte numérique",
       "Rapports de renseignement actionnables",
     ],
-    color: "#0071E3",
-    bgColor: "#EEF4FD",
+    color: "#1fa882",
+    bgColor: "#d1ede5",
   },
   {
     num: "02",
@@ -47,8 +47,8 @@ const poles: Pole[] = [
       "Veille concurrentielle et sectorielle",
       "Reporting hebdomadaire avec recommandations",
     ],
-    color: "#6E44FF",
-    bgColor: "#F0EBFF",
+    color: "#1fa882",
+    bgColor: "#e8f5ef",
   },
   {
     num: "03",
@@ -64,8 +64,8 @@ const poles: Pole[] = [
       "Création de contenus viraux (texte, image, vidéo)",
       "Analyse des performances et optimisation",
     ],
-    color: "#FF6B35",
-    bgColor: "#FFF0EB",
+    color: "#1fa882",
+    bgColor: "#f0f9f6",
   },
   {
     num: "04",
@@ -81,8 +81,8 @@ const poles: Pole[] = [
       "Gestion de crise médiatique",
       "Accompagnement continu et conseil stratégique",
     ],
-    color: "#C8972A",
-    bgColor: "#FDF6E3",
+    color: "#1fa882",
+    bgColor: "#d1ede5",
   },
   {
     num: "05",
@@ -98,8 +98,8 @@ const poles: Pole[] = [
       "Motion design et animation",
       "Photographie institutionnelle et événementielle",
     ],
-    color: "#E03B3B",
-    bgColor: "#FDE8E8",
+    color: "#1fa882",
+    bgColor: "#e8f5ef",
   },
   {
     num: "06",
@@ -115,8 +115,8 @@ const poles: Pole[] = [
       "Investigation forensique numérique",
       "Sécurisation cloud AWS, Azure, GCP",
     ],
-    color: "#2BAE6E",
-    bgColor: "#E5F8EE",
+    color: "#1fa882",
+    bgColor: "#f0f9f6",
   },
   {
     num: "07",
@@ -132,8 +132,8 @@ const poles: Pole[] = [
       "Intégrations API et architectures microservices",
       "Câblage réseau structuré et infra IT",
     ],
-    color: "#1A8FE3",
-    bgColor: "#E8F3FE",
+    color: "#1fa882",
+    bgColor: "#d1ede5",
   },
   {
     num: "08",
@@ -149,8 +149,8 @@ const poles: Pole[] = [
       "AMOA et pilotage de projets IT",
       "Conseil en gouvernance et conformité numérique",
     ],
-    color: "#7B61FF",
-    bgColor: "#EEEAFE",
+    color: "#1fa882",
+    bgColor: "#e8f5ef",
   },
 ]
 

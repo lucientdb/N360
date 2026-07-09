@@ -4,9 +4,9 @@ import Footer from "@/components/layout/Footer"
 import AProposClient from "@/components/sections/AproposClient"
 
 export const metadata: Metadata = {
-  title: "À propos — Numérique 360",
+  title: "À propos — N360 Agency",
   description:
-    "Numérique 360 est la première agence d'intelligence numérique intégrée d'Afrique de l'Ouest. Basée à Dakar Plateau, elle regroupe 8 pôles d'expertise en cybersécurité, OSINT, viralisation et transformation digitale.",
+    "N360 Agency est la première agence d'intelligence numérique intégrée d'Afrique de l'Ouest. Basée à Dakar Plateau, elle regroupe 8 pôles d'expertise en cybersécurité, OSINT, viralisation et transformation digitale.",
 }
 
 const valeurs = [

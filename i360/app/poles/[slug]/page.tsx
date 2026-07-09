@@ -48,11 +48,11 @@ const poles: Pole[] = [
     tagline: "Voir ce que les autres ne voient pas.",
     description:
       "Collecte et analyse de renseignements depuis des sources ouvertes pour anticiper les menaces, surveiller les acteurs malveillants et produire des rapports d'intelligence actionnables.",
-    color: "#0071E3",
-    bgColor: "#EEF4FD",
+    color: "#1fa882",
+    bgColor: "#d1ede5",
     image: "/images/poles/osint.jpg",
     pourquoi:
-      "Numérique 360 dispose d'analystes OSINT formés aux techniques les plus avancées et d'un accès à des outils professionnels (Maltego Pro, MISP, OpenCTI). Nous opérons dans le contexte africain avec une connaissance fine des sources locales — réseaux sociaux sénégalais, presses régionales, bases de données UEMOA.",
+      "N360 Agency dispose d'analystes OSINT formés aux techniques les plus avancées et d'un accès à des outils professionnels (Maltego Pro, MISP, OpenCTI). Nous opérons dans le contexte africain avec une connaissance fine des sources locales — réseaux sociaux sénégalais, presses régionales, bases de données UEMOA.",
     clients: [
       "Entreprises exposées à des risques concurrentiels",
       "Institutions publiques et ministères",
@@ -137,11 +137,11 @@ const poles: Pole[] = [
     tagline: "Maîtriser ce qui se dit de vous en ligne.",
     description:
       "Surveillance en temps réel de votre image sur le web et les réseaux sociaux. Détection des crises naissantes, analyse des sentiments et gestion proactive de votre réputation digitale.",
-    color: "#6E44FF",
-    bgColor: "#F0EBFF",
+    color: "#1fa882",
+    bgColor: "#e8f5ef",
     image: "/images/poles/reputation.jpg",
     pourquoi:
-      "En Afrique de l'Ouest, une crise e-réputation se propage en quelques heures sur WhatsApp, Twitter et les groupes Facebook avant d'atteindre les médias traditionnels. Numérique 360 est la seule structure locale à combiner outils de monitoring professionnels, veille humaine et capacité de réponse rapide en français et en langues locales.",
+      "En Afrique de l'Ouest, une crise e-réputation se propage en quelques heures sur WhatsApp, Twitter et les groupes Facebook avant d'atteindre les médias traditionnels. N360 Agency est la seule structure locale à combiner outils de monitoring professionnels, veille humaine et capacité de réponse rapide en français et en langues locales.",
     clients: [
       "Marques et enseignes à forte présence digitale",
       "Personnalités publiques et politiques",
@@ -226,8 +226,8 @@ const poles: Pole[] = [
     tagline: "Amplifier votre message au-delà de vos frontières.",
     description:
       "Stratégies de croissance organique et virale pour maximiser votre reach sur les plateformes digitales. Création de contenus, gestion de communautés et campagnes d'influence.",
-    color: "#FF6B35",
-    bgColor: "#FFF0EB",
+    color: "#1fa882",
+    bgColor: "#f0f9f6",
     image: "/images/poles/viral.jpg",
     pourquoi:
       "Le marché sénégalais a ses codes, ses influenceurs, ses formats viraux. Ce qui fonctionne en Europe ne fonctionne pas nécessairement à Dakar. Notre équipe crée des contenus ancrés dans la culture locale, avec des références pertinentes et une connaissance fine des algorithmes des plateformes les plus utilisées en Afrique de l'Ouest.",
@@ -315,11 +315,11 @@ const poles: Pole[] = [
     tagline: "Construire et protéger votre capital image.",
     description:
       "Personal branding et gestion de réputation pour dirigeants, personnalités politiques, artistes et célébrités. Nous construisons des narratifs puissants et protégeons votre image publique.",
-    color: "#C8972A",
-    bgColor: "#FDF6E3",
+    color: "#1fa882",
+    bgColor: "#d1ede5",
     image: "/images/poles/image.jpg",
     pourquoi:
-      "En Afrique de l'Ouest, la réputation personnelle est inextricablement liée à la crédibilité professionnelle et politique. Numérique 360 dispose d'une équipe de conseillers en image qui comprennent les enjeux locaux — qu'il s'agisse d'un ministre, d'un PDG ou d'un artiste en pleine ascension.",
+      "En Afrique de l'Ouest, la réputation personnelle est inextricablement liée à la crédibilité professionnelle et politique. N360 Agency dispose d'une équipe de conseillers en image qui comprennent les enjeux locaux — qu'il s'agisse d'un ministre, d'un PDG ou d'un artiste en pleine ascension.",
     clients: [
       "Dirigeants d'entreprise",
       "Personnalités politiques",
@@ -404,8 +404,8 @@ const poles: Pole[] = [
     tagline: "Des contenus qui marquent les esprits.",
     description:
       "Création de contenus vidéo, podcasts et supports visuels à fort impact. De la conception à la diffusion, nous produisons des œuvres audiovisuelles au standard international.",
-    color: "#E03B3B",
-    bgColor: "#FDE8E8",
+    color: "#1fa882",
+    bgColor: "#e8f5ef",
     image: "/images/poles/audiovisuel.jpg",
     pourquoi:
       "Notre équipe est équipée de matériel professionnel de référence (Sony FX3, DJI Mavic 3 Pro, éclairage Aputure) et maîtrise les logiciels de post-production Adobe (Premiere Pro, After Effects, Audition). Nous produisons des contenus qui rivalisent avec les standards internationaux tout en restant ancrés dans l'esthétique et les codes africains.",
@@ -492,12 +492,12 @@ const poles: Pole[] = [
     name: "Cybersécurité & Infrastructures",
     tagline: "Notre pôle phare — protéger ce que vous avez mis des années à construire.",
     description:
-      "La cybersécurité est le pôle stratégique central d'Numérique 360. Dans un contexte d'explosion des cyberattaques en Afrique de l'Ouest, nous proposons une offre complète qui couvre l'ensemble du cycle de protection numérique des organisations.",
-    color: "#2BAE6E",
-    bgColor: "#E5F8EE",
+      "La cybersécurité est le pôle stratégique central de N360 Agency. Dans un contexte d'explosion des cyberattaques en Afrique de l'Ouest, nous proposons une offre complète qui couvre l'ensemble du cycle de protection numérique des organisations.",
+    color: "#1fa882",
+    bgColor: "#f0f9f6",
     image: "/images/poles/cyber.jpg",
     pourquoi:
-      "Numérique 360 est le seul acteur en Afrique de l'Ouest à proposer une chaîne complète de cybersécurité opérationnelle : de l'audit initial à la surveillance continue en passant par la réponse aux incidents. Nos consultants visent les certifications les plus reconnues (CISSP, CEH, ISO 27001) et utilisent les mêmes outils que les cabinets internationaux.",
+      "N360 Agency est le seul acteur en Afrique de l'Ouest à proposer une chaîne complète de cybersécurité opérationnelle : de l'audit initial à la surveillance continue en passant par la réponse aux incidents. Nos consultants visent les certifications les plus reconnues (CISSP, CEH, ISO 27001) et utilisent les mêmes outils que les cabinets internationaux.",
     clients: [
       "Banques & établissements financiers — CBAO, Ecobank, UBA, BSIC, fintech",
       "Télécoms & opérateurs — Orange Sénégal, Free, Expresso",
@@ -609,8 +609,8 @@ const poles: Pole[] = [
     tagline: "Des solutions sur mesure qui durent.",
     description:
       "Conception et développement d'applications web, mobiles et solutions informatiques sur mesure. De l'architecture technique à la mise en production, nous livrons des produits robustes et scalables.",
-    color: "#1A8FE3",
-    bgColor: "#E8F3FE",
+    color: "#1fa882",
+    bgColor: "#d1ede5",
     image: "/images/poles/dev.jpg",
     pourquoi:
       "Notre équipe développe avec les technologies les plus modernes tout en intégrant les contraintes du marché africain : connectivité variable, paiements mobile money, langues locales, comportements utilisateurs spécifiques. Chaque solution est conçue pour fonctionner efficacement dans le contexte sénégalais et ouest-africain.",
@@ -699,11 +699,11 @@ const poles: Pole[] = [
     tagline: "Accompagner votre organisation vers le futur.",
     description:
       "Accompagnement stratégique pour digitaliser et moderniser votre organisation. Diagnostic, feuille de route, gestion du changement et formation des équipes pour une transformation réussie et durable.",
-    color: "#7B61FF",
-    bgColor: "#EEEAFE",
+    color: "#1fa882",
+    bgColor: "#e8f5ef",
     image: "/images/poles/digital.jpg",
     pourquoi:
-      "La transformation digitale en Afrique de l'Ouest ne se décrète pas — elle s'accompagne. Numérique 360 combine expertise technique et compréhension des réalités organisationnelles africaines pour proposer des feuilles de route réalistes, progressives et adaptées aux contraintes budgétaires et humaines de chaque organisation.",
+      "La transformation digitale en Afrique de l'Ouest ne se décrète pas — elle s'accompagne. N360 Agency combine expertise technique et compréhension des réalités organisationnelles africaines pour proposer des feuilles de route réalistes, progressives et adaptées aux contraintes budgétaires et humaines de chaque organisation.",
     clients: [
       "Grandes entreprises en mutation",
       "Institutions publiques en modernisation",
@@ -805,7 +805,7 @@ export async function generateMetadata({
   const pole = getPoleBySlug(slug)
   if (!pole) return { title: "Pôle introuvable" }
   return {
-    title: `${pole.name} — Numérique 360`,
+    title: `${pole.name} — N360 Agency`,
     description: pole.description,
   }
 }

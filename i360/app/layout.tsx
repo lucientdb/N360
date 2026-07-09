@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Inter, Syne } from "next/font/google"
+import { getSiteUrl } from "@/lib/site"
 import "./globals.css"
 
 const inter = Inter({
@@ -13,17 +14,25 @@ const syne = Syne({
   weight: ["400", "700", "800"],
 })
 
+const siteUrl = getSiteUrl()
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "i360 — Intelligence Numérique 360°",
-    template: "%s | i360",
+    default: "N360 Agency — Intelligence Numérique 360°",
+    template: "%s | N360 Agency",
   },
   description:
-    "i360 opère sur 8 pôles d'expertise : cybersécurité, OSINT, transformation digitale, communication et bien plus.",
+    "N360 Agency opère sur 8 pôles d'expertise : cybersécurité, OSINT, transformation digitale, communication et bien plus.",
   keywords: ["cybersécurité", "OSINT", "transformation digitale", "communication digitale"],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "i360 — Intelligence Numérique 360°",
+    title: "N360 Agency — Intelligence Numérique 360°",
     description: "Votre partenaire en cybersécurité et stratégie digitale.",
+    url: siteUrl,
+    siteName: "N360 Agency",
     locale: "fr_FR",
     type: "website",
   },
