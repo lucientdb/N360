@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s | N360 Agency",
   },
   description:
-    "N360 Agency (Numérique 360 Agency) — première agence d'agence numérique intégrée d'Afrique de l'Ouest. Cybersécurité, OSINT, transformation digitale, viralisation et production audiovisuelle à Dakar, Sénégal.",
+    "N360 Agency (Numérique 360 Agency) — première agence numérique intégrée d'Afrique de l'Ouest. Cybersécurité, OSINT, transformation digitale, viralisation et production audiovisuelle à Dakar, Sénégal.",
   keywords: [
     "N360 Agency",
     "Numérique 360 Agency",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "N360 Agency | Numérique 360 Agency — Numérique 360°",
-    description: "Première agence d'agence numérique intégrée d'Afrique de l'Ouest. Cybersécurité, OSINT, transformation digitale à Dakar.",
+    description: "Première agence numérique intégrée d'Afrique de l'Ouest. Cybersécurité, OSINT, transformation digitale à Dakar.",
     url: siteUrl,
     siteName: "N360 Agency",
     locale: "fr_FR",
