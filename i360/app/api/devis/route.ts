@@ -1,115 +1,115 @@
-import { NextResponse } from "next/server"
 import { Resend } from "resend"
+import { NextResponse } from "next/server"
+
+const resend = new Resend(process.env.RESEND_API_KEY)
+
+const CONTACT_EMAIL = "contact@n360agency.com"
 
 export async function POST(req: Request) {
   try {
-    const { poles, budget, delai, name, organisation, email, phone, description } = await req.json()
+    const body = await req.json()
+    const { poles, budget, delai, name, organisation, email, phone, description } = body
 
-    // Validation des champs requis
-    if (!poles || !Array.isArray(poles) || poles.length === 0 || !budget || !delai || !name || !email || !description) {
+    if (!name || !email || !description || !poles?.length) {
       return NextResponse.json(
-        { error: "Veuillez remplir tous les champs obligatoires du formulaire." },
+        { error: "Champs obligatoires manquants." },
         { status: 400 }
       )
     }
 
-    const notificationEmail = process.env.NOTIFICATION_EMAIL || "contact@n360agency.com"
-    const quoteFromEmail =
-      process.env.RESEND_DEVIS_FROM_EMAIL || "contact@n360agency.com"
-    const quoteFromName =
-      process.env.RESEND_DEVIS_FROM_NAME || "N360 Agency Devis"
-    const apiKey = process.env.RESEND_API_KEY
-
-    // Simulation de développement si la clé API n'est pas configurée
-    if (!apiKey || apiKey === "re_your_api_key_here") {
-      console.warn("⚠️ Resend API Key is missing or placeholder. Logging quote request instead:")
-      console.log({
-        to: notificationEmail,
-        subject: `[Devis n360] Demande de ${name}`,
-        data: { poles, budget, delai, name, organisation, email, phone, description }
-      })
-
-      return NextResponse.json({
-        success: true,
-        message: "Simulation de demande de devis réussie (clé API Resend manquante ou par défaut).",
-        debug: true
-      })
-    }
-
-    const resend = new Resend(apiKey)
-
-    const htmlContent = `
-      <div style="font-family: sans-serif; max-width: 650px; margin: 0 auto; padding: 25px; border: 1px solid #e2e8f0; border-radius: 16px; background-color: #ffffff;">
-        <div style="text-align: center; margin-bottom: 20px;">
-          <h2 style="color: #1fa882; margin: 0; font-size: 24px;">Demande de Devis - n360 Agency</h2>
-          <p style="color: #718096; font-size: 14px; margin-top: 5px;">Nouvelle demande de devis reçue depuis le site internet.</p>
-        </div>
-        
-        <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 20px 0;" />
-
-        <h3 style="color: #1a202c; border-left: 4px solid #1fa882; padding-left: 10px; margin-bottom: 15px; font-size: 16px;">Coordonnées du demandeur</h3>
-        <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 25px;">
-          <tr>
-            <td style="padding: 6px 0; color: #718096; width: 150px;"><strong>Nom complet :</strong></td>
-            <td style="padding: 6px 0; color: #1a202c;">${name}</td>
-          </tr>
-          <tr>
-            <td style="padding: 6px 0; color: #718096;"><strong>Organisation :</strong></td>
-            <td style="padding: 6px 0; color: #1a202c;">${organisation || "Non spécifiée"}</td>
-          </tr>
-          <tr>
-            <td style="padding: 6px 0; color: #718096;"><strong>Email :</strong></td>
-            <td style="padding: 6px 0; color: #1a202c;"><a href="mailto:${email}" style="color: #1fa882; text-decoration: none;">${email}</a></td>
-          </tr>
-          <tr>
-            <td style="padding: 6px 0; color: #718096;"><strong>Téléphone :</strong></td>
-            <td style="padding: 6px 0; color: #1a202c;">${phone || "Non renseigné"}</td>
-          </tr>
-        </table>
-
-        <h3 style="color: #1a202c; border-left: 4px solid #1fa882; padding-left: 10px; margin-bottom: 15px; font-size: 16px;">Détails du besoin</h3>
-        <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 25px;">
-          <tr>
-            <td style="padding: 6px 0; color: #718096; width: 150px; vertical-align: top;"><strong>Pôles d'intérêt :</strong></td>
-            <td style="padding: 6px 0; color: #1a202c;">
-              <ul style="margin: 0; padding-left: 20px;">
-                ${poles.map((p: string) => `<li>${p}</li>`).join("")}
-              </ul>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 6px 0; color: #718096;"><strong>Budget estimé :</strong></td>
-            <td style="padding: 6px 0; color: #1a202c; font-weight: bold;">${budget}</td>
-          </tr>
-          <tr>
-            <td style="padding: 6px 0; color: #718096;"><strong>Délai souhaité :</strong></td>
-            <td style="padding: 6px 0; color: #1a202c;">${delai}</td>
-          </tr>
-        </table>
-
-        <h3 style="color: #1a202c; border-left: 4px solid #1fa882; padding-left: 10px; margin-bottom: 15px; font-size: 16px;">Description du projet</h3>
-        <div style="background-color: #f7fafc; padding: 20px; border-radius: 12px; border: 1px solid #edf2f7; font-size: 14px; color: #4a5568; line-height: 1.6; white-space: pre-wrap;">${description}</div>
-      </div>
-    `
-
-    const { data, error } = await resend.emails.send({
-      from: `${quoteFromName} <${quoteFromEmail}>`,
-      to: [notificationEmail],
+    // Email interne à N360 (notification)
+    await resend.emails.send({
+      from: "N360 Devis <onboarding@resend.dev>",
+      to: CONTACT_EMAIL,
       replyTo: email,
-      subject: `[Devis n360] Demande de ${name}`,
-      html: htmlContent,
+      subject: `Nouvelle demande de devis — ${name}${organisation ? ` (${organisation})` : ""}`,
+      html: `
+        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #1a1a1a;">
+          <h2 style="color: #1fa882; border-bottom: 2px solid #1fa882; padding-bottom: 8px;">
+            Nouvelle demande de devis
+          </h2>
+
+          <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+            <tr>
+              <td style="padding: 8px 0; color: #666; width: 140px;"><strong>Nom</strong></td>
+              <td style="padding: 8px 0;">${name}</td>
+            </tr>
+            ${organisation ? `
+            <tr>
+              <td style="padding: 8px 0; color: #666;"><strong>Organisation</strong></td>
+              <td style="padding: 8px 0;">${organisation}</td>
+            </tr>` : ""}
+            <tr>
+              <td style="padding: 8px 0; color: #666;"><strong>Email</strong></td>
+              <td style="padding: 8px 0;"><a href="mailto:${email}">${email}</a></td>
+            </tr>
+            ${phone ? `
+            <tr>
+              <td style="padding: 8px 0; color: #666;"><strong>Téléphone</strong></td>
+              <td style="padding: 8px 0;">${phone}</td>
+            </tr>` : ""}
+            <tr>
+              <td style="padding: 8px 0; color: #666;"><strong>Pôles</strong></td>
+              <td style="padding: 8px 0;">${poles.join(", ")}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #666;"><strong>Budget</strong></td>
+              <td style="padding: 8px 0;">${budget}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #666;"><strong>Délai</strong></td>
+              <td style="padding: 8px 0;">${delai}</td>
+            </tr>
+          </table>
+
+          <div style="background: #f5f5f5; padding: 16px; border-radius: 8px; margin: 20px 0;">
+            <strong>Description du projet :</strong>
+            <p style="margin: 8px 0 0; line-height: 1.6;">${description.replace(/\n/g, "<br>")}</p>
+          </div>
+
+          <p style="color: #888; font-size: 12px; margin-top: 32px;">
+            Demande reçue via le formulaire de devis de n360agency.com
+          </p>
+        </div>
+      `,
     })
 
-    if (error) {
-      console.error("Erreur Resend :", error)
-      return NextResponse.json({ error: error.message }, { status: 500 })
-    }
+    // Email de confirmation au client
+    await resend.emails.send({
+      from: "N360 Agency <contact@n360agency.com>",
+      to: email,
+      subject: "Votre demande de devis a bien été reçue",
+      html: `
+        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #1a1a1a;">
+          <h2 style="color: #1fa882;">Merci, ${name} !</h2>
+          <p>Nous avons bien reçu votre demande de devis et nos experts l'analysent dès maintenant.</p>
+          <p>Vous recevrez une proposition personnalisée <strong>sous 24h</strong>.</p>
 
-    return NextResponse.json({ success: true, data })
-  } catch (err) {
-    console.error("Erreur serveur :", err)
+          <div style="background: #f0fdf9; border: 1px solid #1fa882; padding: 16px; border-radius: 8px; margin: 24px 0;">
+            <p style="margin: 0 0 8px; font-weight: bold; color: #1fa882;">Récapitulatif de votre demande</p>
+            <p style="margin: 4px 0;"><strong>Pôles :</strong> ${poles.join(", ")}</p>
+            <p style="margin: 4px 0;"><strong>Budget :</strong> ${budget}</p>
+            <p style="margin: 4px 0;"><strong>Délai :</strong> ${delai}</p>
+          </div>
+
+          <p>Pour toute question urgente, contactez-nous directement :</p>
+          <ul>
+            <li>Email : <a href="mailto:contact@n360agency.com">contact@n360agency.com</a></li>
+            <li>WhatsApp : <a href="https://wa.me/221776872222">+221 77 687 22 22</a></li>
+          </ul>
+
+          <p style="color: #888; font-size: 12px; margin-top: 32px;">
+            N360 Agency — Dakar Plateau, Sénégal
+          </p>
+        </div>
+      `,
+    })
+
+    return NextResponse.json({ success: true })
+  } catch (error) {
+    console.error("Erreur API devis:", error)
     return NextResponse.json(
-      { error: "Une erreur interne est survenue." },
+      { error: "Une erreur est survenue. Veuillez réessayer." },
       { status: 500 }
     )
   }

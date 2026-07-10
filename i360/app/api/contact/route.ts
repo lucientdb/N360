@@ -1,76 +1,95 @@
-import { NextResponse } from "next/server"
 import { Resend } from "resend"
+import { NextResponse } from "next/server"
+
+const resend = new Resend(process.env.RESEND_API_KEY)
+
+const CONTACT_EMAIL = "contact@n360agency.com"
 
 export async function POST(req: Request) {
   try {
-    const { name, email, phone, subject, message } = await req.json()
+    const body = await req.json()
+    const { name, email, phone, subject, message } = body
 
-    // Validation des champs
     if (!name || !email || !subject || !message) {
       return NextResponse.json(
-        { error: "Veuillez remplir tous les champs obligatoires." },
+        { error: "Champs obligatoires manquants." },
         { status: 400 }
       )
     }
 
-    const notificationEmail = process.env.NOTIFICATION_EMAIL || "contact@n360agency.com"
-    const contactFromEmail =
-      process.env.RESEND_CONTACT_FROM_EMAIL || "contact@n360agency.com"
-    const contactFromName =
-      process.env.RESEND_CONTACT_FROM_NAME || "N360 Agency Contact"
-    const apiKey = process.env.RESEND_API_KEY
-
-    // Simulation de développement si la clé API n'est pas configurée
-    if (!apiKey || apiKey === "re_your_api_key_here") {
-      console.warn("⚠️ Resend API Key is missing or placeholder. Logging email submission instead:")
-      console.log({
-        to: notificationEmail,
-        subject: `[Contact n360] ${subject}`,
-        data: { name, email, phone, subject, message }
-      })
-
-      return NextResponse.json({
-        success: true,
-        message: "Simulation d'envoi réussie (clé API Resend manquante ou par défaut).",
-        debug: true
-      })
-    }
-
-    const resend = new Resend(apiKey)
-
-    const htmlContent = `
-      <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; rounded: 12px;">
-        <h2 style="color: #1fa882; margin-top: 0;">Nouveau message de contact - n360 Agency</h2>
-        <p><strong>Nom complet :</strong> ${name}</p>
-        <p><strong>Email :</strong> <a href="mailto:${email}">${email}</a></p>
-        <p><strong>Téléphone :</strong> ${phone || "Non renseigné"}</p>
-        <p><strong>Sujet :</strong> ${subject}</p>
-        <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 20px 0;" />
-        <p><strong>Message :</strong></p>
-        <p style="white-space: pre-wrap; background-color: #f7fafc; padding: 15px; border-radius: 8px; color: #4a5568; line-height: 1.6;">${message}</p>
-      </div>
-    `
-
-    const { data, error } = await resend.emails.send({
-      from: `${contactFromName} <${contactFromEmail}>`,
-      to: [notificationEmail],
+    // Email interne à N360 (notification)
+    await resend.emails.send({
+      from: "N360 Contact <onboarding@resend.dev>",
+      to: CONTACT_EMAIL,
       replyTo: email,
-      subject: `[Contact n360] ${subject}`,
-      html: htmlContent,
+      subject: `Nouveau message — ${subject} (${name})`,
+      html: `
+        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #1a1a1a;">
+          <h2 style="color: #1fa882; border-bottom: 2px solid #1fa882; padding-bottom: 8px;">
+            Nouveau message de contact
+          </h2>
+
+          <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+            <tr>
+              <td style="padding: 8px 0; color: #666; width: 120px;"><strong>Nom</strong></td>
+              <td style="padding: 8px 0;">${name}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #666;"><strong>Email</strong></td>
+              <td style="padding: 8px 0;"><a href="mailto:${email}">${email}</a></td>
+            </tr>
+            ${phone ? `
+            <tr>
+              <td style="padding: 8px 0; color: #666;"><strong>Téléphone</strong></td>
+              <td style="padding: 8px 0;">${phone}</td>
+            </tr>` : ""}
+            <tr>
+              <td style="padding: 8px 0; color: #666;"><strong>Sujet</strong></td>
+              <td style="padding: 8px 0;">${subject}</td>
+            </tr>
+          </table>
+
+          <div style="background: #f5f5f5; padding: 16px; border-radius: 8px; margin: 20px 0;">
+            <strong>Message :</strong>
+            <p style="margin: 8px 0 0; line-height: 1.6;">${message.replace(/\n/g, "<br>")}</p>
+          </div>
+
+          <p style="color: #888; font-size: 12px; margin-top: 32px;">
+            Message reçu via le formulaire de contact de n360agency.com
+          </p>
+        </div>
+      `,
     })
 
-    if (error) {
-      console.error("Erreur Resend :", error)
-      return NextResponse.json({ error: error.message }, { status: 500 })
-    }
+    // Email de confirmation au visiteur
+    await resend.emails.send({
+      from: "N360 Agency <contact@n360agency.com>",
+      to: email,
+      subject: "Votre message a bien été reçu",
+      html: `
+        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #1a1a1a;">
+          <h2 style="color: #1fa882;">Merci, ${name} !</h2>
+          <p>Nous avons bien reçu votre message concernant : <strong>${subject}</strong>.</p>
+          <p>Notre équipe vous répondra <strong>dans les meilleurs délais</strong> (sous 4h pour les urgences, sous 24h pour les demandes standard).</p>
 
-    return NextResponse.json({ success: true, data })
-  } catch (err) {
-    console.error("Erreur serveur :", err)
+          <p style="margin-top: 24px;">Pour toute urgence, vous pouvez aussi nous joindre directement :</p>
+          <ul>
+            <li>WhatsApp : <a href="https://wa.me/221776872222">+221 77 687 22 22</a></li>
+          </ul>
+
+          <p style="color: #888; font-size: 12px; margin-top: 32px;">
+            N360 Agency — Dakar Plateau, Sénégal
+          </p>
+        </div>
+      `,
+    })
+
+    return NextResponse.json({ success: true })
+  } catch (error) {
+    console.error("Erreur API contact:", error)
     return NextResponse.json(
-      { error: "Une erreur interne est survenue." },
+      { error: "Une erreur est survenue. Veuillez réessayer." },
       { status: 500 }
     )
   }
 }
-

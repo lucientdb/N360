@@ -1,114 +1,75 @@
-import { NextResponse } from "next/server"
 import { Resend } from "resend"
+import { NextResponse } from "next/server"
+
+const resend = new Resend(process.env.RESEND_API_KEY)
+
+const CONTACT_EMAIL = "contact@n360agency.com"
+
+// Remplace par ton Audience ID Resend (créé dans ton dashboard Resend > Audiences)
+const AUDIENCE_ID = process.env.RESEND_AUDIENCE_ID ?? ""
 
 export async function POST(req: Request) {
   try {
-    const { email } = await req.json()
+    const body = await req.json()
+    const { email } = body
 
-    if (!email || !email.includes("@")) {
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json(
-        { error: "Veuillez fournir une adresse email valide." },
+        { error: "Adresse email invalide." },
         { status: 400 }
       )
     }
 
-    const notificationEmail = process.env.NOTIFICATION_EMAIL || "contact@n360agency.com"
-    const newsletterFromEmail =
-      process.env.RESEND_NEWSLETTER_FROM_EMAIL ||
-      "newsletters@n360agency.com"
-    const newsletterFromName =
-      process.env.RESEND_NEWSLETTER_FROM_NAME || "N360 Newsletter"
-    const apiKey = process.env.RESEND_API_KEY
-    const audienceId = process.env.RESEND_AUDIENCE_ID
-
-    // Simulation de développement si la clé API n'est pas configurée
-    if (!apiKey || apiKey === "re_your_api_key_here") {
-      console.warn("⚠️ Resend API Key is missing or placeholder. Logging newsletter subscription instead:")
-      console.log({
-        subscriberEmail: email,
-        notificationTarget: notificationEmail,
-        audienceId: audienceId || "Non configurée"
-      })
-
-      return NextResponse.json({
-        success: true,
-        message: "Simulation d'abonnement newsletter réussie.",
-        debug: true
+    // Ajouter le contact à l'audience Resend (si AUDIENCE_ID configuré)
+    if (AUDIENCE_ID) {
+      await resend.contacts.create({
+        email,
+        audienceId: AUDIENCE_ID,
+        unsubscribed: false,
       })
     }
 
-    const resend = new Resend(apiKey)
-    let addedToAudience = false
-    let errorAudience = null
+    // Email de confirmation à l'abonné
+    await resend.emails.send({
+      from: "N360 Agency <contact@n360agency.com>",
+      to: email,
+      subject: "Bienvenue dans la newsletter N360 Agency",
+      html: `
+        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #1a1a1a;">
+          <h2 style="color: #1fa882;">Bienvenue !</h2>
+          <p>Vous êtes maintenant abonné à la newsletter de <strong>N360 Agency</strong>.</p>
+          <p>Vous recevrez nos analyses et insights sur la <strong>cybersécurité</strong>, le <strong>digital</strong> et le <strong>renseignement</strong> en Afrique.</p>
 
-    // Essayer d'ajouter le contact dans l'audience Resend si configuré
-    if (audienceId) {
-      try {
-        const contactResult = await resend.contacts.create({
-          email: email,
-          unsubscribed: false,
-          audienceId: audienceId,
-        })
-        
-        if (contactResult.error) {
-          errorAudience = contactResult.error.message
-          console.error("Erreur d'ajout de contact Resend :", contactResult.error)
-        } else {
-          addedToAudience = true
-        }
-      } catch (err) {
-        errorAudience = err instanceof Error ? err.message : String(err)
-        console.error("Exception lors de la création du contact :", err)
-      }
-    }
+          <p style="margin-top: 24px; color: #666; font-size: 13px;">
+            Pour vous désabonner à tout moment, répondez simplement à cet email avec "désabonnement".
+          </p>
 
-    // Toujours envoyer une notification email à l'équipe
-    const htmlContent = `
-      <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 12px; background-color: #ffffff;">
-        <h2 style="color: #1fa882; margin-top: 0; font-size: 20px;">Nouvelle inscription Newsletter - n360 Agency</h2>
-        <p>Un nouvel abonné s'est inscrit depuis le site web :</p>
-        <p style="background-color: #f7fafc; padding: 12px; border-radius: 8px; font-size: 16px; font-weight: bold; color: #1a202c; border: 1px solid #edf2f7;">
-          Email : <a href="mailto:${email}">${email}</a>
-        </p>
-        <p style="font-size: 12px; color: #718096; margin-top: 20px;">
-          Date : ${new Date().toLocaleString("fr-FR")}
-        </p>
-        <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 20px 0;" />
-        <p style="font-size: 12px; color: #a0aec0; font-style: italic;">
-          Status Audience : ${
-            audienceId 
-              ? addedToAudience 
-                ? "Ajouté avec succès dans l'audience Resend." 
-                : `Erreur d'ajout à l'audience : ${errorAudience}`
-              : "Aucune Audience ID configurée."
-          }
-        </p>
-      </div>
-    `
-
-    const { error: emailError } = await resend.emails.send({
-      from: `${newsletterFromName} <${newsletterFromEmail}>`,
-      to: [notificationEmail],
-      subject: `[Newsletter n360] Nouvel abonné : ${email}`,
-      html: htmlContent,
+          <p style="color: #888; font-size: 12px; margin-top: 32px;">
+            N360 Agency — Dakar Plateau, Sénégal<br>
+            Emails envoyés depuis newsletters.n360agency.com
+          </p>
+        </div>
+      `,
     })
 
-    if (emailError && !addedToAudience) {
-      console.error("Erreur envoi email de notification :", emailError)
-      return NextResponse.json({ error: emailError.message }, { status: 500 })
-    }
-
-    return NextResponse.json({ 
-      success: true, 
-      addedToAudience,
-      message: addedToAudience 
-        ? "Inscription enregistrée et équipe notifiée." 
-        : "Inscription reçue (équipe notifiée)."
+    // Notification interne
+    await resend.emails.send({
+      from: "N360 Newsletter <onboarding@resend.dev>",
+      to: CONTACT_EMAIL,
+      subject: `Nouvel abonné newsletter — ${email}`,
+      html: `
+        <div style="font-family: sans-serif; color: #1a1a1a;">
+          <p>Nouvel abonnement newsletter :</p>
+          <p><strong>${email}</strong></p>
+        </div>
+      `,
     })
-  } catch (err) {
-    console.error("Erreur serveur newsletter :", err)
+
+    return NextResponse.json({ success: true })
+  } catch (error) {
+    console.error("Erreur API newsletter:", error)
     return NextResponse.json(
-      { error: "Une erreur interne est survenue." },
+      { error: "Une erreur est survenue. Veuillez réessayer." },
       { status: 500 }
     )
   }

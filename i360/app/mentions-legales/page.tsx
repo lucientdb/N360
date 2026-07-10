@@ -29,7 +29,6 @@ export default function MentionsLegalesPage() {
               Téléphone : +221 77 687 22 22<br />
               Forme juridique : SARL (ou autre forme à compléter après immatriculation)<br />
               RCCM : à compléter après immatriculation<br />
-              Directeur de la publication : à compléter
             </p>
 
             <h2>Hébergement</h2>
