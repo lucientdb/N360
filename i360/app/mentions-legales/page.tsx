@@ -27,8 +27,8 @@ export default function MentionsLegalesPage() {
               Site web : <a href="https://www.numerique360agency.com" target="_blank" rel="noopener noreferrer">www.numerique360agency.com</a><br />
               Email : contact@numerique360agency.com<br />
               Téléphone : +221 77 687 22 22<br />
-              Forme juridique : SARL (ou autre forme à compléter après immatriculation)<br />
-              RCCM : à compléter après immatriculation<br />
+              Forme juridique : SARL <br />
+              RCCM : En cours d'obtention<br />
             </p>
 
             <h2>Hébergement</h2>
