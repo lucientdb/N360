@@ -26,22 +26,48 @@ const siteUrl = getSiteUrl()
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "N360 Agency — Intelligence Numérique 360°",
+    default: "N360 Agency | Numérique 360 Agency — Cybersécurité & Digital",
     template: "%s | N360 Agency",
   },
   description:
-    "N360 Agency opère sur 8 pôles d'expertise : cybersécurité, OSINT, transformation digitale, communication et bien plus.",
-  keywords: ["cybersécurité", "OSINT", "transformation digitale", "communication digitale"],
+    "N360 Agency (Numérique 360 Agency) — première agence d'agence numérique intégrée d'Afrique de l'Ouest. Cybersécurité, OSINT, transformation digitale, viralisation et production audiovisuelle à Dakar, Sénégal.",
+  keywords: [
+    "N360 Agency",
+    "Numérique 360 Agency",
+    "N360",
+    "Numerique 360",
+    "agence digitale Dakar",
+    "cybersécurité Sénégal",
+    "OSINT Afrique",
+    "transformation digitale Sénégal",
+    "agence numérique Dakar",
+    "agence numérique Afrique de l'Ouest",
+    "viralisation réseaux sociaux",
+    "communication digitale Sénégal",
+  ],
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "N360 Agency — Intelligence Numérique 360°",
-    description: "Votre partenaire en cybersécurité et stratégie digitale.",
+    title: "N360 Agency | Numérique 360 Agency — Numérique 360°",
+    description: "Première agence d'agence numérique intégrée d'Afrique de l'Ouest. Cybersécurité, OSINT, transformation digitale à Dakar.",
     url: siteUrl,
     siteName: "N360 Agency",
     locale: "fr_FR",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "N360 Agency | Numérique 360 Agency",
+    description: "Cybersécurité, OSINT, transformation digitale & viralisation — Dakar, Sénégal.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 }
 

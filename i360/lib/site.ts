@@ -16,6 +16,7 @@ export function getSiteUrl(): string {
 
 export const siteConfig = {
   name: "N360 Agency",
+  fullName: "N360 Agency | Numérique 360 Agency",
   url: PRODUCTION_SITE_URL,
   domain: "numerique360agency.com",
   email: "contact@numerique360agency.com",
