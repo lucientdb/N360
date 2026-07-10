@@ -6,9 +6,16 @@ import PolesGrid from "@/components/sections/PolesGrid"
 import CtaBand from "@/components/sections/CtaBand"
 
 export const metadata: Metadata = {
-  title: "N360 Agency — Intelligence Numérique 360°",
+  title: "N360 Agency | Numérique 360 Agency — Numérique 360°",
   description:
-    "N360 Agency mobilise 8 pôles d'expertise pour sécuriser votre image, accélérer votre croissance et anticiper les menaces numériques.",
+    "N360 Agency (Numérique 360 Agency) mobilise 8 pôles d'expertise pour sécuriser votre image, accélérer votre croissance digitale et anticiper les menaces numériques. Basée à Dakar Plateau, Sénégal.",
+  keywords: [
+    "N360 Agency",
+    "Numérique 360 Agency",
+    "agence digitale Sénégal",
+    "cybersécurité Dakar",
+    "OSINT Afrique de l'Ouest",
+  ],
 }
 
 export default function HomePage() {
