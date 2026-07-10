@@ -5,6 +5,8 @@ import Link from "next/link"
 import { motion, useScroll, useTransform, useInView, type Variants } from "framer-motion"
 import { ArrowRight, ChevronDown } from "lucide-react"
 
+import BrandName from "@/components/ui/BrandName"
+
 const containerVariants: Variants = {
   hidden: {},
   visible: {
@@ -41,7 +43,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background pt-16"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#060D18] pt-16"
     >
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(26,122,74,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(26,122,74,0.06)_1px,transparent_1px)] bg-[size:48px_48px]" />
 
@@ -58,7 +60,7 @@ export default function Hero() {
           className="flex flex-col items-center gap-6"
         >
           <motion.div variants={itemVariants}>
-            <span className="inline-flex items-center gap-2 text-xs font-mono-brand text-brand-blue-vif bg-brand-blue-light border border-brand-blue/30 px-4 py-2 rounded-full tracking-[0.15em] uppercase">
+            <span className="inline-flex items-center gap-2 text-xs font-mono-brand text-[#00C97A] bg-[#1A7A4A]/20 border border-brand-blue/30 px-4 py-2 rounded-full tracking-[0.15em] uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-blue-vif animate-pulse" />
               N360 Agency
             </span>
@@ -66,12 +68,12 @@ export default function Hero() {
 
           <motion.h1
             variants={itemVariants}
-            className="font-[family-name:var(--font-heading)] font-black text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.04] tracking-[-2.5px] text-foreground"
+            className="font-[family-name:var(--font-heading)] font-black text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.04] tracking-[-2.5px] text-white"
           >
             Une agence.<br />
             Huit expertises.
             <br />
-            <span className="text-brand-blue-vif">Zéro angle mort.</span>
+            <span className="text-[#00C97A]">Zéro angle mort.</span>
           </motion.h1>
 
           <motion.p
@@ -89,7 +91,7 @@ export default function Hero() {
           >
             <Link
               href="/devis"
-              className="group inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-blue-hover text-white text-sm font-medium px-7 py-3.5 rounded-full transition-all duration-200 hover:scale-105 active:scale-95"
+              className="group inline-flex items-center gap-2 bg-[#00C97A] hover:bg-[#00b36d] text-[#060D18] text-sm font-semibold px-7 py-3.5 rounded-full transition-all duration-200 hover:scale-105 active:scale-95"
             >
               Demander un devis
               <ArrowRight
@@ -99,7 +101,7 @@ export default function Hero() {
             </Link>
             <Link
               href="/#poles"
-              className="inline-flex items-center gap-2 text-sm text-brand-gray hover:text-foreground border border-brand-blue/20 hover:border-brand-blue/50 px-7 py-3.5 rounded-full transition-all duration-200"
+              className="inline-flex items-center gap-2 text-sm text-brand-gray hover:text-white border border-[#1A7A4A]/20 hover:border-brand-blue/50 px-7 py-3.5 rounded-full transition-all duration-200"
             >
               Découvrir nos pôles
             </Link>
@@ -116,11 +118,11 @@ export default function Hero() {
             ].map((stat) => (
               <div
                 key={stat.label}
-                className="bg-brand-navy flex flex-col items-center justify-center py-5 px-4"
+                className="bg-[#0D1B2A] flex flex-col items-center justify-center py-5 px-4"
               >
-                <span className="font-[family-name:var(--font-heading)] font-bold text-2xl text-foreground">
+                <span className="font-[family-name:var(--font-heading)] font-bold text-2xl text-white">
                   {stat.val}
-                  <span className="text-brand-blue-vif text-lg">{stat.unit}</span>
+                  <span className="text-[#00C97A] text-lg">{stat.unit}</span>
                 </span>
                 <span className="text-[10px] text-brand-gray uppercase tracking-widest mt-1 text-center font-mono-brand">
                   {stat.label}

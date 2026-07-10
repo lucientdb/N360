@@ -161,8 +161,10 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-[#060D18] text-white;
     font-family: var(--font-sans), 'Inter', sans-serif;
+    font-size: 1.0625rem; /* 17px base au lieu de 16px */
+    line-height: 1.7;
   }
 
   html {
@@ -171,6 +173,11 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading), 'Syne', sans-serif;
+    color: white;
+  }
+
+  strong {
+    color: inherit;
   }
 }
 
@@ -192,7 +199,7 @@
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    border: 3px solid #1A7A4A;
+    border: 3px solid #00C97A;
     animation: contour-pulse 0.9s ease-out infinite;
     pointer-events: none;
   }

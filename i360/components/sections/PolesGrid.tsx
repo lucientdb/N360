@@ -116,7 +116,7 @@ const cardVariants: Variants = {
 
 export default function PolesGrid() {
   return (
-    <section id="poles" className="py-24 px-6 bg-background">
+    <section id="poles" className="py-24 px-6 bg-[#060D18]">
       <div className="max-w-7xl mx-auto">
 
         <motion.div
@@ -129,7 +129,7 @@ export default function PolesGrid() {
           <p className="text-xs text-brand-blue font-mono-brand uppercase tracking-[0.15em] mb-3">
             Nos domaines d&apos;intervention
           </p>
-          <h2 className="font-[family-name:var(--font-heading)] font-bold text-4xl md:text-5xl tracking-tight text-foreground">
+          <h2 className="font-[family-name:var(--font-heading)] font-bold text-4xl md:text-5xl tracking-tight text-white">
             8 pôles. Une vision.
           </h2>
           <p className="max-w-2xl mx-auto mt-4 text-brand-gray leading-relaxed">
@@ -151,7 +151,7 @@ export default function PolesGrid() {
             >
               <Link
                 href={`/poles/${pole.slug}`}
-                className="group block rounded-2xl border border-brand-blue/20 bg-brand-navy overflow-hidden hover:shadow-xl hover:shadow-brand-blue/10 hover:-translate-y-1 transition-all duration-300"
+                className="group block rounded-2xl border border-[#1A7A4A]/20 bg-[#0D1B2A] overflow-hidden hover:shadow-xl hover:shadow-brand-blue/10 hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="relative h-56 overflow-hidden">
                   <Image
@@ -181,7 +181,7 @@ export default function PolesGrid() {
                   <p className="text-xs text-brand-gray leading-relaxed mb-4">
                     {pole.description}
                   </p>
-                  <span className="inline-flex items-center gap-1 text-xs font-medium text-brand-blue-vif transition-gap duration-200">
+                  <span className="inline-flex items-center gap-1 text-xs font-medium text-[#00C97A] transition-gap duration-200">
                     En savoir plus
                     <ArrowRight
                       size={12}

@@ -39,8 +39,19 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between relative">
 
-        <Link href="/" className="flex items-center">
-          <Image src="/images/logo/logo_orig.jpg" alt="n360 Logo" width={120} height={30} style={{ height: 'auto' }} className="h-8 w-auto object-contain" />
+        <Link href="/" className="flex items-center gap-2.5">
+          <Image
+            src="/images/logo/n360_icone_rs.png"
+            alt="N360 icône"
+            width={72}
+            height={72}
+            quality={100}
+            className="h-9 w-9 object-contain rounded-lg"
+          />
+          <span className="font-[family-name:var(--font-heading)] font-black text-xl leading-none">
+            <span className="text-white">N</span>
+            <span style={{ color: "#00C97A" }}>360</span>
+          </span>
         </Link>
 
         <ul className="md:flex items-center gap-8 hidden">
@@ -48,9 +59,9 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`text-sm transition-colors duration-200 ${pathname === link.href
-                  ? "text-brand-blue font-medium"
-                  : "text-white/50 hover:text-white"
+                className={`text-base font-medium transition-colors duration-200 ${pathname === link.href
+                  ? "text-[#00C97A]"
+                  : "text-white/70 hover:text-white"
                   }`}
               >
                 {link.label}
@@ -59,16 +70,16 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-4">
           <Link
             href="/contact"
-            className="text-sm text-white/50 hover:text-white transition-colors"
+            className="text-base text-white/70 hover:text-white transition-colors font-medium"
           >
             WhatsApp
           </Link>
           <Link
             href="/devis"
-            className="bg-brand-blue hover:bg-brand-blue-hover text-white text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-200 hover:scale-105 active:scale-95 contour-pulse"
+            className="bg-[#00C97A] hover:bg-[#00b36d] text-[#060D18] text-base font-semibold px-6 py-2.5 rounded-full transition-all duration-200 hover:scale-105 active:scale-95 contour-pulse"
           >
             Devis gratuit
           </Link>
@@ -77,7 +88,7 @@ export default function Navbar() {
         <div className="md:hidden flex items-center gap-2">
           <Link
             href="/devis"
-            className="bg-brand-blue hover:bg-brand-blue-hover text-white text-xs font-medium px-3 py-2 rounded-full transition-all duration-200 hover:scale-105 active:scale-95 contour-pulse"
+            className="bg-[#00C97A] hover:bg-[#00b36d] text-[#060D18] text-xs font-semibold px-3 py-2 rounded-full transition-all duration-200 hover:scale-105 active:scale-95 contour-pulse"
           >
             Devis
           </Link>
@@ -106,9 +117,9 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`block text-sm py-1 transition-colors ${pathname === link.href
-                      ? "text-brand-blue font-medium"
-                      : "text-white/50 hover:text-white"
+                    className={`block text-base py-1 font-medium transition-colors ${pathname === link.href
+                      ? "text-[#00C97A]"
+                      : "text-white/70 hover:text-white"
                       }`}
                   >
                     {link.label}
@@ -119,7 +130,7 @@ export default function Navbar() {
                 <Link
                   href="/devis"
                   onClick={() => setIsOpen(false)}
-                  className="block w-full text-center bg-brand-blue text-white text-sm font-medium px-5 py-2.5 rounded-full contour-pulse"
+                  className="block w-full text-center bg-[#00C97A] hover:bg-[#00b36d] text-[#060D18] text-sm font-semibold px-5 py-2.5 rounded-full contour-pulse"
                 >
                   Devis gratuit
                 </Link>

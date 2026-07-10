@@ -1,5 +1,6 @@
 "use client"
 
+import BrandName from "@/components/ui/BrandName"
 import { motion, type Variants } from "framer-motion"
 import Link from "next/link"
 import { ArrowRight, Shield, Eye, Zap, Target, Heart } from "lucide-react"
@@ -50,9 +51,9 @@ export default function AProposClient({
 }: Props) {
   return (
     <>
-      <section className="relative pt-16 sm:pt-24 md:pt-32 pb-16 sm:pb-20 md:pb-20 px-6 bg-background overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:48px_48px] opacity-50" />
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-blue-light rounded-full blur-[140px] opacity-30 pointer-events-none" />
+      <section className="relative pt-16 sm:pt-24 md:pt-32 pb-16 sm:pb-20 md:pb-20 px-6 bg-[#060D18] overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(26,122,74,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(26,122,74,0.06)_1px,transparent_1px)] bg-[size:48px_48px]" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#1A7A4A] rounded-full blur-[160px] opacity-10 pointer-events-none" />
 
         <div className="relative max-w-5xl mx-auto">
           <motion.div
@@ -63,21 +64,21 @@ export default function AProposClient({
           >
             <motion.span
               variants={fadeUp}
-              className="inline-flex items-center gap-2 text-xs font-medium text-brand-blue bg-brand-blue-light px-4 py-2 rounded-full tracking-widest uppercase w-fit"
+              className="inline-flex items-center gap-2 text-xs font-medium text-[#1A7A4A] bg-[#1A7A4A]/20 px-4 py-2 rounded-full tracking-widest uppercase w-fit"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-blue animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#1A7A4A] animate-pulse" />
               Qui sommes-nous
             </motion.span>
 
             <motion.h1
               variants={fadeUp}
-              className="font-[family-name:var(--font-heading)] font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-foreground max-w-3xl"
+              className="font-[family-name:var(--font-heading)] font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight text-white max-w-3xl"
             >
               La première agence d&apos;intelligence numérique intégrée{" "}
-              <span className="text-brand-blue">d&apos;Afrique de l&apos;Ouest</span>
+              <span style={{ color: "#00C97A" }}>d&apos;Afrique de l&apos;Ouest</span>
             </motion.h1>
 
-            <motion.p variants={fadeUp} className="text-sm sm:text-base md:text-lg text-brand-gray leading-relaxed max-w-2xl">
+            <motion.p variants={fadeUp} className="text-sm sm:text-base md:text-lg text-[#8A9BB5] leading-relaxed max-w-2xl">
               N360 Agency est la première agence d&apos;intelligence numérique intégrée
               d&apos;Afrique de l&apos;Ouest. Basée à Dakar Plateau, au Sénégal, elle regroupe sous un
               même toit huit pôles d&apos;expertise complémentaires : cybersécurité,
@@ -85,7 +86,7 @@ export default function AProposClient({
               audiovisuelle, développement informatique et transformation digitale.
             </motion.p>
 
-            <motion.p variants={fadeUp} className="text-brand-gray leading-relaxed max-w-2xl">
+            <motion.p variants={fadeUp} className="text-[#8A9BB5] leading-relaxed max-w-2xl">
               Fondée par une équipe de consultants et d&apos;experts numériques sénégalais,
               N360 Agency répond à un constat simple : les entreprises, institutions et
               personnalités d&apos;Afrique de l&apos;Ouest ont besoin d&apos;un partenaire numérique complet,
@@ -95,12 +96,12 @@ export default function AProposClient({
 
             <motion.div
               variants={fadeUp}
-              className="mt-4 bg-brand-navy rounded-2xl px-8 py-6 border-l-4 border-brand-blue max-w-2xl"
+              className="mt-4 bg-[#0D1B2A] rounded-2xl px-8 py-6 border-l-4 border-brand-blue max-w-2xl"
             >
-              <p className="text-xs text-brand-blue font-semibold uppercase tracking-widest mb-2">
+              <p className="text-xs text-[#1A7A4A] font-semibold uppercase tracking-widest mb-2">
                 Notre positionnement unique
               </p>
-              <p className="text-foreground leading-relaxed">
+              <p className="text-white leading-relaxed">
                 N360 Agency est le <strong>seul acteur en Afrique de l&apos;Ouest</strong> à combiner
                 cybersécurité opérationnelle (Audit SI, SOC, Forensic), renseignement numérique
                 (OSINT), viralisation digitale et production audiovisuelle sous une même structure.{" "}
@@ -111,7 +112,7 @@ export default function AProposClient({
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-brand-navy">
+      <section className="py-20 px-6 bg-[#0D1B2A]">
         <div className="max-w-5xl mx-auto">
           <motion.div
             variants={fadeUp}
@@ -120,8 +121,8 @@ export default function AProposClient({
             viewport={{ once: true, margin: "-80px" }}
             className="text-center mb-14"
           >
-            <p className="text-xs text-brand-gray uppercase tracking-[0.15em] mb-3">Mission & Vision</p>
-            <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight">
+            <p className="text-xs text-[#8A9BB5] uppercase tracking-[0.15em] mb-3">Mission & Vision</p>
+            <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight text-white">
               Notre mission & vision
             </h2>
           </motion.div>
@@ -132,22 +133,22 @@ export default function AProposClient({
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
-              className="bg-background rounded-2xl p-8 border border-brand-blue/20"
+              className="bg-[#060D18] rounded-2xl p-8 border border-[#1A7A4A]/20"
             >
-              <span className="text-brand-blue font-bold text-sm uppercase tracking-widest block mb-4">
+              <span className="text-[#1A7A4A] font-bold text-sm uppercase tracking-widest block mb-4">
                 Notre mission
               </span>
-              <p className="text-foreground leading-relaxed mb-4">
+              <p className="text-white leading-relaxed mb-4">
                 Accompagner les entreprises, institutions et personnalités dans la maîtrise totale
                 de leur présence numérique — en les protégeant des cybermenaces, en valorisant leur
                 image et en amplifiant leur impact digital.
               </p>
-              <p className="text-brand-gray text-sm leading-relaxed mb-4">
+              <p className="text-[#8A9BB5] text-sm leading-relaxed mb-4">
                 Nous intervenons sur l&apos;ensemble du spectre numérique : de l&apos;audit de sécurité
                 informatique à la production de contenus viraux, de la surveillance de la réputation
                 en ligne à la mise en place de systèmes de vidéosurveillance.
               </p>
-              <p className="text-brand-gray text-sm leading-relaxed">
+              <p className="text-[#8A9BB5] text-sm leading-relaxed">
                 Notre force est cette vision intégrée que peu d&apos;acteurs au monde, et aucun en
                 Afrique de l&apos;Ouest, sont capables d&apos;offrir.
               </p>
@@ -158,7 +159,7 @@ export default function AProposClient({
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
-              className="bg-brand-blue rounded-2xl p-8"
+              className="bg-[#1A7A4A] rounded-2xl p-8"
             >
               <span className="text-white/70 font-bold text-sm uppercase tracking-widest block mb-4">
                 Notre vision
@@ -174,7 +175,7 @@ export default function AProposClient({
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-background">
+      <section className="py-20 px-6 bg-[#060D18]">
         <div className="max-w-5xl mx-auto">
           <motion.div
             variants={fadeUp}
@@ -183,8 +184,8 @@ export default function AProposClient({
             viewport={{ once: true, margin: "-80px" }}
             className="text-center mb-14"
           >
-            <p className="text-xs text-brand-gray uppercase tracking-[0.15em] mb-3">Nos valeurs fondatrices</p>
-            <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight">
+            <p className="text-xs text-[#8A9BB5] uppercase tracking-[0.15em] mb-3">Nos valeurs fondatrices</p>
+            <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight text-white">
               Ce en quoi nous croyons
             </h2>
           </motion.div>
@@ -202,15 +203,15 @@ export default function AProposClient({
                 <motion.div
                   key={valeur.titre}
                   variants={fadeUp}
-                  className="group bg-brand-navy hover:bg-background border border-transparent hover:border-brand-blue/20 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                  className="group bg-[#0D1B2A] hover:bg-[#060D18] border border-transparent hover:border-[#1A7A4A]/20 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-brand-blue-light flex items-center justify-center mb-4">
-                    <Icon size={18} className="text-brand-blue" />
+                  <div className="w-10 h-10 rounded-xl bg-[#1A7A4A]/20 flex items-center justify-center mb-4">
+                    <Icon size={18} className="text-[#1A7A4A]" />
                   </div>
-                  <h3 className="font-[family-name:var(--font-heading)] font-bold text-base mb-2 text-foreground">
+                  <h3 className="font-[family-name:var(--font-heading)] font-bold text-base mb-2 text-white">
                     {valeur.titre}
                   </h3>
-                  <p className="text-brand-gray text-sm leading-relaxed">{valeur.description}</p>
+                  <p className="text-[#8A9BB5] text-sm leading-relaxed">{valeur.description}</p>
                 </motion.div>
               )
             })}
@@ -218,7 +219,7 @@ export default function AProposClient({
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-foreground text-white">
+      <section className="py-20 px-6 bg-[#0D1B2A]">
         <div className="max-w-5xl mx-auto">
           <motion.div
             variants={fadeUp}
@@ -227,9 +228,9 @@ export default function AProposClient({
             viewport={{ once: true, margin: "-80px" }}
             className="text-center mb-14"
           >
-            <p className="text-xs text-white/50 uppercase tracking-[0.15em] mb-3">Le contexte</p>
-            <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight">
-              Pourquoi N360 Agency ?
+            <p className="text-xs text-[#00C97A] font-mono-brand uppercase tracking-[0.15em] mb-3">Le contexte</p>
+            <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight text-white">
+              Pourquoi <BrandName suffix=" Agency" /> ?
             </h2>
           </motion.div>
 
@@ -244,7 +245,7 @@ export default function AProposClient({
               <h3 className="font-[family-name:var(--font-heading)] font-bold text-lg text-white mb-3">
                 Un marché en mutation rapide
               </h3>
-              <p className="text-white/70 leading-relaxed max-w-3xl">
+              <p className="text-[#8A9BB5] leading-relaxed max-w-3xl">
                 L&apos;Afrique de l&apos;Ouest vit une transformation numérique accélérée. En 2025, le Sénégal
                 compte plus de 11 millions d&apos;utilisateurs d&apos;internet et plus de 8 millions
                 d&apos;abonnés aux réseaux sociaux. Cette digitalisation massive crée des opportunités
@@ -270,13 +271,13 @@ export default function AProposClient({
               <motion.div
                 key={stat.val + stat.source}
                 variants={fadeUp}
-                className="bg-background/5 border border-white/10 rounded-2xl p-6 hover:bg-background/10 transition-all duration-300"
+                className="bg-[#060D18] border border-[#1A7A4A]/20 rounded-2xl p-6 hover:border-[#1A7A4A]/40 transition-all duration-300"
               >
-                <span className="font-[family-name:var(--font-heading)] font-black text-3xl text-brand-blue block mb-2">
+                <span className="font-[family-name:var(--font-heading)] font-black text-3xl text-[#00C97A] block mb-2">
                   {stat.val}
                 </span>
-                <p className="text-white/80 text-sm leading-snug mb-3">{stat.label}</p>
-                <p className="text-white/30 text-xs italic">{stat.source}</p>
+                <p className="text-white text-sm leading-snug mb-3">{stat.label}</p>
+                <p className="text-[#8A9BB5] text-xs italic">{stat.source}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -292,7 +293,7 @@ export default function AProposClient({
               <h3 className="font-[family-name:var(--font-heading)] font-bold text-lg text-white mb-3">
                 Une réputation numérique non maîtrisée
               </h3>
-              <p className="text-white/70 leading-relaxed max-w-3xl">
+              <p className="text-[#8A9BB5] leading-relaxed max-w-3xl">
                 Parallèlement à la cybersécurité, la réputation digitale est devenue un enjeu
                 stratégique majeur. En 2025, une crise e-réputation peut détruire des années de
                 construction de marque en 48 heures. Les personnalités politiques, les dirigeants
@@ -305,7 +306,7 @@ export default function AProposClient({
               <h3 className="font-[family-name:var(--font-heading)] font-bold text-lg text-white mb-3">
                 Un écosystème numérique local sous-équipé
               </h3>
-              <p className="text-white/70 leading-relaxed max-w-3xl">
+              <p className="text-[#8A9BB5] leading-relaxed max-w-3xl">
                 Face à ces enjeux, l&apos;offre locale est insuffisante. Les agences digitales
                 classiques ne maîtrisent pas la cybersécurité. Les cabinets de conseil IT ne font
                 pas de viralisation. Les agences de communication ne font pas d&apos;OSINT.
@@ -313,11 +314,11 @@ export default function AProposClient({
               </p>
             </div>
 
-            <div className="bg-background/5 border border-white/10 rounded-2xl px-8 py-6 border-l-4 border-brand-blue">
-              <p className="text-xs text-brand-blue font-semibold uppercase tracking-widest mb-2">
+            <div className="bg-[#060D18] border border-[#1A7A4A]/30 border-l-4 border-l-[#00C97A] rounded-2xl px-8 py-6">
+              <p className="text-xs text-[#00C97A] font-mono-brand font-semibold uppercase tracking-widest mb-2">
                 Notre avantage compétitif
               </p>
-              <p className="text-white/80 leading-relaxed">
+              <p className="text-white leading-relaxed">
                 N360 Agency est le seul acteur local à proposer une approche de bout en bout :
                 identifier les menaces (OSINT) → évaluer les vulnérabilités (Audit SI) → surveiller
                 en continu (SOC) → corriger et protéger (Sécurisation) → amplifier et valoriser
@@ -329,7 +330,7 @@ export default function AProposClient({
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-background">
+      <section className="py-20 px-6 bg-[#060D18]">
         <div className="max-w-5xl mx-auto">
           <motion.div
             variants={fadeUp}
@@ -338,11 +339,11 @@ export default function AProposClient({
             viewport={{ once: true, margin: "-80px" }}
             className="text-center mb-14"
           >
-            <p className="text-xs text-brand-gray uppercase tracking-[0.15em] mb-3">Nos clients</p>
-            <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight">
+            <p className="text-xs text-[#8A9BB5] uppercase tracking-[0.15em] mb-3">Nos clients</p>
+            <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight text-white">
               Secteurs d&apos;intervention
             </h2>
-            <p className="text-brand-gray mt-4 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-[#8A9BB5] mt-4 max-w-2xl mx-auto leading-relaxed">
               N360 Agency intervient auprès d&apos;une clientèle diversifiée, couvrant l&apos;ensemble
               des secteurs économiques et institutionnels d&apos;Afrique de l&apos;Ouest. Notre positionnement
               hybride (cybersécurité + digital + production) nous permet d&apos;adresser des besoins très
@@ -361,23 +362,23 @@ export default function AProposClient({
               <motion.div
                 key={seg.segment}
                 variants={fadeUp}
-                className="bg-brand-navy border border-transparent hover:border-brand-blue/20 rounded-2xl p-6 transition-all duration-300 hover:shadow-md"
+                className="bg-[#0D1B2A] border border-transparent hover:border-[#1A7A4A]/20 rounded-2xl p-6 transition-all duration-300 hover:shadow-md"
               >
-                <h3 className="font-[family-name:var(--font-heading)] font-bold text-base text-foreground mb-3">
+                <h3 className="font-[family-name:var(--font-heading)] font-bold text-base text-white mb-3">
                   {seg.segment}
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
                   <div>
-                    <p className="text-[10px] text-brand-gray uppercase tracking-widest mb-1">Exemples au Sénégal</p>
-                    <p className="text-foreground">{seg.exemples}</p>
+                    <p className="text-[10px] text-[#8A9BB5] uppercase tracking-widest mb-1">Exemples au Sénégal</p>
+                    <p className="text-white">{seg.exemples}</p>
                   </div>
                   <div>
-                    <p className="text-[10px] text-brand-gray uppercase tracking-widest mb-1">Besoins principaux</p>
-                    <p className="text-brand-gray">{seg.besoins}</p>
+                    <p className="text-[10px] text-[#8A9BB5] uppercase tracking-widest mb-1">Besoins principaux</p>
+                    <p className="text-[#8A9BB5]">{seg.besoins}</p>
                   </div>
                   <div>
-                    <p className="text-[10px] text-brand-gray uppercase tracking-widest mb-1">Pôles mobilisés</p>
-                    <p className="text-brand-blue font-medium">{seg.poles}</p>
+                    <p className="text-[10px] text-[#8A9BB5] uppercase tracking-widest mb-1">Pôles mobilisés</p>
+                    <p className="text-[#1A7A4A] font-medium">{seg.poles}</p>
                   </div>
                 </div>
               </motion.div>
@@ -391,13 +392,13 @@ export default function AProposClient({
             viewport={{ once: true, margin: "-60px" }}
             className="mt-14"
           >
-            <h3 className="font-[family-name:var(--font-heading)] font-bold text-xl text-foreground mb-6">
+            <h3 className="font-[family-name:var(--font-heading)] font-bold text-xl text-white mb-6">
               Notre zone géographique d&apos;intervention
             </h3>
             <ul className="flex flex-col gap-3">
               {zones.map((zone) => (
-                <li key={zone} className="flex items-start gap-3 text-sm text-brand-gray">
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-blue mt-2 flex-shrink-0" />
+                <li key={zone} className="flex items-start gap-3 text-sm text-[#8A9BB5]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1A7A4A] mt-2 flex-shrink-0" />
                   {zone}
                 </li>
               ))}
@@ -406,7 +407,7 @@ export default function AProposClient({
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-brand-navy">
+      <section className="py-20 px-6 bg-[#0D1B2A]">
         <div className="max-w-5xl mx-auto">
           <motion.div
             variants={fadeUp}
@@ -415,8 +416,8 @@ export default function AProposClient({
             viewport={{ once: true, margin: "-80px" }}
             className="text-center mb-14"
           >
-            <p className="text-xs text-brand-gray uppercase tracking-[0.15em] mb-3">Différenciation</p>
-            <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight">
+            <p className="text-xs text-[#8A9BB5] uppercase tracking-[0.15em] mb-3">Différenciation</p>
+            <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight text-white">
               Ce qui nous différencie de la concurrence
             </h2>
           </motion.div>
@@ -426,24 +427,24 @@ export default function AProposClient({
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
-            className="overflow-x-auto rounded-2xl border border-brand-blue/20 bg-background"
+            className="overflow-x-auto rounded-2xl border border-[#1A7A4A]/20 bg-[#060D18]"
           >
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-brand-blue/20 bg-brand-navy">
-                  <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-foreground">Critère</th>
-                  <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-brand-blue">N360 Agency</th>
-                  <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-foreground">Agences digitales classiques</th>
-                  <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-foreground">Cabinets IT locaux</th>
+                <tr className="border-b border-[#1A7A4A]/20 bg-[#0D1B2A]">
+                  <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-white">Critère</th>
+                  <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-[#1A7A4A]">N360 Agency</th>
+                  <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-white">Agences digitales classiques</th>
+                  <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-white">Cabinets IT locaux</th>
                 </tr>
               </thead>
               <tbody>
                 {comparaison.map((row, i) => (
-                  <tr key={row.critere} className={i % 2 === 0 ? "bg-background" : "bg-brand-navy/50"}>
-                    <td className="p-4 font-medium text-foreground">{row.critere}</td>
-                    <td className="p-4 text-brand-blue font-medium">{row.n360}</td>
-                    <td className="p-4 text-brand-gray">{row.agences}</td>
-                    <td className="p-4 text-brand-gray">{row.cabinets}</td>
+                  <tr key={row.critere} className={i % 2 === 0 ? "bg-[#060D18]" : "bg-[#0D1B2A]/50"}>
+                    <td className="p-4 font-medium text-white">{row.critere}</td>
+                    <td className="p-4 text-[#1A7A4A] font-medium">{row.n360}</td>
+                    <td className="p-4 text-[#8A9BB5]">{row.agences}</td>
+                    <td className="p-4 text-[#8A9BB5]">{row.cabinets}</td>
                   </tr>
                 ))}
               </tbody>
@@ -452,7 +453,7 @@ export default function AProposClient({
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-background">
+      <section className="py-20 px-6 bg-[#060D18]">
         <div className="max-w-5xl mx-auto">
           <motion.div
             variants={fadeUp}
@@ -461,11 +462,11 @@ export default function AProposClient({
             viewport={{ once: true, margin: "-80px" }}
             className="mb-10"
           >
-            <p className="text-xs text-brand-gray uppercase tracking-[0.15em] mb-3">Notre équipe</p>
-            <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight mb-4">
+            <p className="text-xs text-[#8A9BB5] uppercase tracking-[0.15em] mb-3">Notre équipe</p>
+            <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight text-white mb-4">
               Des experts sénégalais du numérique
             </h2>
-            <p className="text-brand-gray leading-relaxed max-w-2xl">
+            <p className="text-[#8A9BB5] leading-relaxed max-w-2xl">
               N360 Agency est portée par une équipe fondatrice de professionnels sénégalais du
               numérique, secondée par des collaborateurs experts répartis sur les 8 pôles. Notre
               philosophie RH : recruter les meilleurs talents locaux, les former aux standards
@@ -479,7 +480,7 @@ export default function AProposClient({
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
           >
-            <h3 className="font-[family-name:var(--font-heading)] font-bold text-lg text-foreground mb-6">
+            <h3 className="font-[family-name:var(--font-heading)] font-bold text-lg text-white mb-6">
               Notre philosophie RH
             </h3>
             <ul className="flex flex-col gap-4">
@@ -487,9 +488,9 @@ export default function AProposClient({
                 <motion.li
                   key={item}
                   variants={fadeUp}
-                  className="flex items-start gap-3 bg-brand-navy rounded-xl p-5 text-sm text-brand-gray leading-relaxed"
+                  className="flex items-start gap-3 bg-[#0D1B2A] rounded-xl p-5 text-sm text-[#8A9BB5] leading-relaxed"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-blue mt-2 flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1A7A4A] mt-2 flex-shrink-0" />
                   {item}
                 </motion.li>
               ))}
@@ -498,7 +499,7 @@ export default function AProposClient({
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-brand-navy">
+      <section className="py-20 px-6 bg-[#0D1B2A]">
         <div className="max-w-5xl mx-auto">
           <motion.div
             variants={fadeUp}
@@ -507,11 +508,11 @@ export default function AProposClient({
             viewport={{ once: true, margin: "-80px" }}
             className="text-center mb-14"
           >
-            <p className="text-xs text-brand-gray uppercase tracking-[0.15em] mb-3">Notre approche</p>
-            <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight">
+            <p className="text-xs text-[#8A9BB5] uppercase tracking-[0.15em] mb-3">Notre approche</p>
+            <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight text-white">
               Méthode de travail
             </h2>
-            <p className="text-brand-gray mt-4 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-[#8A9BB5] mt-4 max-w-2xl mx-auto leading-relaxed">
               N360 Agency s&apos;appuie sur une méthodologie structurée qui garantit la qualité, la
               traçabilité et la pertinence de chaque intervention. Notre cycle en 5 étapes est
               appliqué à toutes nos missions, quelle que soit leur nature.
@@ -534,27 +535,27 @@ export default function AProposClient({
                   variants={fadeUp}
                   className="group relative md:pl-16 hover:-translate-y-0.5 transition-transform duration-200"
                 >
-                  <div className="absolute left-0 top-5 w-12 h-12 rounded-full bg-brand-blue-light border-4 border-white flex items-center justify-center hidden md:flex">
-                    <span className="font-[family-name:var(--font-heading)] font-black text-xs text-brand-blue">
+                  <div className="absolute left-0 top-5 w-12 h-12 rounded-full bg-[#1A7A4A]/20 border-4 border-[#060D18] flex items-center justify-center hidden md:flex">
+                    <span className="font-[family-name:var(--font-heading)] font-black text-xs text-[#1A7A4A]">
                       {etape.num}
                     </span>
                   </div>
 
-                  <div className="bg-background group-hover:shadow-md border border-transparent group-hover:border-brand-blue/20 rounded-2xl p-6 transition-all duration-300">
+                  <div className="bg-[#060D18] group-hover:shadow-md border border-transparent group-hover:border-[#1A7A4A]/20 rounded-2xl p-6 transition-all duration-300">
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-3">
-                        <span className="md:hidden font-[family-name:var(--font-heading)] font-black text-xs text-brand-blue bg-brand-blue-light px-2 py-1 rounded-lg">
+                        <span className="md:hidden font-[family-name:var(--font-heading)] font-black text-xs text-[#1A7A4A] bg-[#1A7A4A]/20 px-2 py-1 rounded-lg">
                           {etape.num}
                         </span>
-                        <h3 className="font-[family-name:var(--font-heading)] font-bold text-base text-foreground uppercase tracking-wide">
+                        <h3 className="font-[family-name:var(--font-heading)] font-bold text-base text-white uppercase tracking-wide">
                           {etape.phase}
                         </h3>
                       </div>
-                      <span className="text-xs text-brand-gray bg-brand-navy border border-brand-blue/20 px-3 py-1 rounded-full">
+                      <span className="text-xs text-[#8A9BB5] bg-[#0D1B2A] border border-[#1A7A4A]/20 px-3 py-1 rounded-full">
                         {etape.duree}
                       </span>
                     </div>
-                    <p className="text-brand-gray text-sm leading-relaxed">{etape.contenu}</p>
+                    <p className="text-[#8A9BB5] text-sm leading-relaxed">{etape.contenu}</p>
                   </div>
                 </motion.div>
               ))}
@@ -563,7 +564,7 @@ export default function AProposClient({
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-background">
+      <section className="py-20 px-6 bg-[#060D18]">
         <div className="max-w-5xl mx-auto">
           <motion.div
             variants={fadeUp}
@@ -572,8 +573,8 @@ export default function AProposClient({
             viewport={{ once: true, margin: "-80px" }}
             className="text-center mb-14"
           >
-            <p className="text-xs text-brand-gray uppercase tracking-[0.15em] mb-3">Engagements qualité</p>
-            <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight">
+            <p className="text-xs text-[#8A9BB5] uppercase tracking-[0.15em] mb-3">Engagements qualité</p>
+            <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight text-white">
               Nos engagements qualité
             </h2>
           </motion.div>
@@ -589,14 +590,14 @@ export default function AProposClient({
               <motion.div
                 key={eng.label}
                 variants={fadeUp}
-                className="bg-brand-navy border border-brand-blue/20 rounded-2xl p-6 flex items-start gap-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                className="bg-[#0D1B2A] border border-[#1A7A4A]/20 rounded-2xl p-6 flex items-start gap-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
               >
-                <div className="w-2 h-2 rounded-full bg-brand-blue mt-2 flex-shrink-0" />
+                <div className="w-2 h-2 rounded-full bg-[#1A7A4A] mt-2 flex-shrink-0" />
                 <div>
-                  <h3 className="font-[family-name:var(--font-heading)] font-bold text-sm text-foreground mb-1">
+                  <h3 className="font-[family-name:var(--font-heading)] font-bold text-sm text-white mb-1">
                     {eng.label}
                   </h3>
-                  <p className="text-brand-gray text-sm leading-relaxed">{eng.detail}</p>
+                  <p className="text-[#8A9BB5] text-sm leading-relaxed">{eng.detail}</p>
                 </div>
               </motion.div>
             ))}
@@ -604,15 +605,15 @@ export default function AProposClient({
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-brand-navy">
+      <section className="py-16 px-6 bg-[#0D1B2A]">
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="max-w-4xl mx-auto bg-brand-blue rounded-3xl px-10 py-14 text-center text-white"
+          className="max-w-4xl mx-auto bg-[#00C97A] rounded-3xl px-10 py-14 text-center text-white"
         >
-          <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight mb-4">
+          <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl md:text-4xl tracking-tight text-white mb-4">
             Prêt à travailler avec nous ?
           </h2>
           <p className="text-white/70 mb-8 max-w-xl mx-auto leading-relaxed">
@@ -623,14 +624,14 @@ export default function AProposClient({
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href="/devis"
-              className="group inline-flex items-center gap-2 bg-background text-brand-blue font-medium text-sm px-7 py-3.5 rounded-full hover:bg-background/90 transition-all duration-200 hover:scale-105 active:scale-95"
+              className="group inline-flex items-center gap-2 bg-white text-[#060D18] font-medium text-sm px-7 py-3.5 rounded-full hover:bg-white/90 transition-all duration-200 hover:scale-105 active:scale-95"
             >
               Demander un devis
               <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 text-white border border-white/30 hover:border-white/60 text-sm px-7 py-3.5 rounded-full transition-all duration-200"
+              className="inline-flex items-center gap-2 text-white border border-white/50 hover:border-white hover:bg-white/10 text-sm px-7 py-3.5 rounded-full transition-all duration-200"
             >
               Nous contacter
             </Link>

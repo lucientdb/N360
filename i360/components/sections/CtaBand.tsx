@@ -1,5 +1,6 @@
 "use client"
 
+import BrandName from "@/components/ui/BrandName"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { type Variants } from "framer-motion"
@@ -32,27 +33,27 @@ const itemVariants: Variants = {
 
 export default function CtaBand() {
   return (
-    <section className="py-16 px-6 bg-background">
+    <section className="py-16 px-6 bg-[#060D18]">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
-        className="relative max-w-6xl mx-auto bg-brand-navy border border-brand-blue/20 rounded-3xl px-6 sm:px-8 md:px-10 py-12 sm:py-14 md:py-16 overflow-hidden"
+        className="relative max-w-6xl mx-auto bg-[#0D1B2A] border border-[#1A7A4A]/20 rounded-3xl px-6 sm:px-8 md:px-10 py-12 sm:py-14 md:py-16 overflow-hidden"
       >
         <div className="absolute -top-24 -right-24 w-72 h-72 bg-brand-blue rounded-full blur-3xl opacity-10 pointer-events-none" />
         <div className="absolute -bottom-16 -left-16 w-56 h-56 bg-brand-blue-vif rounded-full blur-3xl opacity-5 pointer-events-none" />
 
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10">
           <motion.div variants={itemVariants} className="text-center md:text-left max-w-xl">
-            <p className="text-xs text-brand-blue-vif font-mono-brand uppercase tracking-[0.15em] font-medium mb-3">
+            <p className="text-xs text-[#00C97A] font-mono-brand uppercase tracking-[0.15em] font-medium mb-3">
               Passons à l&apos;action
             </p>
-            <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl sm:text-3xl md:text-4xl tracking-tight text-foreground leading-snug">
+            <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl sm:text-3xl md:text-4xl tracking-tight text-white leading-snug">
               Prêt à passer à la{" "}
-              <span className="text-brand-blue-vif">vitesse supérieure</span>&nbsp;?
+              <span className="text-[#00C97A]">vitesse supérieure</span>&nbsp;?
             </h2>
-            <p className="mt-4 text-brand-gray text-sm leading-relaxed">
+            <p className="mt-4 text-white/60 text-sm leading-relaxed">
               N360 Agency est le seul acteur en Afrique de l&apos;Ouest à combiner
               cybersécurité opérationnelle, OSINT, viralisation et production audiovisuelle.
               Premier échange offert, sans engagement.
@@ -70,7 +71,7 @@ export default function CtaBand() {
             >
               <Link
                 href="/devis"
-                className="group inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-blue-hover text-white text-sm font-medium px-7 py-3.5 rounded-full transition-colors duration-200"
+                className="group inline-flex items-center gap-2 bg-[#00C97A] hover:bg-[#00b36d] text-[#060D18] text-sm font-semibold px-7 py-3.5 rounded-full transition-colors duration-200"
               >
                 Demander un devis
                 <ArrowRight
@@ -89,7 +90,7 @@ export default function CtaBand() {
                 href="https://wa.me/221776872222"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-white border border-border hover:border-foreground/20 text-foreground text-sm font-medium px-7 py-3.5 rounded-full transition-all duration-200"
+                className="inline-flex items-center gap-2 bg-white/10 border border-white/20 hover:bg-white/20 text-white text-sm font-medium px-7 py-3.5 rounded-full transition-all duration-200"
               >
                 <MessageCircle size={15} className="text-green-500" />
                 WhatsApp
@@ -100,7 +101,7 @@ export default function CtaBand() {
 
         <motion.div
           variants={itemVariants}
-          className="relative z-10 mt-12 pt-10 border-t border-brand-blue/20 grid grid-cols-2 md:grid-cols-4 gap-6"
+          className="relative z-10 mt-12 pt-10 border-t border-[#1A7A4A]/20 grid grid-cols-2 md:grid-cols-4 gap-6"
         >
           {[
             { val: "NDA", label: "Signé avant toute mission" },
@@ -109,7 +110,7 @@ export default function CtaBand() {
             { val: "24/7", label: "Disponibilité SOC" },
           ].map((item) => (
             <div key={item.label} className="text-center">
-              <p className="font-[family-name:var(--font-heading)] font-bold text-xl text-brand-blue-vif">
+              <p className="font-[family-name:var(--font-heading)] font-bold text-xl text-white">
                 {item.val}
               </p>
               <p className="text-xs text-brand-gray mt-1 font-mono-brand">{item.label}</p>

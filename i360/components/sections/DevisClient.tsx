@@ -127,7 +127,7 @@ export default function DevisClient() {
 
   if (sent) {
     return (
-      <section className="min-h-screen flex items-center justify-center px-6 bg-background pt-16">
+      <section className="min-h-screen flex items-center justify-center px-6 bg-[#060D18] pt-16">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -137,25 +137,25 @@ export default function DevisClient() {
           <div className="w-16 sm:w-20 h-16 sm:h-20 rounded-full bg-green-100 flex items-center justify-center">
             <CheckCircle size={40} className="text-green-500" />
           </div>
-          <h1 className="font-[family-name:var(--font-heading)] font-black text-2xl sm:text-3xl text-foreground">
+          <h1 className="font-[family-name:var(--font-heading)] font-black text-2xl sm:text-3xl text-white">
             Demande reçue !
           </h1>
           <p className="text-brand-gray text-sm leading-relaxed">
             Merci <strong>{form.name}</strong>. Nos experts analysent votre demande
             et vous répondront sous 24h avec une proposition personnalisée.
           </p>
-          <div className="w-full p-5 rounded-2xl bg-brand-navy border border-brand-blue/20 text-left">
+          <div className="w-full p-5 rounded-2xl bg-[#0D1B2A] border border-[#1A7A4A]/20 text-left">
             <p className="text-xs text-brand-gray uppercase tracking-widest mb-3">
               Récapitulatif
             </p>
-            <p className="text-sm text-foreground mb-1">
+            <p className="text-sm text-white mb-1">
               <span className="text-brand-gray">Pôles :</span>{" "}
               {form.poles.join(", ")}
             </p>
-            <p className="text-sm text-foreground mb-1">
+            <p className="text-sm text-white mb-1">
               <span className="text-brand-gray">Budget :</span> {form.budget}
             </p>
-            <p className="text-sm text-foreground">
+            <p className="text-sm text-white">
               <span className="text-brand-gray">Délai :</span> {form.delai}
             </p>
           </div>
@@ -165,13 +165,13 @@ export default function DevisClient() {
   }
 
   return (
-    <section className="min-h-screen pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-20 md:pb-24 px-6 bg-background">
+    <section className="min-h-screen pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-20 md:pb-24 px-6 bg-[#060D18]">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-10 sm:mb-12">
           <p className="text-xs text-brand-blue uppercase tracking-[0.15em] font-medium mb-3">
             Gratuit &amp; sans engagement
           </p>
-          <h1 className="font-[family-name:var(--font-heading)] font-black text-3xl sm:text-4xl md:text-5xl tracking-tight text-foreground mb-4">
+          <h1 className="font-[family-name:var(--font-heading)] font-black text-3xl sm:text-4xl md:text-5xl tracking-tight text-white mb-4">
             Demander un devis
           </h1>
           <p className="text-brand-gray text-sm leading-relaxed max-w-md mx-auto">
@@ -190,7 +190,7 @@ export default function DevisClient() {
                       ? "bg-brand-blue text-white"
                       : i === step
                       ? "bg-brand-blue text-white ring-4 ring-brand-blue-light"
-                      : "bg-brand-navy text-brand-gray border border-brand-blue/20"
+                      : "bg-[#0D1B2A] text-brand-gray border border-[#1A7A4A]/20"
                   }`}
                 >
                   {i < step ? <CheckCircle size={14} /> : i + 1}
@@ -214,7 +214,7 @@ export default function DevisClient() {
           ))}
         </div>
 
-        <div className="rounded-2xl border border-brand-blue/20 bg-background shadow-sm overflow-hidden">
+        <div className="rounded-2xl border border-[#1A7A4A]/20 bg-[#060D18] shadow-sm overflow-hidden">
           <AnimatePresence mode="wait">
             {step === 0 && (
               <motion.div
@@ -225,7 +225,7 @@ export default function DevisClient() {
                 exit="exit"
                 className="p-8"
               >
-                <h2 className="font-[family-name:var(--font-heading)] font-bold text-xl text-foreground mb-2">
+                <h2 className="font-[family-name:var(--font-heading)] font-bold text-xl text-white mb-2">
                   Quels pôles vous intéressent ?
                 </h2>
                 <p className="text-sm text-brand-gray mb-6">
@@ -241,8 +241,8 @@ export default function DevisClient() {
                         onClick={() => togglePole(pole.name)}
                         className={`flex items-center gap-3 p-4 rounded-xl border text-left transition-all duration-200 ${
                           selected
-                            ? "border-brand-blue bg-brand-blue-light"
-                            : "border-brand-blue/20 bg-background hover:border-foreground/20"
+                            ? "border-brand-blue bg-[#1A7A4A]/20"
+                            : "border-[#1A7A4A]/20 bg-[#060D18] hover:border-foreground/20"
                         }`}
                       >
                         <span
@@ -253,7 +253,7 @@ export default function DevisClient() {
                           <span className="text-[10px] text-brand-gray uppercase tracking-widest block">
                             Pôle {pole.num}
                           </span>
-                          <span className="text-sm font-medium text-foreground leading-snug">
+                          <span className="text-sm font-medium text-white leading-snug">
                             {pole.name}
                           </span>
                         </div>
@@ -280,7 +280,7 @@ export default function DevisClient() {
                 className="p-8 flex flex-col gap-8"
               >
                 <div>
-                  <h2 className="font-[family-name:var(--font-heading)] font-bold text-xl text-foreground mb-2">
+                  <h2 className="font-[family-name:var(--font-heading)] font-bold text-xl text-white mb-2">
                     Budget envisagé
                   </h2>
                   <p className="text-sm text-brand-gray mb-4">
@@ -294,8 +294,8 @@ export default function DevisClient() {
                         onClick={() => setForm((prev) => ({ ...prev, budget: b }))}
                         className={`flex items-center justify-between px-5 py-3.5 rounded-xl border text-sm transition-all duration-200 ${
                           form.budget === b
-                            ? "border-brand-blue bg-brand-blue-light text-brand-blue font-medium"
-                            : "border-brand-blue/20 bg-background hover:border-foreground/20 text-foreground"
+                            ? "border-brand-blue bg-[#1A7A4A]/20 text-brand-blue font-medium"
+                            : "border-[#1A7A4A]/20 bg-[#060D18] hover:border-foreground/20 text-white"
                         }`}
                       >
                         {b}
@@ -306,7 +306,7 @@ export default function DevisClient() {
                 </div>
 
                 <div>
-                  <h2 className="font-[family-name:var(--font-heading)] font-bold text-xl text-foreground mb-2">
+                  <h2 className="font-[family-name:var(--font-heading)] font-bold text-xl text-white mb-2">
                     Délai souhaité
                   </h2>
                   <div className="flex flex-col gap-2">
@@ -317,8 +317,8 @@ export default function DevisClient() {
                         onClick={() => setForm((prev) => ({ ...prev, delai: d }))}
                         className={`flex items-center justify-between px-5 py-3.5 rounded-xl border text-sm transition-all duration-200 ${
                           form.delai === d
-                            ? "border-brand-blue bg-brand-blue-light text-brand-blue font-medium"
-                            : "border-brand-blue/20 bg-background hover:border-foreground/20 text-foreground"
+                            ? "border-brand-blue bg-[#1A7A4A]/20 text-brand-blue font-medium"
+                            : "border-[#1A7A4A]/20 bg-[#060D18] hover:border-foreground/20 text-white"
                         }`}
                       >
                         {d}
@@ -340,7 +340,7 @@ export default function DevisClient() {
                 className="p-8 flex flex-col gap-5"
               >
                 <div>
-                  <h2 className="font-[family-name:var(--font-heading)] font-bold text-xl text-foreground mb-2">
+                  <h2 className="font-[family-name:var(--font-heading)] font-bold text-xl text-white mb-2">
                     Vos coordonnées
                   </h2>
                   <p className="text-sm text-brand-gray mb-6">
@@ -359,7 +359,7 @@ export default function DevisClient() {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="Modou Diop"
-                      className="w-full border border-brand-blue/20 rounded-xl px-4 py-3 text-sm bg-brand-navy text-foreground placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-blue transition-colors duration-200"
+                      className="w-full border border-[#1A7A4A]/20 rounded-xl px-4 py-3 text-sm bg-[#0D1B2A] text-white placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-blue transition-colors duration-200"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
@@ -372,7 +372,7 @@ export default function DevisClient() {
                       value={form.organisation}
                       onChange={handleChange}
                       placeholder="Nom de l'entreprise"
-                      className="w-full border border-brand-blue/20 rounded-xl px-4 py-3 text-sm bg-brand-navy text-foreground placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-blue transition-colors duration-200"
+                      className="w-full border border-[#1A7A4A]/20 rounded-xl px-4 py-3 text-sm bg-[#0D1B2A] text-white placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-blue transition-colors duration-200"
                     />
                   </div>
                 </div>
@@ -388,7 +388,7 @@ export default function DevisClient() {
                       value={form.email}
                       onChange={handleChange}
                       placeholder="diop@entreprise.com"
-                      className="w-full border border-brand-blue/20 rounded-xl px-4 py-3 text-sm bg-brand-navy text-foreground placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-blue transition-colors duration-200"
+                      className="w-full border border-[#1A7A4A]/20 rounded-xl px-4 py-3 text-sm bg-[#0D1B2A] text-white placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-blue transition-colors duration-200"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
@@ -401,7 +401,7 @@ export default function DevisClient() {
                       value={form.phone}
                       onChange={handleChange}
                       placeholder="+221 77 000 00 00"
-                      className="w-full border border-brand-blue/20 rounded-xl px-4 py-3 text-sm bg-brand-navy text-foreground placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-blue transition-colors duration-200"
+                      className="w-full border border-[#1A7A4A]/20 rounded-xl px-4 py-3 text-sm bg-[#0D1B2A] text-white placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-blue transition-colors duration-200"
                     />
                   </div>
                 </div>
@@ -418,7 +418,7 @@ export default function DevisClient() {
                 className="p-8 flex flex-col gap-5"
               >
                 <div>
-                  <h2 className="font-[family-name:var(--font-heading)] font-bold text-xl text-foreground mb-2">
+                  <h2 className="font-[family-name:var(--font-heading)] font-bold text-xl text-white mb-2">
                     Décrivez votre projet
                   </h2>
                   <p className="text-sm text-brand-gray mb-6">
@@ -431,7 +431,7 @@ export default function DevisClient() {
                   onChange={handleChange}
                   rows={7}
                   placeholder="Ex : Nous sommes une PME de 50 personnes dans le secteur financier. Nous avons récemment subi une tentative d'intrusion et souhaitons réaliser un audit de sécurité complet de notre SI..."
-                  className="w-full border border-brand-blue/20 rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-blue transition-colors duration-200 resize-none"
+                  className="w-full border border-[#1A7A4A]/20 rounded-xl px-4 py-3 text-sm text-white bg-[#0D1B2A] placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-blue transition-colors duration-200 resize-none"
                 />
                 <p className="text-[10px] text-brand-gray">
                   Minimum 20 caractères.{" "}
@@ -460,7 +460,7 @@ export default function DevisClient() {
               <button
                 type="button"
                 onClick={() => setStep((s) => s - 1)}
-                className="inline-flex items-center gap-2 text-sm text-brand-gray hover:text-foreground border border-brand-blue/20 px-5 py-2.5 rounded-full transition-all duration-200"
+                className="inline-flex items-center gap-2 text-sm text-brand-gray hover:text-white border border-[#1A7A4A]/20 px-5 py-2.5 rounded-full transition-all duration-200"
               >
                 <ArrowLeft size={14} />
                 Retour

@@ -31,15 +31,6 @@ export default function MentionsLegalesPage() {
               RCCM : En cours d'obtention<br />
             </p>
 
-            <h2>Hébergement</h2>
-            <p>
-              Ce site est hébergé par <strong>Hostinger International Ltd.</strong><br />
-              Domaine principal : <strong>www.numerique360agency.com</strong><br />
-              Sous-domaine newsletter : <strong>newsletters.numerique360agency.com</strong><br />
-              Adresse de l&apos;hébergeur : 61 Lordou Vironos Street, 6023 Larnaca, Chypre<br />
-              Site : <a href="https://www.hostinger.com" target="_blank" rel="noopener noreferrer">hostinger.com</a>
-            </p>
-
             <h2>Propriété intellectuelle</h2>
             <p>
               L&apos;ensemble du contenu de ce site (textes, images, vidéos, logos, graphismes)

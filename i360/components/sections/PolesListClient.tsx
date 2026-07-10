@@ -175,7 +175,7 @@ const cardVariants: Variants = {
 
 export default function PolesListClient() {
   return (
-    <section className="py-16 px-6 bg-background">
+    <section className="py-16 px-6 bg-[#060D18]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           variants={containerVariants}
@@ -187,68 +187,52 @@ export default function PolesListClient() {
             <motion.div key={pole.slug} variants={cardVariants}>
               <Link
                 href={`/poles/${pole.slug}`}
-                className="group flex flex-col h-full rounded-2xl border border-brand-blue/20 bg-background overflow-hidden hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1 transition-all duration-300"
+                className="group flex flex-col h-full rounded-2xl border border-[#1A7A4A]/20 bg-[#0D1B2A] overflow-hidden hover:shadow-xl hover:shadow-[#1A7A4A]/10 hover:-translate-y-1 transition-all duration-300"
               >
-                <div
-                  className="px-8 pt-8 pb-6 flex items-start gap-5"
-                  style={{ background: pole.bgColor }}
-                >
+                {/* Header de la carte — fond légèrement teinté */}
+                <div className="px-8 pt-8 pb-6 flex items-start gap-5 bg-[#0D1B2A] border-b border-[#1A7A4A]/10">
                   <span
-                    className="font-[family-name:var(--font-heading)] font-black text-5xl leading-none opacity-15 select-none"
-                    style={{ color: pole.color }}
+                    className="font-[family-name:var(--font-heading)] font-black text-5xl leading-none opacity-10 select-none text-[#00C97A]"
                   >
                     {pole.num}
                   </span>
                   <div>
-                    <span
-                      className="text-[10px] font-semibold tracking-[0.15em] uppercase block mb-1"
-                      style={{ color: pole.color }}
-                    >
+                    <span className="text-[10px] font-mono-brand font-semibold tracking-[0.15em] uppercase block mb-1 text-[#00C97A]">
                       Pôle {pole.num}
                     </span>
-                    <h2
-                      className="font-[family-name:var(--font-heading)] font-bold text-xl leading-snug text-foreground"
-                    >
+                    <h2 className="font-[family-name:var(--font-heading)] font-bold text-xl leading-snug text-white">
                       {pole.name}
                     </h2>
-                    <p className="text-sm text-brand-gray mt-1 italic">
+                    <p className="text-sm text-[#8A9BB5] mt-1 italic">
                       {pole.tagline}
                     </p>
                   </div>
                 </div>
 
+                {/* Corps */}
                 <div className="px-8 py-6 flex flex-col gap-5 flex-1">
-                  <p className="text-sm text-brand-gray leading-relaxed">
+                  <p className="text-sm text-[#8A9BB5] leading-relaxed">
                     {pole.description}
                   </p>
 
                   <ul className="flex flex-col gap-2">
                     {pole.services.map((service) => (
-                      <li
-                        key={service}
-                        className="flex items-start gap-2 text-sm text-foreground/80"
-                      >
-                        <span
-                          className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
-                          style={{ background: pole.color }}
-                        />
+                      <li key={service} className="flex items-start gap-2 text-sm text-white/80">
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 bg-[#1A7A4A]" />
                         {service}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="mt-auto pt-4 border-t border-brand-blue/20 flex items-center justify-between">
-                    <span
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold"
-                      style={{ color: pole.color }}
-                    >
+                  <div className="mt-auto pt-4 border-t border-[#1A7A4A]/20 flex items-center justify-between">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#00C97A]">
                       Voir le détail
                       <ArrowRight
                         size={13}
                         className="transition-transform duration-200 group-hover:translate-x-1"
                       />
                     </span>
-                    <span className="text-[10px] text-brand-gray uppercase tracking-widest">
+                    <span className="text-[10px] text-[#8A9BB5] uppercase tracking-widest font-mono-brand">
                       En savoir plus →
                     </span>
                   </div>

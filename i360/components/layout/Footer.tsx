@@ -109,7 +109,7 @@ export default function Footer() {
 
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block">
-              <Image src="/images/logo/fond_blanc.jpg" alt="n360 Logo" width={150} height={40} style={{ height: 'auto' }} className="h-10 w-auto object-contain" />
+              <Image src="/images/logo/fond_blanc.png" alt="n360 Logo" width={300} height={80} quality={100} style={{ height: 'auto' }} className="h-10 w-auto object-contain" />
             </Link>
             <p className="mt-4 text-sm text-white/50 leading-relaxed max-w-xs">
               Première agence d&apos;intelligence numérique intégrée d&apos;Afrique de
