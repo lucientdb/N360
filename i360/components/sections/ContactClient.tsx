@@ -35,8 +35,8 @@ const infos = [
   {
     icon: Mail,
     label: "Email",
-    value: "contact@n360agency.com",
-    href: "mailto:contact@n360agency.com",
+    value: "contact@numerique360agency.com",
+    href: "mailto:contact@numerique360agency.com",
   },
   {
     icon: Phone,

@@ -119,11 +119,11 @@ export default function Footer() {
 
             <div className="mt-6 flex flex-col gap-3">
               <a
-                href="mailto:contact@n360agency.com"
+                href="mailto:contact@numerique360agency.com"
                 className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-white transition-colors duration-200"
               >
                 <Mail size={14} />
-                contact@n360agency.com
+                contact@numerique360agency.com
               </a>
               <a
                 href="tel:+221776872222"
@@ -215,7 +215,7 @@ export default function Footer() {
             </p>
             <p className="text-sm text-white/50 leading-relaxed mb-4">
               Recevez nos analyses et insights sur la cybersécurité et le digital. Les
-              emails sont envoyés depuis newsletters.n360agency.com.
+              emails sont envoyés depuis newsletters.numerique360agency.com.
             </p>
             {status === "success" ? (
               <p className="text-sm text-green-400 font-medium bg-green-500/10 border border-green-500/20 rounded-xl p-3">

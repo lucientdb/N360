@@ -24,8 +24,8 @@ export default function MentionsLegalesPage() {
               <strong>N360 Agency</strong><br />
               Agence d&apos;intelligence numérique intégrée<br />
               Dakar Plateau, Sénégal<br />
-              Site web : <a href="https://www.n360agency.com" target="_blank" rel="noopener noreferrer">www.n360agency.com</a><br />
-              Email : contact@n360agency.com<br />
+              Site web : <a href="https://www.numerique360agency.com" target="_blank" rel="noopener noreferrer">www.numerique360agency.com</a><br />
+              Email : contact@numerique360agency.com<br />
               Téléphone : +221 77 687 22 22<br />
               Forme juridique : SARL (ou autre forme à compléter après immatriculation)<br />
               RCCM : à compléter après immatriculation<br />
@@ -34,8 +34,8 @@ export default function MentionsLegalesPage() {
             <h2>Hébergement</h2>
             <p>
               Ce site est hébergé par <strong>Hostinger International Ltd.</strong><br />
-              Domaine principal : <strong>www.n360agency.com</strong><br />
-              Sous-domaine newsletter : <strong>newsletters.n360agency.com</strong><br />
+              Domaine principal : <strong>www.numerique360agency.com</strong><br />
+              Sous-domaine newsletter : <strong>newsletters.numerique360agency.com</strong><br />
               Adresse de l&apos;hébergeur : 61 Lordou Vironos Street, 6023 Larnaca, Chypre<br />
               Site : <a href="https://www.hostinger.com" target="_blank" rel="noopener noreferrer">hostinger.com</a>
             </p>

@@ -23,7 +23,7 @@ export default function ConfidentialitePage() {
             <p>
               N360 Agency, dont le siège est situé à Dakar Plateau, Sénégal, est
               responsable du traitement de vos données personnelles collectées via ce site.
-              Contact DPO : contact@n360agency.com
+              Contact DPO : contact@numerique360agency.com
             </p>
 
             <h2>2. Données collectées</h2>
@@ -73,8 +73,8 @@ export default function ConfidentialitePage() {
             </p>
             <p>
               Prestataires actuellement prévus : Hostinger (hébergement web et DNS du domaine
-              n360agency.com) et Resend (envoi des emails transactionnels et gestion de
-              l&apos;audience newsletter sur le sous-domaine newsletters.n360agency.com).
+              numerique360agency.com) et Resend (envoi des emails transactionnels et gestion de
+              l&apos;audience newsletter sur le sous-domaine newsletters.numerique360agency.com).
             </p>
 
             <h2>7. Vos droits</h2>
@@ -91,7 +91,7 @@ export default function ConfidentialitePage() {
               <li>Droit d&apos;opposition au traitement</li>
             </ul>
             <p>
-              Pour exercer ces droits, contactez-nous à : contact@n360agency.com. Vous
+              Pour exercer ces droits, contactez-nous à : contact@numerique360agency.com. Vous
               disposez également du droit d&apos;introduire une réclamation auprès de la
               Commission de Protection des Données Personnelles (CDP) du Sénégal.
             </p>

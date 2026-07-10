@@ -5,7 +5,7 @@ import Footer from "@/components/layout/Footer"
 
 export const metadata: Metadata = {
   title: "Conditions Générales d'Utilisation",
-  description: "Conditions Générales d'Utilisation du site n360agency.com.",
+  description: "Conditions Générales d'Utilisation du site numerique360agency.com.",
 }
 
 export default function CguPage() {
@@ -24,7 +24,7 @@ export default function CguPage() {
             <p>
               Les présentes Conditions Générales d&apos;Utilisation (CGU) ont pour objet de
               définir les modalités d&apos;accès et d&apos;utilisation du site internet de N360 Agency
-              accessible à l&apos;adresse www.n360agency.com. Tout accès au site implique
+              accessible à l&apos;adresse www.numerique360agency.com. Tout accès au site implique
               l&apos;acceptation sans réserve des présentes CGU.
             </p>
 

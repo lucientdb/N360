@@ -1,10 +1,11 @@
 import { Resend } from "resend"
 import { NextResponse } from "next/server"
 
-const CONTACT_EMAIL = "contact@n360agency.com"
+const resend = new Resend(process.env.RESEND_API_KEY)
+
+const CONTACT_EMAIL = "contact@numerique360agency.com"
 
 export async function POST(req: Request) {
-  const resend = new Resend(process.env.RESEND_API_KEY)
   try {
     const body = await req.json()
     const { poles, budget, delai, name, organisation, email, phone, description } = body
@@ -67,7 +68,7 @@ export async function POST(req: Request) {
           </div>
 
           <p style="color: #888; font-size: 12px; margin-top: 32px;">
-            Demande reçue via le formulaire de devis de n360agency.com
+            Demande reçue via le formulaire de devis de numerique360agency.com
           </p>
         </div>
       `,
@@ -75,7 +76,7 @@ export async function POST(req: Request) {
 
     // Email de confirmation au client
     await resend.emails.send({
-      from: "N360 Agency <contact@n360agency.com>",
+      from: "N360 Agency <contact@numerique360agency.com>",
       to: email,
       subject: "Votre demande de devis a bien été reçue",
       html: `
@@ -93,7 +94,7 @@ export async function POST(req: Request) {
 
           <p>Pour toute question urgente, contactez-nous directement :</p>
           <ul>
-            <li>Email : <a href="mailto:contact@n360agency.com">contact@n360agency.com</a></li>
+            <li>Email : <a href="mailto:contact@numerique360agency.com">contact@numerique360agency.com</a></li>
             <li>WhatsApp : <a href="https://wa.me/221776872222">+221 77 687 22 22</a></li>
           </ul>
 

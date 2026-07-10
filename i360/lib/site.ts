@@ -1,4 +1,4 @@
-const PRODUCTION_SITE_URL = "https://www.n360agency.com"
+const PRODUCTION_SITE_URL = "https://www.numerique360agency.com"
 
 export function getSiteUrl(): string {
   const fromEnv =
@@ -17,7 +17,7 @@ export function getSiteUrl(): string {
 export const siteConfig = {
   name: "N360 Agency",
   url: PRODUCTION_SITE_URL,
-  domain: "n360agency.com",
-  email: "contact@n360agency.com",
-  newsletterDomain: "newsletters.n360agency.com",
+  domain: "numerique360agency.com",
+  email: "contact@numerique360agency.com",
+  newsletterDomain: "newsletters.numerique360agency.com",
 } as const

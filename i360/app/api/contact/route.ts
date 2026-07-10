@@ -1,10 +1,11 @@
 import { Resend } from "resend"
 import { NextResponse } from "next/server"
 
-const CONTACT_EMAIL = "contact@n360agency.com"
+const resend = new Resend(process.env.RESEND_API_KEY)
+
+const CONTACT_EMAIL = "contact@numerique360agency.com"
 
 export async function POST(req: Request) {
-  const resend = new Resend(process.env.RESEND_API_KEY)
   try {
     const body = await req.json()
     const { name, email, phone, subject, message } = body
@@ -54,7 +55,7 @@ export async function POST(req: Request) {
           </div>
 
           <p style="color: #888; font-size: 12px; margin-top: 32px;">
-            Message reçu via le formulaire de contact de n360agency.com
+            Message reçu via le formulaire de contact de numerique360agency.com
           </p>
         </div>
       `,
@@ -62,7 +63,7 @@ export async function POST(req: Request) {
 
     // Email de confirmation au visiteur
     await resend.emails.send({
-      from: "N360 Agency <contact@n360agency.com>",
+      from: "N360 Agency <contact@numerique360agency.com>",
       to: email,
       subject: "Votre message a bien été reçu",
       html: `
