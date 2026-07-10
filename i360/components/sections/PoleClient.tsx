@@ -107,7 +107,7 @@ export default function PoleClient({ pole, prevPole, nextPole }: Props) {
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 text-sm font-medium px-6 py-3 rounded-full border border-border bg-white hover:border-foreground/20 transition-all duration-200"
+                className="inline-flex items-center gap-2 text-sm font-medium px-6 py-3 rounded-full border border-brand-blue/20 bg-background hover:border-foreground/20 transition-all duration-200"
               >
                 Nous contacter
               </Link>
@@ -116,7 +116,7 @@ export default function PoleClient({ pole, prevPole, nextPole }: Props) {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-background">
         <div className="max-w-5xl mx-auto">
           <motion.div
             variants={fadeUp}
@@ -142,7 +142,7 @@ export default function PoleClient({ pole, prevPole, nextPole }: Props) {
               <motion.div
                 key={i}
                 variants={fadeUp}
-                className="group bg-brand-light hover:bg-white border border-transparent hover:border-border rounded-2xl p-7 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                className="group bg-brand-navy hover:bg-background border border-transparent hover:border-brand-blue/20 rounded-2xl p-7 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               >
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 text-white font-bold text-sm font-[family-name:var(--font-heading)]"
@@ -173,7 +173,7 @@ export default function PoleClient({ pole, prevPole, nextPole }: Props) {
       </section>
 
       {pole.certifications && pole.certifications.length > 0 && (
-        <section className="py-20 px-6 bg-white">
+        <section className="py-20 px-6 bg-background">
           <div className="max-w-5xl mx-auto">
             <motion.div
               variants={fadeUp}
@@ -193,11 +193,11 @@ export default function PoleClient({ pole, prevPole, nextPole }: Props) {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
-              className="overflow-x-auto rounded-2xl border border-border"
+              className="overflow-x-auto rounded-2xl border border-brand-blue/20"
             >
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-border bg-brand-light">
+                  <tr className="border-b border-brand-blue/20 bg-brand-navy">
                     <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold">Certification / Standard</th>
                     <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold">Périmètre</th>
                     <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold">Statut équipe</th>
@@ -205,7 +205,7 @@ export default function PoleClient({ pole, prevPole, nextPole }: Props) {
                 </thead>
                 <tbody>
                   {pole.certifications.map((cert, i) => (
-                    <tr key={cert.nom} className={i % 2 === 0 ? "bg-white" : "bg-brand-light/50"}>
+                    <tr key={cert.nom} className={i % 2 === 0 ? "bg-background" : "bg-brand-navy/50"}>
                       <td className="p-4 font-medium text-foreground">{cert.nom}</td>
                       <td className="p-4 text-brand-gray">{cert.perimetre}</td>
                       <td className="p-4 font-medium" style={{ color: pole.color }}>{cert.statut}</td>
@@ -219,7 +219,7 @@ export default function PoleClient({ pole, prevPole, nextPole }: Props) {
       )}
 
       {pole.techStack && pole.techStack.length > 0 && (
-        <section className="py-20 px-6 bg-brand-light">
+        <section className="py-20 px-6 bg-brand-navy">
           <div className="max-w-5xl mx-auto">
             <motion.div
               variants={fadeUp}
@@ -239,11 +239,11 @@ export default function PoleClient({ pole, prevPole, nextPole }: Props) {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
-              className="overflow-x-auto rounded-2xl border border-border bg-white"
+              className="overflow-x-auto rounded-2xl border border-brand-blue/20 bg-background"
             >
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-border bg-brand-light">
+                  <tr className="border-b border-brand-blue/20 bg-brand-navy">
                     <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold">Catégorie</th>
                     <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold">Outils</th>
                     <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold">Usage</th>
@@ -251,7 +251,7 @@ export default function PoleClient({ pole, prevPole, nextPole }: Props) {
                 </thead>
                 <tbody>
                   {pole.techStack.map((item, i) => (
-                    <tr key={item.categorie} className={i % 2 === 0 ? "bg-white" : "bg-brand-light/50"}>
+                    <tr key={item.categorie} className={i % 2 === 0 ? "bg-background" : "bg-brand-navy/50"}>
                       <td className="p-4 font-medium text-foreground">{item.categorie}</td>
                       <td className="p-4 text-brand-gray">{item.outils}</td>
                       <td className="p-4 text-brand-gray">{item.usage}</td>
@@ -288,7 +288,7 @@ export default function PoleClient({ pole, prevPole, nextPole }: Props) {
               whileInView="visible"
               viewport={{ once: true, margin: "-80px" }}
             >
-              <div className="bg-white rounded-2xl p-7 border border-border">
+              <div className="bg-background rounded-2xl p-7 border border-brand-blue/20">
                 <div className="flex items-center gap-2 mb-5">
                   <Users size={16} style={{ color: pole.color }} />
                   <span className="font-[family-name:var(--font-heading)] font-bold text-sm text-foreground uppercase tracking-wide">
@@ -312,7 +312,7 @@ export default function PoleClient({ pole, prevPole, nextPole }: Props) {
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-white">
+      <section className="py-16 px-6 bg-background">
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -331,7 +331,7 @@ export default function PoleClient({ pole, prevPole, nextPole }: Props) {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href="/devis"
-              className="group inline-flex items-center gap-2 bg-white font-medium text-sm px-7 py-3.5 rounded-full hover:bg-white/90 transition-all duration-200 hover:scale-105 active:scale-95"
+              className="group inline-flex items-center gap-2 bg-background font-medium text-sm px-7 py-3.5 rounded-full hover:bg-background/90 transition-all duration-200 hover:scale-105 active:scale-95"
               style={{ color: pole.color }}
             >
               Demander un devis gratuit
@@ -341,7 +341,7 @@ export default function PoleClient({ pole, prevPole, nextPole }: Props) {
         </motion.div>
       </section>
 
-      <nav className="py-8 px-6 bg-brand-light border-t border-border">
+      <nav className="py-8 px-6 bg-brand-navy border-t border-brand-blue/20">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           {prevPole ? (
             <Link

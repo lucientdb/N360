@@ -127,7 +127,7 @@ export default function DevisClient() {
 
   if (sent) {
     return (
-      <section className="min-h-screen flex items-center justify-center px-6 bg-white pt-16">
+      <section className="min-h-screen flex items-center justify-center px-6 bg-background pt-16">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -144,7 +144,7 @@ export default function DevisClient() {
             Merci <strong>{form.name}</strong>. Nos experts analysent votre demande
             et vous répondront sous 24h avec une proposition personnalisée.
           </p>
-          <div className="w-full p-5 rounded-2xl bg-brand-light border border-border text-left">
+          <div className="w-full p-5 rounded-2xl bg-brand-navy border border-brand-blue/20 text-left">
             <p className="text-xs text-brand-gray uppercase tracking-widest mb-3">
               Récapitulatif
             </p>
@@ -165,7 +165,7 @@ export default function DevisClient() {
   }
 
   return (
-    <section className="min-h-screen pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-20 md:pb-24 px-6 bg-white">
+    <section className="min-h-screen pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-20 md:pb-24 px-6 bg-background">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-10 sm:mb-12">
           <p className="text-xs text-brand-blue uppercase tracking-[0.15em] font-medium mb-3">
@@ -190,7 +190,7 @@ export default function DevisClient() {
                       ? "bg-brand-blue text-white"
                       : i === step
                       ? "bg-brand-blue text-white ring-4 ring-brand-blue-light"
-                      : "bg-brand-light text-brand-gray border border-border"
+                      : "bg-brand-navy text-brand-gray border border-brand-blue/20"
                   }`}
                 >
                   {i < step ? <CheckCircle size={14} /> : i + 1}
@@ -214,7 +214,7 @@ export default function DevisClient() {
           ))}
         </div>
 
-        <div className="rounded-2xl border border-border bg-white shadow-sm overflow-hidden">
+        <div className="rounded-2xl border border-brand-blue/20 bg-background shadow-sm overflow-hidden">
           <AnimatePresence mode="wait">
             {step === 0 && (
               <motion.div
@@ -242,7 +242,7 @@ export default function DevisClient() {
                         className={`flex items-center gap-3 p-4 rounded-xl border text-left transition-all duration-200 ${
                           selected
                             ? "border-brand-blue bg-brand-blue-light"
-                            : "border-border bg-white hover:border-foreground/20"
+                            : "border-brand-blue/20 bg-background hover:border-foreground/20"
                         }`}
                       >
                         <span
@@ -295,7 +295,7 @@ export default function DevisClient() {
                         className={`flex items-center justify-between px-5 py-3.5 rounded-xl border text-sm transition-all duration-200 ${
                           form.budget === b
                             ? "border-brand-blue bg-brand-blue-light text-brand-blue font-medium"
-                            : "border-border bg-white hover:border-foreground/20 text-foreground"
+                            : "border-brand-blue/20 bg-background hover:border-foreground/20 text-foreground"
                         }`}
                       >
                         {b}
@@ -318,7 +318,7 @@ export default function DevisClient() {
                         className={`flex items-center justify-between px-5 py-3.5 rounded-xl border text-sm transition-all duration-200 ${
                           form.delai === d
                             ? "border-brand-blue bg-brand-blue-light text-brand-blue font-medium"
-                            : "border-border bg-white hover:border-foreground/20 text-foreground"
+                            : "border-brand-blue/20 bg-background hover:border-foreground/20 text-foreground"
                         }`}
                       >
                         {d}
@@ -359,7 +359,7 @@ export default function DevisClient() {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="Modou Diop"
-                      className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue transition-colors duration-200"
+                      className="w-full border border-brand-blue/20 rounded-xl px-4 py-3 text-sm bg-brand-navy text-foreground placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-blue transition-colors duration-200"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
@@ -372,7 +372,7 @@ export default function DevisClient() {
                       value={form.organisation}
                       onChange={handleChange}
                       placeholder="Nom de l'entreprise"
-                      className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue transition-colors duration-200"
+                      className="w-full border border-brand-blue/20 rounded-xl px-4 py-3 text-sm bg-brand-navy text-foreground placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-blue transition-colors duration-200"
                     />
                   </div>
                 </div>
@@ -388,7 +388,7 @@ export default function DevisClient() {
                       value={form.email}
                       onChange={handleChange}
                       placeholder="diop@entreprise.com"
-                      className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue transition-colors duration-200"
+                      className="w-full border border-brand-blue/20 rounded-xl px-4 py-3 text-sm bg-brand-navy text-foreground placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-blue transition-colors duration-200"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
@@ -401,7 +401,7 @@ export default function DevisClient() {
                       value={form.phone}
                       onChange={handleChange}
                       placeholder="+221 77 000 00 00"
-                      className="w-full border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-blue transition-colors duration-200"
+                      className="w-full border border-brand-blue/20 rounded-xl px-4 py-3 text-sm bg-brand-navy text-foreground placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-blue transition-colors duration-200"
                     />
                   </div>
                 </div>
@@ -431,7 +431,7 @@ export default function DevisClient() {
                   onChange={handleChange}
                   rows={7}
                   placeholder="Ex : Nous sommes une PME de 50 personnes dans le secteur financier. Nous avons récemment subi une tentative d'intrusion et souhaitons réaliser un audit de sécurité complet de notre SI..."
-                  className="w-full border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-blue transition-colors duration-200 resize-none"
+                  className="w-full border border-brand-blue/20 rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-brand-gray/40 focus:outline-none focus:border-brand-blue transition-colors duration-200 resize-none"
                 />
                 <p className="text-[10px] text-brand-gray">
                   Minimum 20 caractères.{" "}
@@ -460,7 +460,7 @@ export default function DevisClient() {
               <button
                 type="button"
                 onClick={() => setStep((s) => s - 1)}
-                className="inline-flex items-center gap-2 text-sm text-brand-gray hover:text-foreground border border-border px-5 py-2.5 rounded-full transition-all duration-200"
+                className="inline-flex items-center gap-2 text-sm text-brand-gray hover:text-foreground border border-brand-blue/20 px-5 py-2.5 rounded-full transition-all duration-200"
               >
                 <ArrowLeft size={14} />
                 Retour

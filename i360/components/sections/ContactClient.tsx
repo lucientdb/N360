@@ -117,7 +117,7 @@ export default function ContactClient() {
   }
 
   return (
-    <section className="pt-16 sm:pt-24 md:pt-32 pb-16 sm:pb-20 md:pb-24 px-6 bg-white">
+    <section className="pt-16 sm:pt-24 md:pt-32 pb-16 sm:pb-20 md:pb-24 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <motion.div
           variants={containerVariants}
@@ -173,7 +173,7 @@ export default function ContactClient() {
               ))}
             </div>
 
-            <div className="p-6 rounded-2xl bg-brand-light border border-border">
+            <div className="p-6 rounded-2xl bg-brand-navy border border-brand-blue/20">
               <p className="text-xs text-brand-gray uppercase tracking-widest mb-3">
                 Réponse rapide via WhatsApp
               </p>
@@ -202,7 +202,7 @@ export default function ContactClient() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-xl border border-border p-4 text-center"
+                  className="rounded-xl border border-brand-blue/20 p-4 text-center"
                 >
                   <p className="font-[family-name:var(--font-heading)] font-bold text-xl text-brand-blue">
                     {stat.val}
@@ -221,7 +221,7 @@ export default function ContactClient() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4 }}
-                className="rounded-2xl border border-border bg-brand-light p-12 text-center flex flex-col items-center gap-4"
+                className="rounded-2xl border border-brand-blue/20 bg-brand-navy p-12 text-center flex flex-col items-center gap-4"
               >
                 <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
                   <CheckCircle size={32} className="text-[#0d3124]" />
@@ -253,7 +253,7 @@ export default function ContactClient() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="rounded-2xl border border-border bg-white p-8 flex flex-col gap-5 shadow-sm"
+                className="rounded-2xl border border-brand-blue/20 bg-background p-8 flex flex-col gap-5 shadow-sm"
               >
                 <h2 className="font-[family-name:var(--font-heading)] font-bold text-xl text-foreground">
                   Envoyer un message
@@ -277,7 +277,7 @@ export default function ContactClient() {
                       onChange={handleChange}
                       required
                       placeholder="Moussa Diop"
-                      className="w-full border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-brand-gray/50 focus:outline-none focus:border-brand-blue transition-colors duration-200"
+                      className="w-full border border-brand-blue/20 rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-brand-gray/50 focus:outline-none focus:border-brand-blue transition-colors duration-200"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
@@ -291,7 +291,7 @@ export default function ContactClient() {
                       onChange={handleChange}
                       required
                       placeholder="diop@entreprise.com"
-                      className="w-full border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-brand-gray/50 focus:outline-none focus:border-brand-blue transition-colors duration-200"
+                      className="w-full border border-brand-blue/20 rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-brand-gray/50 focus:outline-none focus:border-brand-blue transition-colors duration-200"
                     />
                   </div>
                 </div>
@@ -307,7 +307,7 @@ export default function ContactClient() {
                       value={form.phone}
                       onChange={handleChange}
                       placeholder="+221 77 000 00 00"
-                      className="w-full border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-brand-gray/50 focus:outline-none focus:border-brand-blue transition-colors duration-200"
+                      className="w-full border border-brand-blue/20 rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-brand-gray/50 focus:outline-none focus:border-brand-blue transition-colors duration-200"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
@@ -319,7 +319,7 @@ export default function ContactClient() {
                       value={form.subject}
                       onChange={handleChange}
                       required
-                      className="w-full border border-border rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:border-brand-blue transition-colors duration-200 bg-white"
+                      className="w-full border border-brand-blue/20 rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:border-brand-blue transition-colors duration-200 bg-brand-navy"
                     >
                       <option value="">Choisir un sujet</option>
                       {subjects.map((s) => (
@@ -342,7 +342,7 @@ export default function ContactClient() {
                     required
                     rows={5}
                     placeholder="Décrivez votre projet ou votre demande..."
-                    className="w-full border border-border rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-brand-gray/50 focus:outline-none focus:border-brand-blue transition-colors duration-200 resize-none"
+                    className="w-full border border-brand-blue/20 rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-brand-gray/50 focus:outline-none focus:border-brand-blue transition-colors duration-200 resize-none"
                   />
                 </div>
 

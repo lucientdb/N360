@@ -175,7 +175,7 @@ const cardVariants: Variants = {
 
 export default function PolesListClient() {
   return (
-    <section className="py-16 px-6 bg-white">
+    <section className="py-16 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <motion.div
           variants={containerVariants}
@@ -187,7 +187,7 @@ export default function PolesListClient() {
             <motion.div key={pole.slug} variants={cardVariants}>
               <Link
                 href={`/poles/${pole.slug}`}
-                className="group flex flex-col h-full rounded-2xl border border-border bg-white overflow-hidden hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1 transition-all duration-300"
+                className="group flex flex-col h-full rounded-2xl border border-brand-blue/20 bg-background overflow-hidden hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1 transition-all duration-300"
               >
                 <div
                   className="px-8 pt-8 pb-6 flex items-start gap-5"
@@ -237,7 +237,7 @@ export default function PolesListClient() {
                     ))}
                   </ul>
 
-                  <div className="mt-auto pt-4 border-t border-border flex items-center justify-between">
+                  <div className="mt-auto pt-4 border-t border-brand-blue/20 flex items-center justify-between">
                     <span
                       className="inline-flex items-center gap-1.5 text-xs font-semibold"
                       style={{ color: pole.color }}

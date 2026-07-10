@@ -15,7 +15,7 @@ export default function PolesPage() {
     <main>
       <Navbar />
 
-      <section className="pt-16 sm:pt-24 md:pt-32 pb-12 sm:pb-16 md:pb-16 px-6 bg-white">
+      <section className="pt-16 sm:pt-24 md:pt-32 pb-12 sm:pb-16 md:pb-16 px-6 bg-background">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-xs text-brand-blue uppercase tracking-[0.15em] font-medium mb-3">
             Nos domaines d&apos;intervention

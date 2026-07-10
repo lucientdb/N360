@@ -12,7 +12,7 @@ export default function CguPage() {
   return (
     <main>
       <Navbar />
-      <section className="pt-16 sm:pt-24 md:pt-32 pb-16 sm:pb-20 md:pb-24 px-6 bg-white">
+      <section className="pt-16 sm:pt-24 md:pt-32 pb-16 sm:pb-20 md:pb-24 px-6 bg-background">
         <div className="max-w-3xl mx-auto">
           <h1 className="font-[family-name:var(--font-heading)] font-black text-3xl sm:text-4xl md:text-5xl tracking-tight text-foreground mb-8 sm:mb-10">
             Conditions Générales d&apos;Utilisation

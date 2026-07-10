@@ -116,7 +116,7 @@ const cardVariants: Variants = {
 
 export default function PolesGrid() {
   return (
-    <section id="poles" className="py-24 px-6 bg-white">
+    <section id="poles" className="py-24 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
 
         <motion.div
@@ -126,7 +126,7 @@ export default function PolesGrid() {
           viewport={{ once: true, margin: "-80px" }}
           className="text-center mb-16"
         >
-          <p className="text-xs text-brand-gray uppercase tracking-[0.15em] mb-3">
+          <p className="text-xs text-brand-blue font-mono-brand uppercase tracking-[0.15em] mb-3">
             Nos domaines d&apos;intervention
           </p>
           <h2 className="font-[family-name:var(--font-heading)] font-bold text-4xl md:text-5xl tracking-tight text-foreground">
@@ -151,9 +151,9 @@ export default function PolesGrid() {
             >
               <Link
                 href={`/poles/${pole.slug}`}
-                className="group block rounded-2xl border border-border bg-white overflow-hidden hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1 transition-all duration-300"
+                className="group block rounded-2xl border border-brand-blue/20 bg-brand-navy overflow-hidden hover:shadow-xl hover:shadow-brand-blue/10 hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="relative h-56 overflow-hidden group/image">
+                <div className="relative h-56 overflow-hidden">
                   <Image
                     src={pole.image}
                     alt={pole.name}
@@ -161,33 +161,27 @@ export default function PolesGrid() {
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
-                  <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition-all duration-300" />
+                  <div className="absolute inset-0 bg-black/65 group-hover:bg-black/55 transition-all duration-300" />
                   
                   <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
                     <h3 
                       className="font-[family-name:var(--font-heading)] font-bold text-base leading-tight text-white"
                       style={{
-                        textShadow: `0 0 15px rgba(255, 255, 255, 0.7), 0 2px 10px rgba(0, 0, 0, 0.9), 2px 2px 4px rgba(0, 0, 0, 0.8)`
+                        textShadow: `0 0 15px rgba(0,201,122,0.3), 0 2px 10px rgba(0,0,0,0.9)`
                       }}
                     >
                       {pole.name}
                     </h3>
                   </div>
                   
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300"
-                    style={{ background: pole.color }}
-                  />
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-15 transition-opacity duration-300 bg-brand-blue" />
                 </div>
 
                 <div className="p-5">
                   <p className="text-xs text-brand-gray leading-relaxed mb-4">
                     {pole.description}
                   </p>
-                  <span
-                    className="inline-flex items-center gap-1 text-xs font-medium transition-gap duration-200"
-                    style={{ color: pole.color }}
-                  >
+                  <span className="inline-flex items-center gap-1 text-xs font-medium text-brand-blue-vif transition-gap duration-200">
                     En savoir plus
                     <ArrowRight
                       size={12}

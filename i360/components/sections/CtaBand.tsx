@@ -32,25 +32,25 @@ const itemVariants: Variants = {
 
 export default function CtaBand() {
   return (
-    <section className="py-16 px-6 bg-white">
+    <section className="py-16 px-6 bg-background">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
-        className="relative max-w-6xl mx-auto bg-brand-light rounded-3xl px-6 sm:px-8 md:px-10 py-12 sm:py-14 md:py-16 overflow-hidden"
+        className="relative max-w-6xl mx-auto bg-brand-navy border border-brand-blue/20 rounded-3xl px-6 sm:px-8 md:px-10 py-12 sm:py-14 md:py-16 overflow-hidden"
       >
-        <div className="absolute -top-24 -right-24 w-72 h-72 bg-brand-blue-light rounded-full blur-3xl opacity-60 pointer-events-none" />
-        <div className="absolute -bottom-16 -left-16 w-56 h-56 bg-brand-blue-light rounded-full blur-3xl opacity-40 pointer-events-none" />
+        <div className="absolute -top-24 -right-24 w-72 h-72 bg-brand-blue rounded-full blur-3xl opacity-10 pointer-events-none" />
+        <div className="absolute -bottom-16 -left-16 w-56 h-56 bg-brand-blue-vif rounded-full blur-3xl opacity-5 pointer-events-none" />
 
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10">
           <motion.div variants={itemVariants} className="text-center md:text-left max-w-xl">
-            <p className="text-xs text-brand-blue uppercase tracking-[0.15em] font-medium mb-3">
+            <p className="text-xs text-brand-blue-vif font-mono-brand uppercase tracking-[0.15em] font-medium mb-3">
               Passons à l&apos;action
             </p>
             <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl sm:text-3xl md:text-4xl tracking-tight text-foreground leading-snug">
               Prêt à passer à la{" "}
-              <span className="text-brand-blue">vitesse supérieure</span>&nbsp;?
+              <span className="text-brand-blue-vif">vitesse supérieure</span>&nbsp;?
             </h2>
             <p className="mt-4 text-brand-gray text-sm leading-relaxed">
               N360 Agency est le seul acteur en Afrique de l&apos;Ouest à combiner
@@ -100,7 +100,7 @@ export default function CtaBand() {
 
         <motion.div
           variants={itemVariants}
-          className="relative z-10 mt-12 pt-10 border-t border-border grid grid-cols-2 md:grid-cols-4 gap-6"
+          className="relative z-10 mt-12 pt-10 border-t border-brand-blue/20 grid grid-cols-2 md:grid-cols-4 gap-6"
         >
           {[
             { val: "NDA", label: "Signé avant toute mission" },
@@ -109,10 +109,10 @@ export default function CtaBand() {
             { val: "24/7", label: "Disponibilité SOC" },
           ].map((item) => (
             <div key={item.label} className="text-center">
-              <p className="font-[family-name:var(--font-heading)] font-bold text-xl text-foreground">
+              <p className="font-[family-name:var(--font-heading)] font-bold text-xl text-brand-blue-vif">
                 {item.val}
               </p>
-              <p className="text-xs text-brand-gray mt-1">{item.label}</p>
+              <p className="text-xs text-brand-gray mt-1 font-mono-brand">{item.label}</p>
             </div>
           ))}
         </motion.div>

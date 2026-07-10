@@ -50,7 +50,7 @@ export default function AProposClient({
 }: Props) {
   return (
     <>
-      <section className="relative pt-16 sm:pt-24 md:pt-32 pb-16 sm:pb-20 md:pb-20 px-6 bg-white overflow-hidden">
+      <section className="relative pt-16 sm:pt-24 md:pt-32 pb-16 sm:pb-20 md:pb-20 px-6 bg-background overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:48px_48px] opacity-50" />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-blue-light rounded-full blur-[140px] opacity-30 pointer-events-none" />
 
@@ -95,7 +95,7 @@ export default function AProposClient({
 
             <motion.div
               variants={fadeUp}
-              className="mt-4 bg-brand-light rounded-2xl px-8 py-6 border-l-4 border-brand-blue max-w-2xl"
+              className="mt-4 bg-brand-navy rounded-2xl px-8 py-6 border-l-4 border-brand-blue max-w-2xl"
             >
               <p className="text-xs text-brand-blue font-semibold uppercase tracking-widest mb-2">
                 Notre positionnement unique
@@ -111,7 +111,7 @@ export default function AProposClient({
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-brand-light">
+      <section className="py-20 px-6 bg-brand-navy">
         <div className="max-w-5xl mx-auto">
           <motion.div
             variants={fadeUp}
@@ -132,7 +132,7 @@ export default function AProposClient({
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
-              className="bg-white rounded-2xl p-8 border border-border"
+              className="bg-background rounded-2xl p-8 border border-brand-blue/20"
             >
               <span className="text-brand-blue font-bold text-sm uppercase tracking-widest block mb-4">
                 Notre mission
@@ -174,7 +174,7 @@ export default function AProposClient({
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-background">
         <div className="max-w-5xl mx-auto">
           <motion.div
             variants={fadeUp}
@@ -202,7 +202,7 @@ export default function AProposClient({
                 <motion.div
                   key={valeur.titre}
                   variants={fadeUp}
-                  className="group bg-brand-light hover:bg-white border border-transparent hover:border-border rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                  className="group bg-brand-navy hover:bg-background border border-transparent hover:border-brand-blue/20 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                 >
                   <div className="w-10 h-10 rounded-xl bg-brand-blue-light flex items-center justify-center mb-4">
                     <Icon size={18} className="text-brand-blue" />
@@ -270,7 +270,7 @@ export default function AProposClient({
               <motion.div
                 key={stat.val + stat.source}
                 variants={fadeUp}
-                className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300"
+                className="bg-background/5 border border-white/10 rounded-2xl p-6 hover:bg-background/10 transition-all duration-300"
               >
                 <span className="font-[family-name:var(--font-heading)] font-black text-3xl text-brand-blue block mb-2">
                   {stat.val}
@@ -313,7 +313,7 @@ export default function AProposClient({
               </p>
             </div>
 
-            <div className="bg-white/5 border border-white/10 rounded-2xl px-8 py-6 border-l-4 border-brand-blue">
+            <div className="bg-background/5 border border-white/10 rounded-2xl px-8 py-6 border-l-4 border-brand-blue">
               <p className="text-xs text-brand-blue font-semibold uppercase tracking-widest mb-2">
                 Notre avantage compétitif
               </p>
@@ -329,7 +329,7 @@ export default function AProposClient({
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-background">
         <div className="max-w-5xl mx-auto">
           <motion.div
             variants={fadeUp}
@@ -361,7 +361,7 @@ export default function AProposClient({
               <motion.div
                 key={seg.segment}
                 variants={fadeUp}
-                className="bg-brand-light border border-transparent hover:border-border rounded-2xl p-6 transition-all duration-300 hover:shadow-md"
+                className="bg-brand-navy border border-transparent hover:border-brand-blue/20 rounded-2xl p-6 transition-all duration-300 hover:shadow-md"
               >
                 <h3 className="font-[family-name:var(--font-heading)] font-bold text-base text-foreground mb-3">
                   {seg.segment}
@@ -406,7 +406,7 @@ export default function AProposClient({
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-brand-light">
+      <section className="py-20 px-6 bg-brand-navy">
         <div className="max-w-5xl mx-auto">
           <motion.div
             variants={fadeUp}
@@ -426,11 +426,11 @@ export default function AProposClient({
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
-            className="overflow-x-auto rounded-2xl border border-border bg-white"
+            className="overflow-x-auto rounded-2xl border border-brand-blue/20 bg-background"
           >
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-border bg-brand-light">
+                <tr className="border-b border-brand-blue/20 bg-brand-navy">
                   <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-foreground">Critère</th>
                   <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-brand-blue">N360 Agency</th>
                   <th className="text-left p-4 font-[family-name:var(--font-heading)] font-bold text-foreground">Agences digitales classiques</th>
@@ -439,7 +439,7 @@ export default function AProposClient({
               </thead>
               <tbody>
                 {comparaison.map((row, i) => (
-                  <tr key={row.critere} className={i % 2 === 0 ? "bg-white" : "bg-brand-light/50"}>
+                  <tr key={row.critere} className={i % 2 === 0 ? "bg-background" : "bg-brand-navy/50"}>
                     <td className="p-4 font-medium text-foreground">{row.critere}</td>
                     <td className="p-4 text-brand-blue font-medium">{row.n360}</td>
                     <td className="p-4 text-brand-gray">{row.agences}</td>
@@ -452,7 +452,7 @@ export default function AProposClient({
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-background">
         <div className="max-w-5xl mx-auto">
           <motion.div
             variants={fadeUp}
@@ -487,7 +487,7 @@ export default function AProposClient({
                 <motion.li
                   key={item}
                   variants={fadeUp}
-                  className="flex items-start gap-3 bg-brand-light rounded-xl p-5 text-sm text-brand-gray leading-relaxed"
+                  className="flex items-start gap-3 bg-brand-navy rounded-xl p-5 text-sm text-brand-gray leading-relaxed"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-brand-blue mt-2 flex-shrink-0" />
                   {item}
@@ -498,7 +498,7 @@ export default function AProposClient({
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-brand-light">
+      <section className="py-20 px-6 bg-brand-navy">
         <div className="max-w-5xl mx-auto">
           <motion.div
             variants={fadeUp}
@@ -540,7 +540,7 @@ export default function AProposClient({
                     </span>
                   </div>
 
-                  <div className="bg-white group-hover:shadow-md border border-transparent group-hover:border-border rounded-2xl p-6 transition-all duration-300">
+                  <div className="bg-background group-hover:shadow-md border border-transparent group-hover:border-brand-blue/20 rounded-2xl p-6 transition-all duration-300">
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-3">
                         <span className="md:hidden font-[family-name:var(--font-heading)] font-black text-xs text-brand-blue bg-brand-blue-light px-2 py-1 rounded-lg">
@@ -550,7 +550,7 @@ export default function AProposClient({
                           {etape.phase}
                         </h3>
                       </div>
-                      <span className="text-xs text-brand-gray bg-brand-light border border-border px-3 py-1 rounded-full">
+                      <span className="text-xs text-brand-gray bg-brand-navy border border-brand-blue/20 px-3 py-1 rounded-full">
                         {etape.duree}
                       </span>
                     </div>
@@ -563,7 +563,7 @@ export default function AProposClient({
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-background">
         <div className="max-w-5xl mx-auto">
           <motion.div
             variants={fadeUp}
@@ -589,7 +589,7 @@ export default function AProposClient({
               <motion.div
                 key={eng.label}
                 variants={fadeUp}
-                className="bg-brand-light border border-border rounded-2xl p-6 flex items-start gap-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                className="bg-brand-navy border border-brand-blue/20 rounded-2xl p-6 flex items-start gap-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
               >
                 <div className="w-2 h-2 rounded-full bg-brand-blue mt-2 flex-shrink-0" />
                 <div>
@@ -604,7 +604,7 @@ export default function AProposClient({
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-brand-light">
+      <section className="py-16 px-6 bg-brand-navy">
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -623,7 +623,7 @@ export default function AProposClient({
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href="/devis"
-              className="group inline-flex items-center gap-2 bg-white text-brand-blue font-medium text-sm px-7 py-3.5 rounded-full hover:bg-white/90 transition-all duration-200 hover:scale-105 active:scale-95"
+              className="group inline-flex items-center gap-2 bg-background text-brand-blue font-medium text-sm px-7 py-3.5 rounded-full hover:bg-background/90 transition-all duration-200 hover:scale-105 active:scale-95"
             >
               Demander un devis
               <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-1" />

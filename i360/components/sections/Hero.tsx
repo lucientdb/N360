@@ -41,11 +41,11 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white pt-16"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background pt-16"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:48px_48px] opacity-60" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(26,122,74,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(26,122,74,0.06)_1px,transparent_1px)] bg-[size:48px_48px]" />
 
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-brand-blue-light rounded-full blur-[120px] opacity-40 pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-brand-blue rounded-full blur-[160px] opacity-10 pointer-events-none" />
 
       <motion.div
         style={{ y, opacity }}
@@ -58,8 +58,8 @@ export default function Hero() {
           className="flex flex-col items-center gap-6"
         >
           <motion.div variants={itemVariants}>
-            <span className="inline-flex items-center gap-2 text-xs font-medium text-brand-blue bg-brand-blue-light px-4 py-2 rounded-full tracking-widest uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-blue animate-pulse" />
+            <span className="inline-flex items-center gap-2 text-xs font-mono-brand text-brand-blue-vif bg-brand-blue-light border border-brand-blue/30 px-4 py-2 rounded-full tracking-[0.15em] uppercase">
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-blue-vif animate-pulse" />
               N360 Agency
             </span>
           </motion.div>
@@ -71,7 +71,7 @@ export default function Hero() {
             Une agence.<br />
             Huit expertises.
             <br />
-            <span className="text-brand-blue">Zéro angle mort.</span>
+            <span className="text-brand-blue-vif">Zéro angle mort.</span>
           </motion.h1>
 
           <motion.p
@@ -99,7 +99,7 @@ export default function Hero() {
             </Link>
             <Link
               href="/#poles"
-              className="inline-flex items-center gap-2 text-sm text-brand-gray hover:text-foreground border border-border hover:border-foreground/30 px-7 py-3.5 rounded-full transition-all duration-200"
+              className="inline-flex items-center gap-2 text-sm text-brand-gray hover:text-foreground border border-brand-blue/20 hover:border-brand-blue/50 px-7 py-3.5 rounded-full transition-all duration-200"
             >
               Découvrir nos pôles
             </Link>
@@ -107,7 +107,7 @@ export default function Hero() {
 
           <motion.div
             variants={itemVariants}
-            className="grid grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden mt-6 w-full max-w-sm"
+            className="grid grid-cols-3 gap-px bg-brand-blue/20 rounded-2xl overflow-hidden mt-6 w-full max-w-sm"
           >
             {[
               { val: "8", unit: "+", label: "Pôles d'expertise" },
@@ -116,13 +116,13 @@ export default function Hero() {
             ].map((stat) => (
               <div
                 key={stat.label}
-                className="bg-white flex flex-col items-center justify-center py-5 px-4"
+                className="bg-brand-navy flex flex-col items-center justify-center py-5 px-4"
               >
                 <span className="font-[family-name:var(--font-heading)] font-bold text-2xl text-foreground">
                   {stat.val}
-                  <span className="text-brand-blue text-lg">{stat.unit}</span>
+                  <span className="text-brand-blue-vif text-lg">{stat.unit}</span>
                 </span>
-                <span className="text-[10px] text-brand-gray uppercase tracking-widest mt-1 text-center">
+                <span className="text-[10px] text-brand-gray uppercase tracking-widest mt-1 text-center font-mono-brand">
                   {stat.label}
                 </span>
               </div>
@@ -141,7 +141,7 @@ export default function Hero() {
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ChevronDown size={22} className="text-brand-gray" />
+          <ChevronDown size={22} className="text-brand-blue/50" />
         </motion.div>
       </motion.div>
     </section>

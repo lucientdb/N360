@@ -1,17 +1,24 @@
 import type { Metadata } from "next"
-import { Inter, Syne } from "next/font/google"
+import { Inter, Syne, Space_Mono } from "next/font/google"
 import { getSiteUrl } from "@/lib/site"
 import "./globals.css"
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
+  weight: ["300", "400", "500", "600"],
 })
 
 const syne = Syne({
   subsets: ["latin"],
   variable: "--font-heading",
-  weight: ["400", "700", "800"],
+  weight: ["400", "500", "600", "700", "800"],
+})
+
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono-brand",
+  weight: ["400", "700"],
 })
 
 const siteUrl = getSiteUrl()
@@ -44,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr" className={`${inter.variable} ${syne.variable}`} suppressHydrationWarning>
+    <html lang="fr" className={`${inter.variable} ${syne.variable} ${spaceMono.variable}`} suppressHydrationWarning>
       <body className="bg-background text-foreground antialiased">
         {children}
       </body>
