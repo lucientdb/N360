@@ -26,7 +26,7 @@ const siteUrl = getSiteUrl()
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "N360 Agency | Numérique 360 Agency — Cybersécurité & Digital",
+    default: "N360 Agency - Numérique 360 Agency",
     template: "%s | N360 Agency",
   },
   description:
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "N360 Agency | Numérique 360 Agency — Numérique 360°",
+    title: "N360 Agency - Numérique 360 Agency",
     description: "Première agence numérique intégrée d'Afrique de l'Ouest. Cybersécurité, OSINT, transformation digitale à Dakar.",
     url: siteUrl,
     siteName: "N360 Agency",
