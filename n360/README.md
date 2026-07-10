@@ -12,9 +12,9 @@ Site vitrine Next.js de N360 Agency.
 
 ## URLs
 
-- Production : https://www.n360agency.com
-- Email contact : contact@n360agency.com
-- Email newsletter : newsletters@n360agency.com
+- Production : https://www.numerique360agency.com
+- Email contact : contact@numerique360agency.com
+- Email newsletter : newsletters@numerique360agency.com
 
 ## Installation locale
 
@@ -51,10 +51,10 @@ npm run lint     # vérification ESLint
 ## Déploiement Hostinger
 
 1. Créer une application Node.js (Node 20+).
-2. Déployer le contenu du dossier `i360`.
+2. Déployer le contenu du dossier `n360`.
 3. Exécuter `npm install`, puis `npm run build`, puis `npm run start`.
 4. Configurer les variables d'environnement dans hPanel.
-5. Pointer le domaine `www.n360agency.com` vers l'application.
+5. Pointer le domaine `www.numerique360agency.com` vers l'application.
 6. Configurer les enregistrements DNS Resend (SPF, DKIM, DMARC).
 
 ## Structure utile
@@ -76,5 +76,5 @@ public/images/       Logos et visuels
 
 - Accueil et pages légales
 - Formulaires contact, devis, newsletter
-- `https://www.n360agency.com/sitemap.xml`
-- Redirection `n360agency.com` vers `www.n360agency.com`
+- `https://www.numerique360agency.com/sitemap.xml`
+- Redirection `numerique360agency.com` vers `www.numerique360agency.com`
